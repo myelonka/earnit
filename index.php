@@ -1,9 +1,9 @@
 <html>
     <head>
-        <title>Title</title>
+        <title>earnit - homepage</title>
+		<meta charset="utf-8">
 		<link rel="stylesheet" href="main.css">
-        <meta charset="utf-8">
-		<link rel='icon' href='#'>
+		<link rel='icon' href='img/icon.png'>
     </head>
 	<body>
 		
