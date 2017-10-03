@@ -1,24 +1,24 @@
 <div id="nav-container">
 	<div class="col-12" id="nav">
 		<div class="col-3" id="logo-container">
-			<span class="helper"></span><a href="#"><img src="img/earnit-logo@1x.png" height="36px" alt="earnit logo"/></a>
+			<span class="helper"></span><a href="index.php"><img src="img/earnit-logo@1x.png" height="36px" alt="earnit logo"/></a>
 		</div>
 		<div id="nav-menu" style="grid-column: 4/13">
 			<ul id="nav-list" class="right">
 				<li>
-					<a id="link" href="#">Home</a>
+					<a <?php if($current == 'index.php') {echo ' id=\'current\'';} ?> href="index.php">Home</a>
 				</li>
 				<li>
-					<a id="alt-link" href="#">Browse Offers</a>
+					<a <?php if($current == 'browse.php') {echo ' id=\'current\'';} ?> href="browse.php">Browse Offers</a>
 				</li>
 				<li>
-					<a id="link" href="#">Post an Offer</a>
+					<a <?php if($current == 'post.php') {echo ' id=\'current\'';} ?> href="post.php">Post an Offer</a>
 				</li>
 				<li>
-					<a id="link" href="#">How It Works</a>
+					<a <?php if($current == 'how.php') {echo ' id=\'current\'';} ?> href="how.php">How It Works</a>
 				</li>
 				<li>
-					<a id="link" href="#">Contact</a>
+					<a <?php if($current == 'contact.php') {echo ' id=\'current\'';} ?> href="contact.php">Contact</a>
 				</li>
 			</ul>
 		</div>
