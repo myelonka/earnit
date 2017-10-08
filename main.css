@@ -240,6 +240,7 @@ p {
 	letter-spacing: 1.2;
 	color: #fff;
 	padding: 0 0.5rem;
+	font-variant-ligatures: none;
 }
 
 #nav-list a:hover {
@@ -366,6 +367,12 @@ li:first-child{
 }
 
 
+.footercol{
+    float:none;
+    padding-left:2%;
+    padding-right:2%;
+    width:96%    
+}
 
 
 
@@ -388,11 +395,4 @@ li:first-child{
         max-width: 75rem;
   }
     
-    .footercol{
-    float:none;
-    padding-left:2%;
-    padding-right:2%;
-    width:96%    
-}
-
 }
