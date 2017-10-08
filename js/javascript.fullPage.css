@@ -221,7 +221,7 @@ button {
     cursor: pointer;
     width: 100%;
 	font-size: 16px;
-	border-radius: 2px;
+	border-radius: 0.5rem;
 }
 
 /* Extra styles for the cancel button */
