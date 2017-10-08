@@ -2,7 +2,7 @@
 
 /* 
 *** 1 rem = 16px 
-*** THEME COLORS: #5836FF #111 
+*** THEME COLORS: #5836FF #24207A #111 
 */
 
 /* UNIVERSAL */
@@ -42,7 +42,6 @@ h1,h2,h3,h4,h5,h6 {
 	font-size: 100%;
 	margin:0;
 	padding:0;
-	color:#444;
 }
 q:before,q:after {
 	content:'';
@@ -64,7 +63,6 @@ body {
 
 * {
     font-family: 'Montserrat', Helvetica, sans-serif;
-    color: #333447;
     line-height: 1.5;
 }
 
@@ -83,7 +81,7 @@ h3 {
 }
 
 h4 {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
 }
 
 h5 {
@@ -96,23 +94,9 @@ h6 {
 
 p {
     font-size: 1.125rem;
-    font-weight: 200;
+    font-weight: 300;
     line-height: 1.8;
 }
-
-.font-light {
-    font-weight: 300;
-}
-
-.font-regular {
-    font-weight: 400;
-}
-
-.font-heavy {
-    font-weight: 700;
-}
-
-
 
 
 /* POSITIONING */
@@ -135,7 +119,10 @@ p {
     text-align: justify;
 }
 
-
+.color-div { 
+	background-color: #5836FF;
+	border-radius: 0.5rem;
+}
 
 
 /* GRID SYSTEM */
