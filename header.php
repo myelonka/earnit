@@ -18,7 +18,7 @@
 					<a <?php if($current == 'how.php') {echo ' id=\'current\'';} ?> href="how.php">How It Works</a>
 				</li>
 				<li>
-					<a <?php if($current == 'contact.php') {echo ' id=\'current\'';} ?> href="contact.php">Contact</a>
+					<a <?php if($current == 'profile.php') {echo ' id=\'current\'';} ?> href="profile.php">profile</a>
 				</li>
 			</ul>
 		</div>
