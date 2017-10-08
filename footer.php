@@ -3,7 +3,6 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     
     <footer>
-     /*basic idea for footer taken from https://bootsnipp.com/snippets/j62dD*/
      <div class="container">
        <div class="row">
        
