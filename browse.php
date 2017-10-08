@@ -33,8 +33,8 @@
 			<div class="col-3" style="grid-column: 7/10"><h3>Lorem ipsum dolor sit amet.</h3></div>
 			<div class="col-3" style="grid-column: 10/13"><h3>Lorem ipsum dolor sit amet.</h3></div>
 		</div>
-        <?php 
-			include('footer.php');
-		?>
 	</body>
+     <?php 
+			include('footer.php');
+     ?>
 </html>
