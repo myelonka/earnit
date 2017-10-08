@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>earnit - browse offers</title>
+        <title>EarnIt - browse offers</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="main.css">
 		<link rel='icon' href='img/favicon.png'>

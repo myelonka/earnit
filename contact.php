@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>earnit - contact page</title>
+        <title>EarnIt - contact page</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="main.css">
 		<link rel='icon' href='img/favicon.png'>

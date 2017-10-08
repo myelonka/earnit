@@ -173,7 +173,7 @@ html.fp-enabled,
     top: -2px;
     color: #fff;
     font-size: 14px;
-    font-family: arial, helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     white-space: nowrap;
     max-width: 220px;
     overflow: hidden;
@@ -194,3 +194,69 @@ html.fp-enabled,
 #fp-nav ul li .fp-tooltip.left {
     left: 20px;
 }
+
+a {
+	font-size: 16px;
+	color: #fff;
+	font-weight: 400;	
+}
+
+a::after { 
+    content: "»";
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+	margin-bottom: 1rem;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #fff;
+    color: #111;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+	font-size: 16px;
+	border-radius: 2px;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+	background: none;
+	color: #fff;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,.signupbtn {
+    float: left;
+    width: 50%;
+	margin-top: 2rem;
+}
+
+.signupbtn {
+	color: #5836FF;
+	font-weight: 600;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+label {
+	font-size: 16px;
+	color: #fff;
+}
+

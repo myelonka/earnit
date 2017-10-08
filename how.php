@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>earnit - how it works</title>
+        <title>EarnIt - how it works</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="main.css">
 		<link rel='icon' href='img/favicon.png'>
