@@ -273,6 +273,37 @@ p {
 
 
 
+
+form{
+    
+    font-family: 'Space Mono', monospace;
+    color:#FFF;
+    font-size:0.5em;
+    margin-bottom: 0.3em;
+    letter-spacing: 2px;
+}
+
+input[type=submit]{
+    background-color: #FFF;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-family: 'Space Mono', monospace;
+    text-transform: uppercase;
+}
+
+input[type=text], input[type=email]{
+    margin: 0.2em 0.8em 0.2em 0em;
+}
+
+input[type=submit]{
+    margin: 0.7em 0.8em 0.2em 0em;
+}
+
+li:first-child{
+  margin-top:0px;
+}
+
 footer{
      background-color: #111;
      padding:70px 0px;
@@ -336,42 +367,11 @@ footer{
     font-size:1.5em;
 }
 
-form{
-    
-    font-family: 'Space Mono', monospace;
-    color:#FFF;
-    font-size:0.5em;
-    margin-bottom: 0.3em;
-    letter-spacing: 2px;
-}
-
-input[type=submit]{
-    background-color: #FFF;
-    border: none;
-    color: black;
-    cursor: pointer;
-    font-family: 'Space Mono', monospace;
-    text-transform: uppercase;
-}
-
-input[type=text], input[type=email]{
-    margin: 0.2em 0.8em 0.2em 0em;
-}
-
-input[type=submit]{
-    margin: 0.7em 0.8em 0.2em 0em;
-}
-
-li:first-child{
-  margin-top:0px;
-}
-
-
 .footercol{
-    float:none;
+    float: none;
     padding-left:2%;
     padding-right:2%;
-    width:96%    
+    width:96%;
 }
 
 
