@@ -1,9 +1,9 @@
- /*basic idea for footer taken from https://bootsnipp.com/snippets/j62dD*/
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="main.css">
+
+<link rel="stylesheet" type="text/css" href="footer.css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     
     <footer>
+     /*basic idea for footer taken from https://bootsnipp.com/snippets/j62dD*/
      <div class="container">
        <div class="row">
        
