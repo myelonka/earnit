@@ -2,6 +2,7 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     
     <footer>
+
      <div class="container">
        <div class="row">
        
@@ -58,25 +59,27 @@
                                   <input type="email" name="email"><br/>
                                   <input type="submit" value="Submit">
                               </form>
-                               <li>
-                                    <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-                               </li>
-                              
-                               <li>
-                                    <a href="#"><i class="fa fa-github fa-2x"></i></a>
-                               </li>
-                                
-                               <li>
-                                    <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
-                               </li>
-                               
-                               <li>
-                                    <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
-                               </li>
-                                
-                               <li>
-                                    <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
-                              </li>
+                              <div id="icons">
+                                   <li>
+                                        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                                   </li>
+
+                                   <li>
+                                        <a href="#"><i class="fa fa-github fa-2x"></i></a>
+                                   </li>
+
+                                   <li>
+                                        <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+                                   </li>
+
+                                   <li>
+                                        <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
+                                   </li>
+
+                                   <li>
+                                        <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+                                  </li>
+                              </div>
                               
                      </ul>
                 </div>
@@ -84,4 +87,5 @@
            
            </div> 
         </div>
+
     </footer>
