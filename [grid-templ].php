@@ -25,5 +25,8 @@
 			<div>11</div>
 			<div>12</div>
 		</div>
+        <?php 
+			include('footer.php');
+		?>
 	</body>
 </html>
