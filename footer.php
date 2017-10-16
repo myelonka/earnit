@@ -10,7 +10,7 @@
                     <ul class="adress">
                          <span>Contact</span>
                          <li>
-                             <p>17, Plaza Santander Bodega<br>01064 Villa Nueva<br>GUATEMALA</p>
+                            <p>17, Plaza Santander Bodega<br>01064 Villa Nueva<br>GUATEMALA</p>
                           </li>
 
                           <li>

@@ -124,6 +124,16 @@ p {
 	background-color: #6633ff;
 }
 
+::selection { /* SELECTED TEXT BG COLOR */
+    background: #6633ff;
+	color: #fff;
+	
+}
+::-moz-selection {
+    background: #6633ff;
+	color: #fff;
+}
+
 
 /* GRID SYSTEM */
 
