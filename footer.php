@@ -3,22 +3,22 @@
 
     <footer>
 
-     <div class="container">
+     <div class="footer-container">
        <div class="row">
 
                 <div class="footercol">
                     <ul class="adress">
-                         <span>Adress</span>
+                         <span>Contact</span>
                          <li>
-                             <p> Chlastawa 17, 66-210 Chlastawa, Guatemala</p>
+                             <p>17, Plaza Santander Bodega<br>01064 Villa Nueva<br>GUATEMALA</p>
                           </li>
 
                           <li>
-                            <p>+90 1234 56789</p>
+                            <br><p>(+502) 2331-8595</p>
                           </li>
 
                           <li>
-                            <p>info@earnit.com</p>
+							  <br><p>info@earnit.com</p>
                           </li>
                      </ul>
                 </div>
@@ -27,25 +27,20 @@
                     <ul class="content">
                          <span>Content</span>
                          <li>
-                            <a href="#">Home</a>
+                            <a href="#">Privacy</a>
                           </li>
 
                           <li>
-                             <a href="#">About</a>
+                             <a href="#">Community</a>
                           </li>
 
                           <li>
-                            <a href="#">Blog</a>
+                            <a href="contact.php">Contact Us</a>
                           </li>
 
                           <li>
-                             <a href="#">Gallery </a>
+                             <a href="#">FAQ</a>
                           </li>
-
-                          <li>
-                            <a href="#">Profile</a>
-                         </li>
-
                     </ul>
                 </div>
 
@@ -53,12 +48,11 @@
                    <ul class="contact">
                               <span>Connect</span>
                               <form>
-                                  Name:<br/>
-                                  <input type="text" name="firstname"><br/>
-                                  Email:<br/>
-                                  <input type="email" name="email"><br/>
+                                  Subscribe for a newsletter:
+                                  <br><br><input type="email" name="email" placeholder="Your Email"><br/>
                                   <input type="submit" value="Submit">
                               </form>
+					   		 <br>
                               <div id="icons">
                                    <li>
                                         <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
