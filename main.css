@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900|Space+Mono:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900|Space+Mono:400,700');
 
-/* 
-*** 1 rem = 16px 
-*** THEME COLORS: #5836FF #24207A #111 
+/*
+*** 1 rem = 16px
+*** THEME COLORS: #6633ff #24207A #111
 */
 
 /* UNIVERSAL */
@@ -58,7 +58,8 @@ body {
     left: 0;
     top: 0;
     font-size: 100%;
-	background-color: #ccc;
+	 background-color: #f9f9f9;
+	 margin-top: 3rem;
 }
 
 * {
@@ -119,9 +120,8 @@ p {
     text-align: justify;
 }
 
-.color-div { 
-	background-color: #5836FF;
-	border-radius: 0.5rem;
+.color-div {
+	background-color: #6633ff;
 }
 
 
@@ -129,7 +129,7 @@ p {
 
 .page-container {
 	display: grid;
-    margin: 0 auto;
+   margin: 0 auto;
 	margin-top: 1rem;
 	grid-gap: 1rem;
 	grid-template-columns: repeat(12, 1fr);
@@ -190,90 +190,126 @@ p {
 .page-container div {
 	background-color: #dddddd;
 	text-align: center;
-	border-radius: 0.5rem;
 }
-
 
 
 
 /* HEADER & FOOTER */
 
 #nav-container {
-	width: 100%;
 	background-color: #111;
+	width: 100%;
+	height: 4rem;
+	position: fixed;
+	top: 0;
 }
 
-#nav {
+#nav-menu-wrapper {
+	position: absolute;
+	top: 0;
+	width: 100%;
 	margin: 0 auto;
-	width: 75rem;
+	overflow: hidden;
 	height: 4rem;
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-gap: 1rem;	
 }
 
 #nav-menu {
-	display: block
-}
-
-#nav-list {
-	list-style: none;
-	height: 4rem;
-	margin: 0;
+	width: 100%;
 	padding: 0;
-	grid-template-columns: repeat(8, 1fr);
-	grid-gap: 1rem;
-}
-
-#nav-list li {
 	display: inline-block;
-	text-align: right;
-	margin-left: 2.5rem;
-	margin-top: 1.25rem;	
+	list-style: none;
 }
 
-#nav-list a {
-	font-family: 'Space Mono', monospace;
+#nav-menu li {
+	display: inline-block;
+	margin-top: 1.25rem;
+}
+
+#nav-menu a {
+	font-family: 'Montserrat', sans-serif;
 	text-decoration: none;
-	font-weight: 400;
-	font-size: 1rem;
-	letter-spacing: 1.2;
-	color: #fff;
-	padding: 0 0.5rem;
+	font-weight: 500;
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.5);
+	margin: 0 0.25rem;
+	padding: 0.5rem 0.75rem;
 	font-variant-ligatures: none;
 }
 
-#nav-list a:hover {
-	text-decoration: underline;
-}
-
-#current {
-	border-radius: 2px;
-	background-color: #5836FF;
+#nav-menu a:hover {
 	color: #fff;
 }
 
-#current:hover {
-	font-weight: 700;
-	background-color: #fff;
-	color: #5836FF;
+.current, .current path {
+	 color: #fff !important;
+	 fill: rgba(255, 255, 255, 1) !important;
+}
+
+#super-link {
+	transition: background-color 0.15s ease-out;
+		-webkit-transition: background-color 0.15s ease-out;
+	   -moz-transition: background-color 0.15s ease-out;
+	   -o-transition: background-color 0.15s ease-out;
+	background-color: #6633ff;
+	color: #fff !important;
+	font-weight: 400 !important;
+}
+
+#super-link:hover {
+	background-color: #452abd;
 }
 
 .helper {
 	display: inline-block;
-    height: 100%;
-    vertical-align: middle;
+   height: 100%;
+   vertical-align: middle;
 }
 
 #logo-container img {
 	vertical-align: middle;
+	display: inline-block;
+	margin-left: 2rem;
+	position: relative;
 }
 
-<<<<<<< HEAD
-=======
+#profile-img-link {
+	float: right;
+	position: relative;
+	padding: 1.25rem 2rem;
+}
 
-form{
-    
+#profile-img {
+	height: 25px;
+	vertical-align: middle;
+}
+
+a.svg-link:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#profile-img path {
+	transition: fill 0.25s ease-out;
+		-webkit-transition: fill 0.15s ease-out;
+	   -moz-transition: fill 0.15s ease-out;
+	   -o-transition: fill 0.15s ease-out;
+	fill: rgba(255, 255, 255, 0.5);
+}
+
+a.svg-link:hover path {
+	fill: rgba(255, 255, 255, 1) !important;
+}
+
+
+
+
+
+
+form {
     font-family: 'Space Mono', monospace;
     color:#FFF;
     font-size:0.5em;
@@ -281,7 +317,7 @@ form{
     letter-spacing: 2px;
 }
 
-input[type=submit]{
+input[type=submit] {
     background-color: #FFF;
     border: none;
     color: black;
@@ -290,19 +326,19 @@ input[type=submit]{
     text-transform: uppercase;
 }
 
-input[type=text], input[type=email]{
+input[type=text], input[type=email] {
     margin: 0.2em 0.8em 0.2em 0em;
 }
 
-input[type=submit]{
+input[type=submit] {
     margin: 0.7em 0.8em 0.2em 0em;
 }
 
-li:first-child{
+li:first-child {
   margin-top:0px;
 }
 
-footer{
+footer {
      background-color: #111;
      padding:70px 0px;
      font-family: 'Space Mono', monospace;
@@ -310,12 +346,14 @@ footer{
      font-size: 1.5em;
      width:100%;
      height:30%;
-}	       
+}
+
+
 
 .adress span , .content span , .contact span{
-   color: #FFF; 
-   font-weight: 800; 
-   padding-bottom: 10px; 
+   color: #FFF;
+   font-weight: 600;
+   padding-bottom: 10px;
    margin-bottom: 20px;
    display: block;
    text-transform: uppercase;
@@ -330,7 +368,7 @@ footer{
 .contact span {
     margin-bottom: 16px;
 }
- 
+
 .adress li p , .content li a , .contact li a{
     color:#FFF;
     letter-spacing: 2px;
@@ -349,14 +387,17 @@ footer{
 
 
 .adress p:hover, .content a:hover {
-	color: #5836FF;
+	color: #6633ff;
 }
+
+
+
 
 .footercol{
     float:left;
     padding-left:2%;
     padding-right:2%;
-    width:29.33%;    
+    width:29.33%;
 }
 
 .fa{
@@ -374,23 +415,23 @@ footer{
 
 
 
-/*
-@media only screen and (min-width: 33.75em) {  
+
+@media only screen and (min-width: 720px) {
 	.page-container {
-        max-width: 33.75rem;
+        max-width: 720px;
   }
-	
+
 }
 
-@media only screen and (min-width: 45em) {  
+@media only screen and (min-width: 960px) {
 	.page-container {
-        max-width: 45rem;
+        max-width: 960px;
   }
 }
-*/
-@media only screen and (min-width: 75em) { /* 960px - DESKTOP */
+
+@media only screen and (min-width: 1600px) { /* DESKTOP */
     .page-container {
-        max-width: 75rem;
+        max-width: 1600px;
   }
-    
+
 }

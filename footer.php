@@ -1,57 +1,57 @@
 <link rel="stylesheet" type="text/css" href="footer.css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    
+
     <footer>
 
      <div class="container">
        <div class="row">
-       
+
                 <div class="footercol">
                     <ul class="adress">
-                         <span>Adress</span>    
+                         <span>Adress</span>
                          <li>
                              <p> Chlastawa 17, 66-210 Chlastawa, Guatemala</p>
                           </li>
-                               
+
                           <li>
                             <p>+90 1234 56789</p>
                           </li>
-                               
+
                           <li>
-                            <p>info@learnit.com</p>
+                            <p>info@earnit.com</p>
                           </li>
                      </ul>
                 </div>
-                
+
                 <div class="footercol">
                     <ul class="content">
-                         <span>Content</span>    
+                         <span>Content</span>
                          <li>
                             <a href="#">Home</a>
                           </li>
-                               
+
                           <li>
                              <a href="#">About</a>
                           </li>
-                               
+
                           <li>
                             <a href="#">Blog</a>
                           </li>
-                               
+
                           <li>
                              <a href="#">Gallery </a>
                           </li>
-                               
+
                           <li>
                             <a href="#">Profile</a>
                          </li>
-                         
+
                     </ul>
                 </div>
-           
+
               <div class="footercol">
                    <ul class="contact">
-                              <span>Connect</span>  
+                              <span>Connect</span>
                               <form>
                                   Name:<br/>
                                   <input type="text" name="firstname"><br/>
@@ -80,12 +80,12 @@
                                         <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
                                   </li>
                               </div>
-                              
+
                      </ul>
                 </div>
-           
-           
-           </div> 
+
+
+           </div>
         </div>
 
     </footer>

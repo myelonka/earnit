@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		
+
 		<title>welcome to EarnIt</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="javascript.fullPage.css" />
@@ -12,7 +12,7 @@
 
 			/* Custom CSS
 			 * --------------------------------------- */
-			
+
 			.content{
 				position: relative;
 				top: 50%;
@@ -24,7 +24,7 @@
 				grid-gap: 1rem;
 				grid-template-columns: repeat(12, 1fr);
 			}
-			
+
 			.content2 {
 				position: relative;
 				top: 50%;
@@ -41,17 +41,16 @@
 			#section0{
 				background-image: url("../img/macbook.jpeg");
 			}
-			
+
 			#section0 img {
 				display: inline-block;
 			}
 			#section0 .content {
 				background-color:rgba(100, 50, 255, 0.7);
-				padding: 2rem;
-				border-radius: 0.5rem;
+				padding: 3rem;
 			}
 			#section0 .content div{
-				margin-top: 8rem;	
+				margin-top: 8rem;
 			}
 			#section0 h2 {
 				font-family: 'Space Mono', monospace;
@@ -95,7 +94,7 @@
 				display: inline-block;
 				font-family: 'Space Mono', monospace;
 			}
-			
+
 			#section2 a:hover {
 				color: #fff;
 				text-decoration: underline;
@@ -103,7 +102,6 @@
 		</style>
 	</head>
 	<body>
-
 
 	<div id="fullpage">
 		<div class="section " id="section0">
@@ -127,9 +125,8 @@
 						Our website contains hundreds of job offers from companies and independent entrepreneurs. Choose from a variety of fields.<br>Register and start earning today!<br><br>
 						&#8595;  for employers  &#8595;
 					</h4>
-					<!--<img style="height: 160px; float: right;" src="../img/fingerbang-alt.gif" />-->
 				</div>
-				<div class="color-div" style="grid-column: 7/13; padding: 2rem 2rem;">
+				<div class="color-div" style="grid-column: 7/13; padding: 3rem;">
 					<form>
 						<div>
 							<label><b>Email</b></label>

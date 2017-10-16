@@ -149,11 +149,9 @@ html.fp-enabled,
     height: 12px;
     width: 12px;
     margin: -6px 0 0 -6px;
-    border-radius: 100%;
 }
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
-    border-radius: 50%;
     position: absolute;
     z-index: 1;
     height: 4px;
@@ -198,7 +196,7 @@ html.fp-enabled,
 a {
 	font-size: 16px;
 	color: #fff;
-	font-weight: 400;	
+	font-weight: 400;
 }
 
 /* Full-width input fields */
@@ -221,7 +219,6 @@ button {
     cursor: pointer;
     width: 100%;
 	font-size: 16px;
-	border-radius: 0.5rem;
 }
 
 /* Extra styles for the cancel button */
