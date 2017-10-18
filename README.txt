@@ -13,7 +13,7 @@ Please edit with care.
 
 STUFF TO FIX:
 
-16-10-2017 / Mati:
-- how the hell do you put multiple links in current thingy??
-- earnit-logo.png link doesn't work (not clickable)
-- the *akhem* footer is poopy and half-assed
+18-10-2017 / Mati:
+- how the hell do you put multiple links in current thingy???
+- earnit-logo.png link doesn't work (not clickable; something to do with display property on the anchor)
+- the footer is poopy and half-assed (still)
