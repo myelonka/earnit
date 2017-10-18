@@ -1,8 +1,10 @@
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <div id="nav-container">
-	<div id="logo-container" style="display: inline-block;">
-		<span class="helper"></span><a class="svg-link" href="index.php"><img src="img/earnit-logo.svg" height="32px" alt="earnit logo"/></a>
+	<div id="logo-container">
+		<span class="img-helper"></span><a href="index.php">
+			<img src="img/earnit-logo.png" alt="earnit logo" />
+		</a>
 	</div>
 	<div id=nav-menu-wrapper>
 		<ul id="nav-menu" class="center">
@@ -10,7 +12,7 @@
 				<a <?php if($current == 'index.php') {echo ' class=\'current\'';} ?> href="index.php">Home</a>
 			</li>
 			<li>
-				<a <?php if($current == 'browse.php') {echo ' class=\'current\'';} ?> href="browse.php">Browse offers</a>
+				<a <?php if($current == 'browse-featured.php'/* || 'browse-new.php' || 'browse-categories.php' || 'browse-freelancers.php'*/) {echo ' class=\'current\'';} ?> href="browse-featured.php">Browse offers</a>
 			</li>
 			<li>
 				<a <?php if($current == 'how.php') {echo ' class=\'current\'';} ?> href="how.php">How it works</a>
@@ -19,7 +21,7 @@
 				<a <?php if($current == 'contact.php') {echo ' class=\'current\'';} ?> href="contact.php">Contact us</a>
 			</li>
 			<li>
-				<a id='super-link' href="post.php">Make a post</a>
+				<a id='cta-link' href="post.php">Post an offer</a>
 			</li>
 		</ul>
 	</div>

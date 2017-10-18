@@ -1,8 +1,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 
-		<title>welcome to EarnIt</title>
+		<title>Welcome to EarnIt</title>
 		<meta charset="utf-8" />
+		<meta name="description" content="Landing page for EarnIt">
+		<meta name="keywords" content="earnit, freelancer, freelancing, entrepreneur, student, coding, graphic design, programming, wed design, web development, ui, ux, computer science, user, profile">
+	    <meta name="author" content="Mateusz Mielowski, Paula Pudane, Anete Serecenko">
 		<link rel="stylesheet" type="text/css" href="javascript.fullPage.css" />
 		<link rel="stylesheet" type="text/css" href="../main.css" />
 		<link rel='icon' href='../img/favicon.png'>
@@ -106,8 +109,8 @@
 	<div id="fullpage">
 		<div class="section " id="section0">
 			<div class="content">
-				<img id="landing-logo" src="../img/earnit-logo-w@1x.png" />
-				<img src="../img/underscore@1x.gif" />
+				<img id="landing-logo" src="../img/earnit-logo-w.png" />
+				<img src="../img/underscore.gif" />
 				<div class="col-12">
 					<h2>Welcome!</h2><br>
 					<h4 style="color: #fff;">&mdash;<br>EarnIt is a place for student freelancers and entrepreneurs working in the IT field (and more).<br>You can find dozens of experienced students, and hundreds of well paid job comissions (and the numbers are still growing).<br><br>&#8595;  scroll down to learn more  &#8595;

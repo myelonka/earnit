@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="footer.css">
+<!-- GRAYED OUT JUST FOR NOW
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <footer>
@@ -83,3 +83,4 @@
         </div>
 
     </footer>
+-->

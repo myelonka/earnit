@@ -1,19 +1,68 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900|Space+Mono:400,700');
-
 /*
 *** 1 rem = 16px
-*** THEME COLORS: #6633ff #24207A #06060c
+
+*** THEME COLORS: 
+primary: #6633ff , secondary: #24207a , tertiary: #9f8fff , 
+dark: #06060c , light: #f9f9f9
+
+*** VISUAL RULES BY MATI, THE GRAPHIC NAZI:
+- Try NOT to use font-size other than specified h1-6 sizes.
+		Note that h3 is a little 'special'!
+- Use specified fonts.
+- Use theme colors.
+- NO BORDER-RADIUS.
+- NO SHADOWS.
+- NO GLOW, 3D, GLITTER, ETC.
+- NO unnecessary text stylization (italics, bold).
+- Use HTML entities for advanced punctuation (e.g. ellipsis).
+  		See: https://goo.gl/bs4FBW
 */
 
-/* UNIVERSAL */
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800|Space+Mono:400,700');
+
+
+/* UNIVERSAL/RESETS */
+
+* {
+    font-family: 'Montserrat', sans-serif;
+	box-sizing: inherit;
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+}
+*:before, *:after {
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    font-size: 100%;
+	background-color: #f9f9f9;
+    margin-top: 2rem;
+}
 div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
 form,fieldset,input,textarea,p,blockquote,th,td {
 	padding: 0;
 	margin: 0;
 }
-a{
+a {
 	text-decoration: none;
+	font-weight: 500;
+	font-size: 0.85rem;
+}
+a:visited {
+	color: #000;
 }
 table {
 	border-spacing: 0;
@@ -25,7 +74,7 @@ address,caption,cite,code,dfn,em,strong,th,var {
 	font-weight: normal;
 	font-style: normal;
 }
-strong{
+strong {
 	font-weight: bold;
 }
 ol,ul {
@@ -37,172 +86,135 @@ caption,th {
 	text-align: left;
 
 }
-h1,h2,h3,h4,h5,h6 {
-	font-weight: 400;
-	font-size: 100%;
-	margin:0;
-	padding:0;
-}
 q:before,q:after {
 	content:'';
 }
-abbr,acronym { border: 0;
+abbr,acronym { 
+	border: 0;
 }
-
-html,
-body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    left: 0;
-    top: 0;
-    font-size: 100%;
-	 background-color: #f9f9f9;
-	 margin-top: 3rem;
-}
-
-* {
-    font-family: 'Montserrat', Helvetica, sans-serif;
-    line-height: 1.5;
-}
-
 h1 {
-    font-size: 6rem;
-	font-weight: 900;
+   font-size: 6rem;
+	font-weight: 600;
+	letter-spacing: -4;
 }
-
 h2 {
-    font-size: 3rem;
-	font-weight: 700;
+   font-size: 4rem;
+	font-weight: 600;
+	letter-spacing: -2.5;
 }
-
 h3 {
-    font-size: 2rem;
+   font-size: 3rem;
+	font-weight: 600;
+	letter-spacing: -1.5;
 }
-
 h4 {
-    font-size: 1.5rem;
+	font-size: 2rem;
+	font-weight: 400;
+	letter-spacing: 6;
+	font-variant-caps: all-small-caps;
+	font-feature-settings: "c2sc", "smcp";
+	line-height: 1.2;
 }
-
 h5 {
-    font-size: 1rem;
+   font-size: 1.5rem;
+	font-weight: 400;
 }
-
 h6 {
-    font-size: 0.875rem;
+   font-size: 0.875rem;
+	font-weight: 400;
 }
-
 p {
     font-size: 1.125rem;
-    font-weight: 300;
-    line-height: 1.8;
+    font-weight: 400;
+    line-height: 1.4;
 }
-
+textarea { 
+	outline: none; 
+}
+label {
+	font-size: 1.125rem;
+	font-weight: 400;
+}
+input {
+	outline: none;
+	border: none;
+	width: 16rem;
+	height: 2rem;
+	font-size: 1.125rem;
+	padding: 0.5rem;
+	font-family: 'Space Mono', monospace;
+}
+button {
+	outline: none;
+	background: #fff;
+	border: none;
+	font-size: 1.125rem;
+	height: 2rem;
+	display: inline;
+	cursor: pointer;
+}
+::selection { /* SELECTED TEXT BG COLOR */
+    background: #9f8fff;
+	color: #fff;
+}
+::-moz-selection {
+    background: #9f8fff;
+	color: #fff;
+}
 
 /* POSITIONING */
 
 .left {
     text-align: left;
 }
-
 .right {
     text-align: right;
 }
-
 .center {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
-
 .justify {
     text-align: justify;
-}
-
-.color-div {
-	background-color: #6633ff;
-}
-
-::selection { /* SELECTED TEXT BG COLOR */
-    background: #6633ff;
-	color: #fff;
-	
-}
-::-moz-selection {
-    background: #6633ff;
-	color: #fff;
 }
 
 
 /* GRID SYSTEM */
 
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+	padding: 1rem;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 .page-container {
-	display: grid;
-   margin: 0 auto;
-	margin-top: 1rem;
-	grid-gap: 1rem;
-	grid-template-columns: repeat(12, 1fr);
-	
+    margin: 0 auto;
 }
 
-.col-1 {
-	grid-column: 1/2;
-}
-
-.col-2 {
-	grid-column: 1/3;
-}
-
-.col-3 {
-	grid-column: 1/4;
-}
-
-.col-4 {
-	grid-column: 1/5;
-}
-
-.col-5 {
-	grid-column: 1/6;
-}
-
-.col-6 {
-	grid-column: 1/7;
-}
-
-.col-7 {
-	grid-column: 1/8;
-}
-
-.col-8 {
-	grid-column: 1/9;
-}
-
-.col-9 {
-	grid-column: 1/10;
-}
-
-.col-10 {
-	grid-column: 1/11;
-}
-
-.col-11 {
-	grid-column: 1/12;
-}
-
-.col-12 {
-	grid-column: 1/13;
-}
-
-
-
-
-/*!!!!!TESTING GRID!!!!!*/
+/*!!!!!TESTING VISULAS!!!!!*/
 .page-container div {
-	background-color: #dddddd;
-	text-align: center;
+	border: 1px solid #ddd;
 }
-
+/*!!!!!*/
 
 
 /* HEADER & FOOTER */
@@ -213,6 +225,7 @@ p {
 	height: 4rem;
 	position: fixed;
 	top: 0;
+	z-index: 2;
 }
 
 #nav-menu-wrapper {
@@ -226,25 +239,22 @@ p {
 
 #nav-menu {
 	width: 100%;
-	padding: 0;
 	display: inline-block;
 	list-style: none;
 }
 
 #nav-menu li {
 	display: inline-block;
-	margin-top: 1.25rem;
+	margin-top: 1.4rem;
 }
 
 #nav-menu a {
 	font-family: 'Montserrat', sans-serif;
-	text-decoration: none;
 	font-weight: 500;
-	font-size: 14px;
 	color: rgba(255, 255, 255, 0.5);
 	margin: 0 0.25rem;
 	padding: 0.5rem 0.75rem;
-	font-variant-ligatures: none;
+	letter-spacing: 0.5;
 }
 
 #nav-menu a:hover {
@@ -256,31 +266,39 @@ p {
 	 fill: rgba(255, 255, 255, 1) !important;
 }
 
-#super-link {
+#cta-link {
 	transition: background-color 0.15s ease-out;
-		-webkit-transition: background-color 0.15s ease-out;
-	   -moz-transition: background-color 0.15s ease-out;
-	   -o-transition: background-color 0.15s ease-out;
+	-webkit-transition: background-color 0.15s ease-out;
+	-moz-transition: background-color 0.15s ease-out;
+	-o-transition: background-color 0.15s ease-out;
 	background-color: #6633ff;
 	color: #fff !important;
 	font-weight: 400 !important;
 }
 
-#super-link:hover {
-	background-color: #452abd;
+#cta-link:hover {
+	background-color: #24207a;
 }
 
-.helper {
+.img-helper {
 	display: inline-block;
-   height: 100%;
-   vertical-align: middle;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#logo-container {
+	display: inline;
 }
 
 #logo-container img {
+	height: 32px;
 	vertical-align: middle;
 	display: inline-block;
 	margin-left: 2rem;
-	position: relative;
+}
+
+#logo-container a {
+	display: inline-block;
 }
 
 #profile-img-link {
@@ -295,19 +313,19 @@ p {
 }
 
 a.svg-link:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 #profile-img path {
 	transition: fill 0.25s ease-out;
-		-webkit-transition: fill 0.15s ease-out;
-	   -moz-transition: fill 0.15s ease-out;
-	   -o-transition: fill 0.15s ease-out;
+	-webkit-transition: fill 0.15s ease-out;
+	-moz-transition: fill 0.15s ease-out;
+	-o-transition: fill 0.15s ease-out;
 	fill: rgba(255, 255, 255, 0.5);
 }
 
@@ -318,7 +336,7 @@ a.svg-link:hover path {
 
 
 
-
+/*FIX THIS. DON'T USE GLOBAL ELEMENTS FOR JUST THE FOOTER!
 
 form {
     color:#FFF;
@@ -346,13 +364,15 @@ input[type=submit] {
     margin: 0.7em 0.8em 0.2em 0em;
 }
 
+
+
 li:first-child {
-  margin-top:0px;
+     margin-top:0px;
 }
 
 footer {
-	position: relative;
-	bottom: -240px;
+	 position: relative;
+	 bottom: -240px;
      background-color: #06060c;
      padding:60px 0px;
      font-family: 'Space Mono', monospace;
@@ -363,60 +383,222 @@ footer {
 
 
 .adress span , .content span , .contact span{
-   color: #FFF;
-   font-weight: 600;
-   padding-bottom: 10px;
-   margin-bottom: 20px;
-   display: block;
-   text-transform: uppercase;
-   font-size: 13px;
-   letter-spacing: 3px;
+      color: #FFF;
+      font-weight: 600;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      display: block;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 3px;
 }
 
 
 .adress li p , .content li a , .contact li a{
-    color:#FFF;
-    letter-spacing: 2px;
-    text-decoration:none;
-    font-size:12px;
+       color:#FFF;
+       letter-spacing: 2px;
+       text-decoration:none;
+       font-size:12px;
 }
 
 .contact li{
-    float:left;
+       float:left;
 }
 
 
 .adress , .content , .contact {
-    list-style: none;
+       list-style: none;
 }
 
 
 .content a:hover {
-	color: #6633ff;
+	   color: #6633ff;
 }
 
 
 .footercol{
-    float:left;
-    padding-left:2%;
-    padding-right:2%;
-    width:29.33%;	
+       float:left;
+       padding-left:2%;
+       padding-right:2%;
+       width:29.33%;	
 }
 
 .fa{
-    color: rgba(255, 255, 255, 0.5);
-    margin-right: 10px;
-    font-size:1.5em;
+       color: rgba(255, 255, 255, 0.5);
+       margin-right: 10px;
+       font-size:1.5em;
 }
 
 .fa:hover {
-	color: rgba(255, 255, 255, 1);
+	   color: rgba(255, 255, 255, 1);
+}
+*/
+.footer-container{
+	   position: absolute;	
+	   margin: 0 30%; /*!!!!!!!!FIX THIS LATER
+	PLUS FOR SOME REASON IT MAKES THE BANNER WORK PROPERLY?????
+	*/
 }
 
-.footer-container{
-	position: absolute;	
-	margin: 0 30%; /*FIX THIS BULLCRAP LATER*/
+
+
+
+
+/*HOMEPAGE*/
+
+#top-banner {
+	width: 100%;
+	height: 400px;
+	background-color: #6633ff;
+	display: block;
+	position: relative;
 }
+
+#top-banner-wrapper {
+	width: 1115px;
+	display: block;
+	margin: 0 auto;
+}
+
+#banner-img {
+	float: left;
+	display: inline-block;
+}
+
+#reg-form {
+	position: absolute;
+	float: left;
+	display: inline;
+	line-height: 1;
+	top: -1.5rem;
+	margin-left: 2rem;
+}
+
+#reg-form td {
+	padding: 0.5rem 1rem;
+	color: #fff;
+	text-align: right;
+}
+
+#reg-form th {
+	padding: 0.5rem 1rem;
+	color: #fff;
+	text-align: left;
+	font-weight: 500;
+}
+
+#reg-form input {
+	width: 24rem;
+	height: 3rem;
+	background-color: #24207A;
+	border: solid 0.125rem #24207A;
+	color: #fff;
+	font-variant-ligatures: none;
+	padding: 1rem;
+	letter-spacing: 1.5;
+}
+
+#reg-form input:focus {
+	border-color: #9f8fff;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #9f8fff;
+	font-size: 1rem;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #9f8fff;
+	font-size: 1rem;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #9f8fff;
+	font-size: 1rem;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #9f8fff;
+	font-size: 1rem;
+}
+
+#reg-loginbtn, #reg-signupbtn {
+	height: 2.5rem;
+	width: 45%;
+	float: left;
+	font-weight: 500;
+	color: #24207A;
+}
+
+#reg-signupbtn {
+	border-bottom: 0.25rem solid #9f8fff;
+}
+
+#reg-signupbtn:active {
+	border-bottom: none;
+	border-top: 0.25rem solid #6633ff;
+}
+
+#reg-loginbtn {
+	background: none;
+	color: #fff;
+	text-align: right;
+	float: right;
+	font-size: 0.875rem;
+	height: 1rem;
+}
+
+#reg-loginbtn::after {
+	content: ' \00BB';
+}
+
+
+
+/*BROWSE*/
+
+.sub-nav {
+	margin: 1.5rem 0;
+	vertical-align: middle;
+}
+
+.sub-nav li {
+	display: inline;
+	margin: 0 0.25rem;
+	padding: 0.5rem 0.75rem;
+}
+
+.sub-nav a {
+	font-weight: 500;
+	color: #06060c;
+}
+
+.sub-current {
+	color: #6633ff !important;
+	font-weight: 600 !important;
+}
+
+
+
+/*PROFILE PAGE*/
+
+#profile-info {
+	text-align: center;
+}
+
+#avatar {
+	background-image: url('img/profile-pic.jpg');
+	width: 200px;
+	height: 200px;
+	background-size: cover;
+	background-position: center;
+	border-radius: 50%;
+	margin: 0 auto;
+	margin-bottom: 2rem;
+}
+
+#profile-work div {
+	height: 300px;
+}
+
+
+
 
 
 @media only screen and (min-width: 720px) {
