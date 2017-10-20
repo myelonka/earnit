@@ -209,11 +209,13 @@ button {
 #body-wrapper {
    position: relative;
 	padding-top: 4rem;
+    overflow:hidden;
+    padding-bottom: 200px;
 }
 
 .page-container {
    margin: 0 auto;
-	min-height: 100%;
+    min-width: 100%;    	
 }
 
 .darkpage {
@@ -645,12 +647,12 @@ footer {
 	}
 }
 
-@media only screen and (min-width: 1600px) { /* DESKTOP */
+@media only screen and (min-width: 1200px) { /* DESKTOP */
     .page-container {
-        max-width: 1600px;
+        max-width: 1200px;
     }
 	.footer-container{
-		width: 1600px;
+		width: 1200px;
 	}
 
 }
