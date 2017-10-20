@@ -12,7 +12,8 @@
 		<div id="body-wrapper">
 
 			<?php
-				$subcurrent = 'feat';
+			
+				$subcurrent = $_GET['page'];
 				include('config.php');
 				include('header.php');
 			?>
@@ -21,16 +22,16 @@
 				<div class="center" class="col-12">
 					<ul class="sub-nav">
 						<li>
-							<a <?php if($subcurrent == 'feat') {echo ' class=\'sub-current\'';} ?> href="browse-featured.php">Featured</a>
+							<a <?php if($subcurrent == 'feat') {echo ' class=\'sub-current\'';} ?> href="?page=feat">Featured</a>
 						</li>
 						<li>
-							<a <?php if($subcurrent == 'new') {echo ' class=\'sub-current\'';} ?> href="browse-new.php">New</a>
+							<a <?php if($subcurrent == 'recent') {echo ' class=\'sub-current\'';} ?> href="?page=recent">New</a>
 						</li>
 						<li>
-							<a <?php if($subcurrent == 'categ') {echo ' class=\'sub-current\'';} ?> href="browse-categories.php">Categories</a>
+							<a <?php if($subcurrent == 'categ') {echo ' class=\'sub-current\'';} ?> href="?page=categ">Categories</a>
 						</li>
 						<li>
-							<a <?php if($subcurrent == 'freel') {echo ' class=\'sub-current\'';} ?> href="browse-freelancers.php">Freelancers</a>
+							<a <?php if($subcurrent == 'freel') {echo ' class=\'sub-current\'';} ?> href="?page=freel">Freelancers</a>
 						</li>
 					</ul>
 				</div>
@@ -46,13 +47,23 @@
 				<div class="col-1">10</div>
 				<div class="col-1">11</div>
 				<div class="col-1">12</div>
-				<div class="col-12"><h1>Browse &ndash; featured </h1></div>
-				<div class="col-6"><h2>Lorem ipsum dolor sit amet.</h2></div>
-				<div class="col-6"><h2>Lorem ipsum dolor sit amet.</h2></div>
-				<div class="col-3"><h3>Lorem ipsum dolor sit amet.</h3></div>
-				<div class="col-3"><h3>Lorem ipsum dolor sit amet.</h3></div>
-				<div class="col-3"><h3>Lorem ipsum dolor sit amet.</h3></div>
-				<div class="col-3"><h3>Lorem ipsum dolor sit amet.</h3></div>
+				
+				<?php switch ($subcurrent) {
+					case "feat":
+					  include('browse-feat.php');
+					  break;
+					case "recent":
+					 include('browse-recent.php');
+					  break;
+					case "categ":
+					  include('browse-categ.php');
+					  break;
+					case "freel":
+					 include('browse-freel.php');
+					  break;
+					}
+				?>
+				
 			</div>
 
 			<?php 
