@@ -15,9 +15,12 @@
 			include('config.php');
 			include('header.php');
 			
+			
 			if (empty($_SESSION['email'])) {
 				header('location: login.php');
 			}
+			
+			session_start();
 			
 		?>
 
@@ -31,7 +34,10 @@
 					?>
 				</div>
 			
+			
+			
 			<?php endif ?>
+			
 			
 			
 			<?php if (isset($_SESSION['email'])): ?>

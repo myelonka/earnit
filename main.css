@@ -209,6 +209,8 @@ button {
 #body-wrapper {
    position: relative;
 	padding-top: 4rem;
+	overflow: hidden;
+	padding-bottom: 200px;
 }
 
 .page-container {
