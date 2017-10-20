@@ -17,14 +17,14 @@
 			include('config.php');
 			include('header.php');
 			
-			session_start();
-			
 			$email = '';
 			$password = '';
 			$errors = array();
 
 			@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 			ini_set('session.cookie_httponly', true);
+			
+			session_start();
 				
 			if (isset($_POST['register'])) {
 				$email = mysqli_real_escape_string($db, $_POST['email']);

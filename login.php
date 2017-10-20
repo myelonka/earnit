@@ -20,6 +20,7 @@
 			$_SESSION['success'] = '';
 
 			session_start();
+			
 
 			if (isset($_POST['login'])) {
 				$email = mysqli_real_escape_string($db, $_POST['email']);
@@ -68,7 +69,7 @@
 
 				<h1>Log in</h1>
 
-				<form action="profile.php" name='login' method="POST">
+				<form action="" name="login" method="POST">
 				<div class="col-12">
 					<label><b>Email</b></label>
 					<input type="text" name="email" required>

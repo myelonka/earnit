@@ -9,3 +9,4 @@ $dbuser = 'root';
 $dbpass = '';
 $dbserver = 'localhost';
 
+?>

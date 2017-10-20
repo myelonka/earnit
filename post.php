@@ -17,7 +17,6 @@
 		?>
 		
 		<div class="page-container">
-			<div class="col-1">10</div>
 			<div class="col-12"><h1>Post a job offer</h1></div>
             
             <form method="post" action="formtest.php">
