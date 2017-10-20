@@ -209,13 +209,14 @@ button {
 #body-wrapper {
    position: relative;
 	padding-top: 4rem;
-    overflow:hidden;
-    padding-bottom: 200px;
+   overflow: hidden;
+   padding-bottom: 200px;
 }
 
 .page-container {
    margin: 0 auto;
-    min-width: 100%;    	
+   min-height: 100%;
+	max-width: 1400px;
 }
 
 .darkpage {
@@ -411,7 +412,7 @@ footer {
 #follow {
 	float: right;
 	text-align: right;
-	margin: 2rem 0;
+	margin: 1.5rem 0;
 }
 
 #icons {
@@ -647,12 +648,12 @@ footer {
 	}
 }
 
-@media only screen and (min-width: 1200px) { /* DESKTOP */
+@media only screen and (min-width: 1400px) { /* DESKTOP */
     .page-container {
-        max-width: 1200px;
+        max-width: 1400px;
     }
 	.footer-container{
-		width: 1200px;
+		width: 1400px;
 	}
 
 }
