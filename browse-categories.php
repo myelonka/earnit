@@ -9,6 +9,7 @@
 		<link rel='icon' href='img/favicon.png'>
     </head>
 	<body>
+		<div id="body-wrapper">
 		
 		<?php
 			$subcurrent = 'categ';
@@ -58,5 +59,6 @@
 			include('footer.php');
      	?>
 		
+		</div>
 	</body>
 </html>

@@ -1,86 +1,62 @@
-<!-- GRAYED OUT JUST FOR NOW
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<footer>
+  <div class="footer-container">
+	 <div class="footer-row">
+			 <div class="footer-col">
+				  <ul>
+						 <h5 class="smallcaps">Content</h5><br><br>
+						  <li>
+							 <a href="#">Privacy Policy</a>
+						  </li>
+					  
+					     <li>
+							 <a href="#">Terms &amp; Conditions</a>
+						  </li>
 
-    <footer>
+						  <li>
+							  <a href="#">Jobs</a>
+						  </li>
 
-     <div class="footer-container">
-       <div class="row">
+						  <li>
+							 <a href="contact.php">Contact Us</a>
+						  </li>
 
-                <div class="footercol">
-                    <ul class="adress">
-                         <span>Contact</span>
-                         <li>
-                            <p>17, Plaza Santander Bodega<br>01064 Villa Nueva<br>GUATEMALA</p>
-                          </li>
+						  <li>
+							  <a href="#">FAQ</a>
+						  </li>
+				  </ul>
+				 <h6>Copyright &copy; <?php echo date("Y"); ?> EarnIt</h6>
+			 </div>
+			  <div class="footer-col" id="connect">
+					 <ul>
+						<h5 class="smallcaps">Connect</h5><br><br>
+						<form id="newsletter" method="GET">
+							 <input id="newsletter-email" type="email" name="email" placeholder="email address" required><br>
+							 <input id="newsletter-submitbtn" type="submit" value="Subscribe to newsletter &raquo;">
+						</form>
+						</ul>
+				 </div>
+			 <div id="follow">
+				<ul>
+					<h5 class="smallcaps">Follow</h5><br><br>
+					 <div id="icons">
+						  <li>
+								 <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+						  </li>
 
-                          <li>
-                            <br><p>(+502) 2331-8595</p>
-                          </li>
+						  <li>
+								 <a href="#"><i class="fa fa-github fa-2x"></i></a>
+						  </li>
 
-                          <li>
-							  <br><p>info@earnit.com</p>
-                          </li>
-                     </ul>
-                </div>
+						  <li>
+								 <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+						  </li>
 
-                <div class="footercol">
-                    <ul class="content">
-                         <span>Content</span>
-                         <li>
-                            <a href="#">Privacy</a>
-                          </li>
-
-                          <li>
-                             <a href="#">Community</a>
-                          </li>
-
-                          <li>
-                            <a href="contact.php">Contact Us</a>
-                          </li>
-
-                          <li>
-                             <a href="#">FAQ</a>
-                          </li>
-                    </ul>
-                </div>
-
-              <div class="footercol">
-                   <ul class="contact">
-                              <span>Connect</span>
-                              <form>
-                                  Subscribe for a newsletter:
-                                  <br><br><input type="email" name="email" placeholder="Your Email"><br/>
-                                  <input type="submit" value="Submit">
-                              </form>
-					   		 <br>
-                              <div id="icons">
-                                   <li>
-                                        <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-                                   </li>
-
-                                   <li>
-                                        <a href="#"><i class="fa fa-github fa-2x"></i></a>
-                                   </li>
-
-                                   <li>
-                                        <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
-                                   </li>
-
-                                   <li>
-                                        <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
-                                   </li>
-
-                                   <li>
-                                        <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
-                                  </li>
-                              </div>
-
-                     </ul>
-                </div>
-
-
-           </div>
-        </div>
-
-    </footer>
--->
+						  <li>
+								 <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+						 </li>
+					 </div>
+				 </ul>
+			 </div>
+		  </div>
+	  </div>
+ </footer>

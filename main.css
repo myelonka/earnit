@@ -6,8 +6,7 @@ primary: #6633ff , secondary: #24207a , tertiary: #9f8fff ,
 dark: #06060c , light: #f9f9f9
 
 *** VISUAL RULES BY MATI, THE GRAPHIC NAZI:
-- Try NOT to use font-size other than specified h1-6 sizes.
-		Note that h3 is a little 'special'!
+- Try NOT to use font-size other than specified p,h1-6 sizes.
 - Use specified fonts.
 - Use theme colors.
 - NO BORDER-RADIUS.
@@ -25,7 +24,7 @@ dark: #06060c , light: #f9f9f9
 /* UNIVERSAL/RESETS */
 
 * {
-    font-family: 'Montserrat', sans-serif;
+   font-family: 'Montserrat', sans-serif;
 	box-sizing: inherit;
 	-webkit-box-sizing: inherit;
 	-moz-box-sizing: inherit;
@@ -41,15 +40,14 @@ html {
   -moz-box-sizing: border-box;
 }
 html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    left: 0;
-    top: 0;
-    font-size: 100%;
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+   left: 0;
+   top: 0;
+   font-size: 100%;
 	background-color: #f9f9f9;
-    margin-top: 2rem;
 }
 div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
 form,fieldset,input,textarea,p,blockquote,th,td {
@@ -95,7 +93,7 @@ abbr,acronym {
 h1 {
    font-size: 6rem;
 	font-weight: 600;
-	letter-spacing: -4;
+	letter-spacing: -3;
 }
 h2 {
    font-size: 4rem;
@@ -110,9 +108,6 @@ h3 {
 h4 {
 	font-size: 2rem;
 	font-weight: 400;
-	letter-spacing: 6;
-	font-variant-caps: all-small-caps;
-	font-feature-settings: "c2sc", "smcp";
 	line-height: 1.2;
 }
 h5 {
@@ -127,6 +122,11 @@ p {
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 1.4;
+}
+.smallcaps {
+	letter-spacing: 6;
+	font-variant-caps: all-small-caps;
+	font-feature-settings: "c2sc", "smcp";
 }
 textarea { 
 	outline: none; 
@@ -154,11 +154,11 @@ button {
 	cursor: pointer;
 }
 ::selection { /* SELECTED TEXT BG COLOR */
-    background: #9f8fff;
+    background: #6633ff;
 	color: #fff;
 }
 ::-moz-selection {
-    background: #9f8fff;
+    background: #6633ff;
 	color: #fff;
 }
 
@@ -196,28 +196,52 @@ button {
 .col-12 {width: 100%;}
 
 [class*="col-"] {
-    float: left;
+   float: left;
 	padding: 1rem;
 }
 
 .row::after {
-    content: "";
-    clear: both;
-    display: table;
+   content: '';
+   clear: both;
+   display: table;
+}
+
+#body-wrapper {
+   position: relative;
+	padding-top: 4rem;
 }
 
 .page-container {
-    margin: 0 auto;
+   margin: 0 auto;
+	min-height: 100%;
+}
+
+.darkpage {
+	background-color: #06060c;
+	color: #fff;
 }
 
 /*!!!!!TESTING VISULAS!!!!!*/
 .page-container div {
 	border: 1px solid #ddd;
+	
+.error {
+	position: absolute;
+	z-index: 5;
+	width: 300px;
+	height: 45px;
+	margin: 0 auto;
+	left: 450;
+	top: 243;
+	text-align: left;
+	vertical-align: middle;
+	color: #ff0000;
+	}
 }
 /*!!!!!*/
 
 
-/* HEADER & FOOTER */
+/* HEADER */
 
 #nav-container {
 	background-color: #06060c;
@@ -281,7 +305,7 @@ button {
 }
 
 .img-helper {
-	display: inline-block;
+	 display: inline-block;
     height: 100%;
     vertical-align: middle;
 }
@@ -334,113 +358,111 @@ a.svg-link:hover path {
 }
 
 
-
-
-/*FIX THIS. DON'T USE GLOBAL ELEMENTS FOR JUST THE FOOTER!
-
-form {
-    color:#FFF;
-    font-size:0.5em;
-    margin-bottom: 0.3em;
-    letter-spacing: 2px;
-}
-
-input[type=submit] {
-    background-color: #FFF;
-	padding: 5px 10px;
-    border: none;
-    color: #000;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
-input[type=email] {
-    margin: 0.2em 0.8em 0.2em 0em;
-	width: 250px;
-	padding: 10px;
-}
-
-input[type=submit] {
-    margin: 0.7em 0.8em 0.2em 0em;
-}
-
-
-
-li:first-child {
-     margin-top:0px;
-}
+/* FOOTER */
 
 footer {
-	 position: relative;
-	 bottom: -240px;
-     background-color: #06060c;
-     padding:60px 0px;
-     font-family: 'Space Mono', monospace;
-     font-size: 1.5em;
-     width:100%;
-	 height: 240px;
+	position: absolute;
+	width: 100%;
+	height: 200px;
+	bottom: 0;
+	left: 0;
+	color: #fff;
+	background-color: #06060c;
+}
+
+.footer-container {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.footer-col {
+	float: left;
+	padding: 1.5rem 0;
+}
+
+.footer-col ul {
+	list-style: none;
+	display: inline;
+	float: left;
+	margin-bottom: 2rem;
+}
+
+.footer-col li {
+	display: inline;
+	padding-bottom: 1rem;
+	padding-right: 2rem;
 }
 
 
-.adress span , .content span , .contact span{
-      color: #FFF;
-      font-weight: 600;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      display: block;
-      text-transform: uppercase;
-      font-size: 13px;
-      letter-spacing: 3px;
+.footer-col a, .footer-col h6 {
+	color: rgba(255, 255, 255, 0.6);
 }
 
-
-.adress li p , .content li a , .contact li a{
-       color:#FFF;
-       letter-spacing: 2px;
-       text-decoration:none;
-       font-size:12px;
+.footer-col a:hover {
+	color: #fff;
 }
 
-.contact li{
-       float:left;
+#connect {
+	margin-left: 6rem;
 }
 
-
-.adress , .content , .contact {
-       list-style: none;
+#follow {
+	float: right;
+	text-align: right;
+	margin: 2rem 0;
 }
 
-
-.content a:hover {
-	   color: #6633ff;
+#icons {
+	margin-top: 0.5rem;
+	text-align: right;
 }
 
-
-.footercol{
-       float:left;
-       padding-left:2%;
-       padding-right:2%;
-       width:29.33%;	
+#icons li {
+	display: inline-block;
+	margin-left: 1.5rem;
 }
 
-.fa{
-       color: rgba(255, 255, 255, 0.5);
-       margin-right: 10px;
-       font-size:1.5em;
+.fa {
+	color: rgba(255, 255, 255, 0.6);
 }
 
 .fa:hover {
-	   color: rgba(255, 255, 255, 1);
-}
-*/
-.footer-container{
-	   position: absolute;	
-	   margin: 0 30%; /*!!!!!!!!FIX THIS LATER
-	PLUS FOR SOME REASON IT MAKES THE BANNER WORK PROPERLY?????
-	*/
+	color: #fff;
 }
 
+#newsletter input {
+	height: 2.5rem;
+	padding: 0.5rem;
+	font-weight: 500;
+}
 
+#newsletter-email {
+	border: solid 0.125rem rgba(255, 255, 255, 0.6);
+	background: none;
+	color: #fff;
+}
+
+#newsletter-email:focus {
+	border-color: #fff;
+}
+
+#newsletter-submitbtn {
+	width: auto;
+	height: 2.5rem;
+	text-align: right;
+	margin-left: -0.25rem;
+	float: left;
+	background: none;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 0.875rem;
+	cursor: pointer;
+	color: rgba(255, 255, 255, 0.6);
+	margin-top: 0.5rem;
+}
+
+#newsletter-submitbtn:hover {
+	color: #fff;
+}
 
 
 
@@ -502,19 +524,19 @@ footer {
 	border-color: #9f8fff;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+#reg-form::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #9f8fff;
 	font-size: 1rem;
 }
-::-moz-placeholder { /* Firefox 19+ */
+#reg-form::-moz-placeholder { /* Firefox 19+ */
     color: #9f8fff;
 	font-size: 1rem;
 }
-:-ms-input-placeholder { /* IE 10+ */
+#reg-form:-ms-input-placeholder { /* IE 10+ */
     color: #9f8fff;
 	font-size: 1rem;
 }
-:-moz-placeholder { /* Firefox 18- */
+#reg-form:-moz-placeholder { /* Firefox 18- */
     color: #9f8fff;
 	font-size: 1rem;
 }
@@ -569,9 +591,12 @@ footer {
 	color: #06060c;
 }
 
+.sub-nav a:hover {
+	color: #6633ff;
+}
+
 .sub-current {
 	color: #6633ff !important;
-	font-weight: 600 !important;
 }
 
 
@@ -625,7 +650,7 @@ footer {
         max-width: 1600px;
     }
 	.footer-container{
-		width: 720px;
+		width: 1600px;
 	}
 
 }
