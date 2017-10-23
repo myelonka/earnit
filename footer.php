@@ -40,19 +40,19 @@
 					<h5 class="smallcaps">Follow</h5><br><br>
 					 <div id="icons">
 						  <li>
-								 <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+								 <a href="https://www.facebook.com/anetete.anetete" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
 						  </li>
 
 						  <li>
-								 <a href="#"><i class="fa fa-github fa-2x"></i></a>
+								 <a href="https://github.com/myelonka/earnit" target="_blank"><i class="fa fa-github fa-2x"></i></a>
 						  </li>
 
 						  <li>
-								 <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
+								 <a href="https://www.linkedin.com/in/aneteserecenko/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
 						  </li>
 
 						  <li>
-								 <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
+								 <a href="#" target="_blank"><i class="fa fa-google-plus fa-2x"></i></a>
 						 </li>
 					 </div>
 				 </ul>

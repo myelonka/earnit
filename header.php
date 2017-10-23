@@ -11,28 +11,28 @@
 	<div id=nav-menu-wrapper>
 		<ul id="nav-menu" class="center">
 			<li>
-				<a <?php if($current == 'index.php') {echo ' class=\'current\'';} ?> href="index.php">Home</a>
+				<a <?php if($current == 'index.php') {echo ' class=\'current\'';} ?> href="index.php?">Home</a>
 			</li>
 			<li>
-				<a <?php if($current == 'browse-featured.php'/* || 'browse-new.php' || 'browse-categories.php' || 'browse-freelancers.php'*/) {echo ' class=\'current\'';} ?> href="browse-featured.php">Browse offers</a>
+				<a <?php if($current == 'browse.php') {echo ' class=\'current\'';} ?> href="browse.php?page=feat">Browse offers</a>
 			</li>
 			<li>
-				<a <?php if($current == 'how.php') {echo ' class=\'current\'';} ?> href="how.php">How it works</a>
+				<a <?php if($current == 'how.php') {echo ' class=\'current\'';} ?> href="how.php?">How it works</a>
 			</li>
 			<li>
-				<a <?php if($current == 'contact.php') {echo ' class=\'current\'';} ?> href="contact.php">Contact us</a>
+				<a <?php if($current == 'contact.php') {echo ' class=\'current\'';} ?> href="contact.php?">Contact us</a>
 			</li>
 			<li>
 				<a id='cta-link' href="post.php">Post an offer</a>
 			</li>
 		</ul>
 	</div>
-	<a <?php if($current == 'profile.php') {echo ' class=\'current\'';} ?> href="profile.php" class="svg-link" id="profile-img-link"><img src="img/profile-icon.svg" alt="profile icon" class="svg" id="profile-img" /></a>
+	<a <?php if($current == 'profile.php') {echo ' class=\'current\'';} ?> href="profile.php?" class="svg-link" id="profile-img-link"><img src="img/profile-icon.svg" alt="profile icon" class="svg" id="profile-img" /></a>
 </div>
 
 
 
-<script>
+<script> //Converts to svg xml
 	jQuery('img.svg').each(function(){
 				  var $img = jQuery(this);
 				  var imgID = $img.attr('id');

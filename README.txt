@@ -14,7 +14,9 @@ Please edit with care.
 STUFF TO FIX:
 
 18-10-2017 / Mati:
-- how the hell do you put multiple links in current thingy???
 - earnit-logo.png link doesn't work (not clickable; something to do with display property on the anchor)
-- space under footer
+
+
+20-10-2017 / Mati:
 - login doesn't work (something with sessions)
+- figure out how to put '?' after url immediately after opening page on idex.php
