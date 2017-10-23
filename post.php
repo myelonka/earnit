@@ -18,18 +18,78 @@
 		
 		<div class="page-container">
 			<div class="col-12"><h1>Post a job offer</h1></div>
+        <?php
+           if (isset($_POST['submit'])){//if submit button is pressed
+               //add security
+               $author = trim($_POST['author']);
+               $title = trim($_POST['title']);
+               $description = trim($_POST['description']);
+               $employerMail = trim($_POST['employerMail']);
+               $deadline = strtotime($_POST['deadline']);//converting into timestamp
+               $deadline = date("Y-m-d, $deadline");//formating before saing into DB
+               $field = $_POST['field'];//do i need to modify?
+                                
+               if (!$author || !$title || !$description || !$employerMail || !$deadline){
+                   printf('You must fill out all the form fields');
+               } //29:00 on video
+               
+               $author = addslashes($author);
+               $title = addslashes($title);
+               $description = addslashes($description);
+               $employerMail = addslashes($employerMail);
+               $deadline = addslashes($deadline); //do this parameter need addslashes?
+               
+            @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+               
+                if ($db->connect_error) {
+                echo "could not connect: " . $db->connect_error;
+                printf("<br><a href=index.php>Return to home page </a>");
+                exit();
+                }
+               
+               $smth = $db->prepare('INSERT INTO posts (postid, author, title, description, empoyerMail, deadlline)VALUES (null, ?, ?, ?, ?, ?)');
+                   
+               $smth->bind_param('sssss', $author, $title, $description, $empoyerMail, $deadlline);
+               $smth->execute();
+               
+               if (isset($_POST['field'])) {
+                    $optionArray = $_POST['field'];
+                    for ($i=0; $i<count($optionArray); $i++) {
+                        echo $optionArray[$i]."<br />";
+                        $fieldvalue = $opptionArray[i].value;//which checkbox was marked
+                    }
+                }
+               
+               $smth1 = $db->prepare('INSERT INTO category (categoryid, categoryname) VALUES (null, ?)');
+               
+               $smth1->bind_param('s', $fieldvalue);//value = stored from for loop
+               $smth1->execute();
+           }
             
-            <form method="post" action="formtest.php">
-                Company name:<br>
-              <input type="text" name="author"><br>
+        ?>
+            <form method="post" action="post.php">
+              Company name:<br>
+              <input type="text" name="author" value=""><br><br>
               Title:<br>
-              <input type="text" name="title"><br>
+              <input type="text" name="title" value=""><br><br>
               Job description:<br>
-              <textarea type="text" name="description" cols="80px" rows="15" wrap="soft">
-              </textarea>
-              
+              <textarea type="text" name="description" value="description" cols="80px" rows="15" wrap="soft">
+              </textarea><br><br>
+              Email:<br>
+              <input type="email" name="employerMail"><br><br>
+              Application deadline:<br>
+              <input type="date" min="2017-01-01" name="deadline"><br><br>
+              Job field:<br><br>
+              <input type="checkbox" name="field[]" value="1">Front End<br>
+              <input type="checkbox" name="field[]" value="2" >back End<br>
+              <input type="checkbox" name="field[]" value="3">Web Designer<br>
+              <input type="checkbox" name="field[]" value="4" >UI Designer<br>
+              <input type="checkbox" name="field[]" value="5">UX Designer<br>
+              <input type="checkbox" name="field[]" value="6" >Interaction Designer<br>
+              <input type="checkbox" name="field[]" value="7">SEO Specialist<br><br><br>
               <input type="submit">
             </form>
+
             
 			<div class="col-6"><h2>Lorem ipsum dolor sit amet.</h2></div>
 			<div class="col-6" style="grid-column: 7/13"><h2>Lorem ipsum dolor sit amet.</h2></div>
