@@ -17,7 +17,8 @@
 		?>
 		
 		<div class="page-container">
-			<div class="col-1">1</div>
+
+		<!--<div class="col-1">1</div>
 			<div class="col-1">2</div>
 			<div class="col-1">3</div>
 			<div class="col-1">4</div>
@@ -28,14 +29,65 @@
 			<div class="col-1">9</div>
 			<div class="col-1">10</div>
 			<div class="col-1">11</div>
-			<div class="col-1">12</div>
-			<div class="col-12"><h1>How it works</h1></div>
-			<div class="col-6"><h2>Lorem ipsum dolor sit amet.</h2></div>
-			<div class="col-6" style="grid-column: 7/13"><h2>Lorem ipsum dolor sit amet.</h2></div>
-			<div class="col-3"><h3>Lorem ipsum dolor sit amet.</h3></div>
-			<div class="col-3" style="grid-column: 4/7"><h3>Lorem ipsum dolor sit amet.</h3></div>
-			<div class="col-3" style="grid-column: 7/10"><h3>Lorem ipsum dolor sit amet.</h3></div>
-			<div class="col-3" style="grid-column: 10/13"><h3>Lorem ipsum dolor sit amet.</h3></div>
+			<div class="col-1">12</div>-->
+
+			<div id="how-it-works-heading" class="col-12"><h4>I want to <span class="highlight">{ offer }</span> a job</h4></div>
+			<div class="col-4">
+				<div class="how-icon-container">
+					<img src="img/how-icons/icon1.png">
+				</div>
+				<div class="how-step-container">
+					<p><b>STEP 1</b> Describe your idea, set a deadine and post your offer</p>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="how-icon-container">
+					<img src="img/how-icons/icon2.png">
+				</div>
+				<div class="how-step-container">
+					<p><b>STEP 2</b> Check applicants, decide who fits the job best and contact them</p>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="how-icon-container">
+					<img src="img/how-icons/icon3.png">
+				</div>
+				<div class="how-step-container">
+					<p><b>STEP 3</b> You have found the freelancer who can work on your offer</p>
+				</div>
+			</div>
+
+<br>
+
+		<div id="get-a-job">
+			<div id="how-it-works-heading" class="col-12"><h4>I want to <span class="highlight">{ get }</span> a job</h4></div>
+			<div class="col-4">
+				<div class="how-icon-container">
+					<img src="img/how-icons/icon4.png">
+				</div>
+				<div class="how-step-container">
+					<p><b>STEP 1</b> Browse current job offers</p>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="how-icon-container">
+					<img src="img/how-icons/icon5.png">
+				</div>
+				<div class="how-step-container">
+					<p><b>STEP 2</b> Apply for the offers you want to work on</p>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="how-icon-container">
+					<img src="img/how-icons/icon6.png">
+				</div>
+				<div class="how-step-container">
+					<p><b>STEP 3</b> Wait for the commissioner to contact you</p>
+				</div>
+			</div>
+		</div>
+
+
 		</div>
 		
 		<?php 
