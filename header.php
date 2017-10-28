@@ -4,7 +4,7 @@
 
 <div id="nav-container">
 	<div id="logo-container">
-		<span class="img-helper"></span><a href="index.php">
+		<span class="img-helper"></span><a href="index.php?">
 			<img src="img/earnit-logo.png" alt="earnit logo" />
 		</a>
 	</div>

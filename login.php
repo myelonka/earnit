@@ -15,41 +15,31 @@
 			include('config.php');
 			include('header.php');
 			
-			$errors = array();
-			
-			$_SESSION['success'] = '';
-
 			session_start();
-			
+			@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+			ini_set('session.cookie_httponly', true);
+			$error = null;
 
-			if (isset($_POST['login'])) {
-				$email = mysqli_real_escape_string($db, $_POST['email']);
-				$password = mysqli_real_escape_string($db, $_POST['password']);
+			if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-				if (count($errors) == 0) {
-					$password = md5($password);
-					$query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-					$result = mysqli_query($db, $query);
-					$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-					$active = $row['active'];
+			  $email = mysqli_real_escape_string($db,$_POST['email']);
+			  $password = mysqli_real_escape_string($db,$_POST['password']); 
 
-					if(mysqli_num_rows($result) == 1) {
-						$_SESSION['email'] = $email;
-						$_SESSION['success'] = 'Login successful!';
-						header('location: profile.php');
-					}
-					else {
-						array_push($errors, 'The email or password is incorrect!');
-						header('location: login.php');
-					}
-				}
-			}
+			  $sql = "SELECT id FROM users WHERE email = '$email' and password = '$password'";
+			  $result = mysqli_query($db,$sql);
+			  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+			  $active = $row['active'];
 
-			if (isset($_GET['logout'])) {
-				session_destroy();
-				unset($_SESSION['email']);
-				header('location: login.php');
-			}
+			  $count = mysqli_num_rows($result);
+
+			  if($count == 1) {
+				 $_SESSION['login_user'] = $email;
+
+				 header("location: profile.php?");
+			  }else {
+				 $error = 'Your username or password is invalid!';
+			  }
+			 }
 
 		?>
 		
@@ -66,19 +56,59 @@
 				<div class="col-1">10</div>
 				<div class="col-1">11</div>
 				<div class="col-1">12</div>
-
-				<h1>Log in</h1>
-
-				<form action="" name="login" method="POST">
-				<div class="col-12">
-					<label><b>Email</b></label>
-					<input type="text" name="email" required>
-					<label><b>Password</b></label>
-					<input type="password" name="password" required>
-					<button type="submit" >Login</button>
-					<?php include('errors.php'); ?>
-			  </div>
-			</form>
+					<?php if ($error != null) { echo '<div class="errors">', $error, '</div>'; } ?>
+				<div class="col-4" id="loginform"><h2>Sign in</h2><br><br><br>
+					<form action="" name="login" method="POST">
+						<tr>
+							<td></td>
+							<td><input type="email" name="email" placeholder="email" spellcheck="false" required></td>
+							<br>
+						</tr>
+						<tr>
+							<td></td>
+							<td><input type="password" name="password" placeholder="password" required></td>
+							<br>
+						</tr>
+						<tr>	
+							<td></td>
+							<td>
+								<br>
+								<button type="submit" name="login" id="loginbtn">Sign in</button>
+								<a href="#" id="forgotbtn">Forgot your password?</a>
+							</td>
+						</tr>
+					</form>
+				</div>
+				<div class="col-5" id="reg-form2">
+					<h2>&#8230; or register</h2><br><br>
+					<form action="" name="register" method="POST">
+						<table>
+							<tr>
+								<td></td>
+								<td><input type="email" name="email" placeholder="email" spellcheck="false" required></td>
+								<br>
+							</tr>
+							<tr>
+								<td></td>
+								<td><input type="password" name="password" placeholder="password" required></td>
+								<br>
+							</tr>
+							<tr>
+								<td></td>
+								<td><input type="password" name="passwordc" placeholder="confirm password" required></td>
+								<br>
+							</tr>
+							<tr>	
+								<td></td>
+								<td>
+									<br>
+									<button type="submit" name="register" id="reg-signupbtn">Sign up</button>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<div class="col-3"></div>
 			</div>
 		
 		<?php 

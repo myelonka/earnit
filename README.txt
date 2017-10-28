@@ -18,5 +18,11 @@ STUFF TO FIX:
 
 
 20-10-2017 / Mati:
-- registration works but login doesn't (something with sessions)
 - $current only works when there is a '?' at the end of url
+
+
+
+SECONDARY TASKS:
+
+- add newsletter functionality
+- add password encryption
