@@ -18,5 +18,5 @@ STUFF TO FIX:
 
 
 20-10-2017 / Mati:
-- login doesn't work (something with sessions)
-- figure out how to put '?' after url immediately after opening page on idex.php
+- registration works but login doesn't (something with sessions)
+- $current only works when there is a '?' at the end of url
