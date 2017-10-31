@@ -40,8 +40,8 @@
 					mysqli_query($db, $sql);
 					header('location: profile.php');
 					
-					$_SESSION['email'] = $email;
-					header('location: profile.php');
+					$_SESSION['login_user'] = $email;
+					header('location: profile.php?');
 				}
 			}
 			?>
