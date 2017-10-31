@@ -37,7 +37,7 @@
 					<img src="img/how-icons/icon1.png">
 				</div>
 				<div class="how-step-container">
-					<p><b>STEP 1</b> Describe your idea, set a deadine and post your offer</p>
+					<h3>1</h3><p> Describe your idea, set a deadine and post your offer</p>
 				</div>
 			</div>
 			<div class="col-4">

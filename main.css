@@ -637,6 +637,14 @@ footer {
 	padding: 1rem 1rem 1rem 1rem;
 }
 
+.how-step-container p, h3{
+	display: inline;
+}
+
+.how-step-container p {
+	width: 100px;
+}
+
 #get-a-job {
 	background-color: #000;
 }
