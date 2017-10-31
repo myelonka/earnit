@@ -80,13 +80,14 @@
               Application deadline:<br>
               <input type="date" min="2017-01-01" name="deadline"><br><br>
               Job field:<br><br>
-              <input type="checkbox" name="field[]" value="1">Front End<br>
-              <input type="checkbox" name="field[]" value="2" >back End<br>
-              <input type="checkbox" name="field[]" value="3">Web Designer<br>
-              <input type="checkbox" name="field[]" value="4" >UI Designer<br>
-              <input type="checkbox" name="field[]" value="5">UX Designer<br>
-              <input type="checkbox" name="field[]" value="6" >Interaction Designer<br>
-              <input type="checkbox" name="field[]" value="7">SEO Specialist<br><br><br>
+              <input type="radio" name="field[]" value="1">Software Development<br>
+              <input type="radio" name="field[]" value="2" >Mobile App Development<br>
+              <input type="radio" name="field[]" value="3">Web Development<br>
+              <input type="radio" name="field[]" value="4" >Graphic Design<br>
+              <input type="radio" name="field[]" value="5">UI/UX Design<br>
+              <input type="radio" name="field[]" value="6" >Social Media<br>
+              <input type="radio" name="field[]" value="7">On-site SEO<br><br><br>
+			     <!--OTHER SPECIFY HERE-->
               <input type="submit">
             </form>
 

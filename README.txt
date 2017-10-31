@@ -18,5 +18,11 @@ STUFF TO FIX:
 
 
 20-10-2017 / Mati:
-- login doesn't work (something with sessions)
-- figure out how to put '?' after url immediately after opening page on idex.php
+- $current only works when there is a '?' at the end of url
+
+
+
+SECONDARY TASKS:
+
+- add newsletter functionality
+- add password encryption
