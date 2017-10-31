@@ -19,7 +19,8 @@
 		<div class="page-container">
 			<div class="col-12"><h1>Post a job offer</h1></div>
         <?php
-           // How variables $_POST and $_GET work.
+            
+            // How variables $_POST and $_GET work.
            // VALUES are set in these variables with a reference on their NAME, to retrieve them.
            //  ex :  <form method="post" action="post.php">
            //        <input type="text" NAME="author" VALUE=""><br><br>
@@ -37,8 +38,10 @@
                $field = $_POST['field'];//do i need to modify?          
                
                if (!$author || !$title || !$description || !$employerMail || !$deadline){
-                   printf('You must fill out all the form fields');
-                   // Here informations are not filled, so you don't want the data to be uploaded to the database. Interrupt the code and redirect the user with an explicit error message.
+                   printf('<img id="exclamation" src="img/exclamation_icon.png"><span id="message_style">You must fill out all the form fields</span>');
+                       
+
+               // Here informations are not filled, so you don't want the data to be uploaded to the database. Interrupt the code and redirect the user with an explicit error message.
                } //29:00 on video
                
                $author = addslashes($author);
@@ -64,7 +67,7 @@
                         $fieldvalue = $optionArray[$i];//which checkbox was marked
                     }
                 }
-               $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, employerMail, timestamp, category) VALUES (null, ?, ?, ?, ?, ?,?)');
+               $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, employerMail, timestamp, category) VALUES (null, ?, ?, ?, ?, ?, ?)');
                
                $stmt->bind_param('ssssis', $author, $title, $description, $employerMail, $deadlline, $fieldvalue);
 

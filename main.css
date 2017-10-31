@@ -765,6 +765,77 @@ footer {
 	text-decoration: underline;
 }
 
+<<<<<<< HEAD
+=======
+#reg-form2 {
+	background-color: #6633ff;
+	color: #fff;
+	padding: 1rem 4rem;
+}
+
+#reg-form2 form {
+	width: 100%;
+	margin-top: -2.9rem;
+}
+
+#reg-form2 h2 {
+	font-weight: 500;
+}
+
+#reg-form2 td {
+	padding: 0.5rem 0;
+	color: #fff;
+	text-align: right;
+}
+
+#reg-form2 input {
+	width: 432.61px;
+	height: 3rem;
+	background-color: #24207a;
+	border: solid 0.125rem #24207a;
+	color: #fff;
+	font-variant-ligatures: none;
+	padding: 1rem;
+	letter-spacing: 1.5;
+}
+
+#reg-form2 input:focus {
+	border-color: #9f8fff;
+}
+
+#reg-form2::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #9f8fff;
+	font-size: 1rem;
+}
+#reg-form2::-moz-placeholder { /* Firefox 19+ */
+    color: #9f8fff;
+	font-size: 1rem;
+}
+#reg-form2:-ms-input-placeholder { /* IE 10+ */
+    color: #9f8fff;
+	font-size: 1rem;
+}
+#reg-form2:-moz-placeholder { /* Firefox 18- */
+    color: #9f8fff;
+	font-size: 1rem;
+}
+
+/*POST FORM*/
+
+#message_style{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #6633ff;
+}
+
+#exclamation{
+   width: 30px;
+   margin-bottom: -3px;
+   padding-right: 5px;
+}
+
+
+>>>>>>> e13f1f12251bf8f85745039dd384957d842f2d7b
 @media only screen and (min-width: 720px) {
 	.page-container {
         max-width: 720px;
@@ -790,4 +861,5 @@ footer {
 	.footer-container{
 		width: 1400px;
 	}
-}
+}}
+
