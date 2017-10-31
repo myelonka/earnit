@@ -311,19 +311,21 @@ button {
 }
 
 #logo-container {
-	display: inline;
-	cursor: pointer;
+	display: inline-block;
+	position: relative
 }
 
 #logo-container img {
 	height: 32px;
 	vertical-align: middle;
-	display: inline-block;
 	margin-left: 2rem;
 }
 
 #logo-container a {
-	display: inline-block;
+	display: block;
+	position: absolute;
+	top: 1rem;
+	z-index: 6;
 }
 
 #profile-img-link {
@@ -431,7 +433,7 @@ footer {
 
 
 .footer-col a, .footer-col h6 {
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(255, 255, 255, 0.5);
 }
 
 .footer-col a:hover {
@@ -459,7 +461,7 @@ footer {
 }
 
 .fa {
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(255, 255, 255, 0.5);
 }
 
 .fa:hover {
@@ -473,7 +475,7 @@ footer {
 }
 
 #newsletter-email {
-	border: solid 0.125rem rgba(255, 255, 255, 0.6);
+	border: solid 0.125rem rgba(255, 255, 255, 0.5);
 	background: none;
 	color: #fff;
 }
@@ -492,7 +494,7 @@ footer {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 0.875rem;
 	cursor: pointer;
-	color: rgba(255, 255, 255, 0.6);
+	color: rgba(255, 255, 255, 0.5);
 	margin-top: 0.5rem;
 }
 
@@ -692,8 +694,10 @@ footer {
 	width: 200px;
 	height: 200px;
 	background-size: cover;
+	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 50%;
+	border: solid 2px #ddd;
 	margin: 0 auto;
 	margin-bottom: 2rem;
 }
@@ -708,7 +712,7 @@ footer {
 #loginform {
 	clear: both;
 	text-align: center;
-	margin-top: 12rem;
+	margin-top: 8rem;
 }
 
 #loginform form {
@@ -861,5 +865,5 @@ footer {
 	.footer-container{
 		width: 1400px;
 	}
-}}
+}
 
