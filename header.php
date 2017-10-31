@@ -20,16 +20,28 @@
 				<a <?php if($current == 'how.php') {echo ' class=\'current\'';} ?> href="how.php?">How it works</a>
 			</li>
 			<li>
-				<a <?php if($current == 'contact.php') {echo ' class=\'current\'';} ?> href="contact.php?">Contact us</a>
-			</li>
-			<li>
 				<a id='cta-link' href="post.php">Post an offer</a>
 			</li>
 		</ul>
 	</div>
-	<a <?php if($current == 'profile.php') {echo ' class=\'current\'';} ?> href="profile.php?" class="svg-link" id="profile-img-link"><img src="img/profile-icon.svg" alt="profile icon" class="svg" id="profile-img" /></a>
+	<a <?php if($current == 'profile.php') {echo ' class=\'current\'';} ?> href="profile.php?" class="svg-link" id="profile-img-link">
+			<?php session_start(); if(isset($_SESSION['login_user']) && !empty($_SESSION['login_user'])) {
+				echo "<span id='welcome'>Welcome,&nbsp;</span> <span>" . $_SESSION['login_user'] . "</span>"; } 
+			else { 
+				echo '<span>Sign in</span>'; } ?>
+		<img src="img/profile-icon.svg" alt="profile icon" class="svg" id="profile-img" />
+	</a>
 </div>
-
+<!--<div class="profmenu">
+	<ul>
+		<li>
+			<a href="profile.php?">My Profile</a>
+		</li>
+		<li>
+			<a href="logout.php">Logout</a>
+		</li>
+	</ul>
+</div>-->
 
 
 <script> //Converts img to svg xml

@@ -17,7 +17,6 @@
 			include('config.php');
 			include('header.php');
 		
-			session_start();
 			@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 			ini_set('session.cookie_httponly', true);
 			$error = null;
@@ -47,7 +46,8 @@
 			}
 			?>
 
-			<div id="top-banner">
+			<?php if (empty($_SESSION['login_user'])): ?>
+			<div id="top-banner"> :
 				<div id="top-banner-wrapper">
 					<div id="banner-img"><img src="img/banner.png" alt="start earning today" /></div>
 					<div id="reg-form">
@@ -93,6 +93,8 @@
 				</div>
 			</div>
 			
+			<?php endif; ?>
+			
 			<div class="page-container">
 				<div class="col-12"><h1>Hello world!</h1></div>
 				<div class="row">
@@ -102,7 +104,7 @@
 				<div class="col-3"><h4>&mdash;<br>Lorem ipsum dolor sit amet. [h4]</h4></div>
 				<div class="col-3"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [p]</p></div>
 				<div class="col-3"><h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [h6]</h6></div>
-				<div class="col-3"><a href="js/landing-page.php">Go to landing page [a] &raquo;</a></div>
+				<div class="col-3">AYY LMAO</div>
 			</div>
 
 			<?php
