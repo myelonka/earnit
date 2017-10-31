@@ -27,7 +27,7 @@
            //        </form> 
            // If you don't set the name, you won't be able to check if the input exists in POST/GET => You don't know if the button has been pressed.
 
-           if (isset($_POST['submit'])){   //if submit button is pressed
+           if (isset($_POST['submit_form'])){   //if submit button is pressed
                //add security
                $author = trim($_POST['author']);
                $title = trim($_POST['title']);
@@ -93,7 +93,7 @@
               Application deadline:<br>
               <input type="date" min="2017-01-01" max="2027-01-01" name="deadline"><br><br>
               Job field:<br><br>
-<<<<<<< HEAD
+
               <input type="checkbox" name="field[]" value="frontEnd">Front End<br>
               <input type="checkbox" name="field[]" value="backEnd" >Back End<br>
               <input type="checkbox" name="field[]" value="webDesigner">Web Designer<br>
@@ -101,22 +101,10 @@
               <input type="checkbox" name="field[]" value="uxDesigner">UX Designer<br>
               <input type="checkbox" name="field[]" value="interactionDesigner" >Interaction Designer<br>
               <input type="checkbox" name="field[]" value="seoSpecialist">SEO Specialist<br><br><br>
-              <input type="submit" name="submit">
-=======
-              <input type="radio" name="field[]" value="1">Software Development<br>
-              <input type="radio" name="field[]" value="2" >Mobile App Development<br>
-              <input type="radio" name="field[]" value="3">Web Development<br>
-              <input type="radio" name="field[]" value="4" >Graphic Design<br>
-              <input type="radio" name="field[]" value="5">UI/UX Design<br>
-              <input type="radio" name="field[]" value="6" >Social Media<br>
-              <input type="radio" name="field[]" value="7">On-site SEO<br><br><br>
-			     <!--OTHER SPECIFY HERE-->
-              <input type="submit">
->>>>>>> 2440e81f07e74223265957caf9f83a037fe73fde
-            </form>
+              <input type="submit" name="submit_form">
 
-            
-			<div class="col-6"><h2>Lorem ipsum dolor sit amet.</h2></div>
+
+            <div class="col-6"><h2>Lorem ipsum dolor sit amet.</h2></div>
 			<div class="col-6" style="grid-column: 7/13"><h2>Lorem ipsum dolor sit amet.</h2></div>
 			<div class="col-3"><h3>Lorem ipsum dolor sit amet.</h3></div>
 			<div class="col-3" style="grid-column: 4/7"><h3>Lorem ipsum dolor sit amet.</h3></div>
