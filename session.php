@@ -1,7 +1,6 @@
 <?php
    include('config.php');
    @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
-   session_start();
    
    $user_check = $_SESSION['login_user'];
    
