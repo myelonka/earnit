@@ -598,7 +598,7 @@ footer {
 	color: #6633ff !important;
 }
 
-<<<<<<< HEAD
+
 /*HOW IT WORKS*/
 
 #how-it-works-heading h4 {
@@ -646,8 +646,7 @@ footer {
 }
 
 
-=======
->>>>>>> 55cfc39842b95a95862c4ede88aae111e8e95813
+
 /*PROFILE PAGE*/
 
 #profile-info {
@@ -777,6 +776,20 @@ footer {
 	font-size: 1rem;
 }
 
+/*POST FORM*/
+
+#message_style{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #6633ff;
+}
+
+#exclamation{
+   width: 30px;
+   margin-bottom: -3px;
+   padding-right: 5px;
+}
+
 
 @media only screen and (min-width: 720px) {
 	.page-container {
@@ -804,3 +817,4 @@ footer {
 		width: 1400px;
 	}
 }
+
