@@ -7,6 +7,7 @@
 	    <meta name="author" content="Mateusz Mielowski, Paula Pudane, Anete Serecenko">
 		<link rel="stylesheet" href="main.css">
 		<link rel='icon' href='img/favicon.png'>
+        
     </head>
 	<body>
 		<div id="body-wrapper">

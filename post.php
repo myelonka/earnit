@@ -32,12 +32,13 @@
                //add security
                $author = trim($_POST['author']);
                $title = trim($_POST['title']);
-               $description = trim($_POST['description']);
+               $description = $_POST['description'];//trim removes white space..we dont purt it here
+               $promo = $_POST['promo'];
                $employerMail = trim($_POST['employerMail']);
                $deadline = strtotime($_POST['deadline']);//converting into timestamp
-               $field = $_POST['field'];//do i need to modify?          
+               $field = $_POST['field'];          
                
-               if (!$author || !$title || !$description || !$employerMail || !$deadline){
+               if (!$author || !$title || !$description || !$promo ||!$employerMail || !$deadline){
                    printf('<img id="exclamation" src="img/exclamation_icon.png"><span id="message_style">You must fill out all the form fields</span>');
                        
 
@@ -47,6 +48,7 @@
                $author = addslashes($author);
                $title = addslashes($title);
                $description = addslashes($description);
+               $promo = addslashes($promo);
                $employerMail = addslashes($employerMail);
                $deadline = addslashes($deadline); //do this parameter need addslashes?
               
@@ -67,9 +69,9 @@
                         $fieldvalue = $optionArray[$i];//which checkbox was marked
                     }
                 }
-               $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, employerMail, timestamp, category) VALUES (null, ?, ?, ?, ?, ?, ?)');
+               $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, promo, employerMail, timestamp, category) VALUES (null, ?, ?, ?, ?, ?, ?, ?)');
                
-               $stmt->bind_param('ssssis', $author, $title, $description, $employerMail, $deadlline, $fieldvalue);
+               $stmt->bind_param('sssssis', $author, $title, $description, $promo, $employerMail, $deadlline, $fieldvalue);
 
                // You can see if the request has been executed by checking the return of it (True for yes, False, for no).
                // $smth->error() will return you the error message.
@@ -83,13 +85,16 @@
            }
             
         ?>
-            <form method="post" action="post.php">
+            <form id="post_form" method="post" action="post.php">
               Company name:<br>
               <input type="text" name="author" value=""><br><br>
               Title:<br>
               <input type="text" name="title" value=""><br><br>
-              Job description:<br>
-              <textarea type="text" name="description" value="description" cols="80px" rows="15" wrap="soft">
+              Job description (max 5000 characters):<br>
+              <textarea maxlength="5000" type="text" name="description" value="description" cols="80px" rows="15" wrap="soft">
+              </textarea><br><br>
+              Job promo (max 500 characters):<br>
+              <textarea maxlength="500" type="text" name="promo" value="description" cols="80px" rows="15" wrap="soft">
               </textarea><br><br>
               Email:<br>
               <input type="email" name="employerMail"><br><br>
