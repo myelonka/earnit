@@ -19,7 +19,7 @@
 			ini_set('session.cookie_httponly', true);
 			$error = null;
 
-			if($_SERVER["REQUEST_METHOD"] == "POST") {
+			if(isset($_POST['login'])) {
 
 			  $email = mysqli_real_escape_string($db,$_POST['email']);
 			  $password = mysqli_real_escape_string($db,$_POST['password']); 
@@ -39,24 +39,10 @@
 				 $error = 'Your username or password is invalid!';
 			  }
 			 }
-
 		?>
 		
 			<div class="page-container">
-				<div class="col-1">1</div>
-				<div class="col-1">2</div>
-				<div class="col-1">3</div>
-				<div class="col-1">4</div>
-				<div class="col-1">5</div>
-				<div class="col-1">6</div>
-				<div class="col-1">7</div>
-				<div class="col-1">8</div>
-				<div class="col-1">9</div>
-				<div class="col-1">10</div>
-				<div class="col-1">11</div>
-				<div class="col-1">12</div>
-					<?php if ($error != null) { echo '<div class="errors">', $error, '</div>'; } ?>
-				<div class="col-4" id="loginform"><h2>Sign in</h2><br><br><br>
+				<div class="col-12" id="loginform"><h2>Sign in</h2><br><br><br>
 					<form action="" name="login" method="POST">
 						<tr>
 							<td></td>
@@ -71,43 +57,13 @@
 						<tr>	
 							<td></td>
 							<td>
-								<br>
 								<button type="submit" name="login" id="loginbtn">Sign in</button>
-								<a href="#" id="forgotbtn">Forgot your password?</a>
+								<a href="index.php?" id="forgotbtn">Don't have an account?</a>
 							</td>
 						</tr>
+						<?php if ($error != null) { echo '<div class="errors col-12">', $error, '</div>'; } ?>
 					</form>
 				</div>
-				<div class="col-5" id="reg-form2">
-					<h2>&#8230; or register</h2><br><br>
-					<form action="" name="register" method="POST">
-						<table>
-							<tr>
-								<td></td>
-								<td><input type="email" name="email" placeholder="email" spellcheck="false" required></td>
-								<br>
-							</tr>
-							<tr>
-								<td></td>
-								<td><input type="password" name="password" placeholder="password" required></td>
-								<br>
-							</tr>
-							<tr>
-								<td></td>
-								<td><input type="password" name="passwordc" placeholder="confirm password" required></td>
-								<br>
-							</tr>
-							<tr>	
-								<td></td>
-								<td>
-									<br>
-									<button type="submit" name="register" id="reg-signupbtn">Sign up</button>
-								</td>
-							</tr>
-						</table>
-					</form>
-				</div>
-				<div class="col-3"></div>
 			</div>
 		
 		<?php 

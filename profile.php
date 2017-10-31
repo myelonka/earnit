@@ -19,36 +19,24 @@
 		?>
 			
 				<div class="page-container">
-					<div class="col-1">1</div>
-					<div class="col-1">2</div>
-					<div class="col-1">3</div>
-					<div class="col-1">4</div>
-					<div class="col-1">5</div>
-					<div class="col-1">6</div>
-					<div class="col-1">7</div>
-					<div class="col-1">8</div>
-					<div class="col-1">9</div>
-					<div class="col-1">10</div>
-					<div class="col-1">11</div>
-					<div class="col-1">12</div>
 					<div class="col-2" id="profile-info">
 					<div id="avatar"></div>
-					<span><p>Latvia</p></span>
-					<span><p>speaks basic english, latvian, russian</p></span>
-					<span><p>knows HTML, CSS, PHP, JS</p></span>
-					<span><p>member since September 2017</p></span>
-					
+					<span><p>country</p></span>
+					<span><p>languages</p></span>
+					<span><p>skills</p></span>
+					<span><p>member since</p></span>
+					<br>
 					<a href="logout.php">Logout</a>
 						
 					
 					</div>
-					<div class="col-10" id="profile-name">
+					<div class="col-10" id="profile-name"><br>
 						<span><h2><?php echo $_SESSION['login_user']; ?></h2></span>
-						<span><p>&mdash;<br>front-end web developer &amp; graphic designer</p></span>
+						<span><p>&mdash;<br>short description</p></span>
 					</div>
 					<div class="col-10" id="profile-work">
-						<div class="col-3"></div>
-						<div class="col-3"></div>
+						<div class="col-3">profile work</div>
+						<div class="col-3">...</div>
 						<div class="col-3"></div>
 						<div class="col-3"></div>
 						<div class="col-3"></div>
