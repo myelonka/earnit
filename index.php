@@ -16,15 +16,14 @@
 			<?php
 			include('config.php');
 			include('header.php');
-			
-			$email = '';
-			$password = '';
-			$errors = array();
-
+		
+			session_start();
 			@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 			ini_set('session.cookie_httponly', true);
+			$error = null;
+			$email = '';
+			$password = '';
 			
-			session_start();
 				
 			if (isset($_POST['register'])) {
 				$email = mysqli_real_escape_string($db, $_POST['email']);
@@ -32,23 +31,20 @@
 				$passwordConf = mysqli_real_escape_string($db, $_POST['passwordc']);
 				
 				if ($password != $passwordConf) {
-					array_push($errors, 'Passwords don\'t match!');
+					$error = 'Passwords don\'t match!';
 				}
 				
-				if (count($errors) == 0) {
-					$passwordEncr = md5($password); //ENCRYPTING PASSWORD BEFORING STORING TO DB
+				
+				if ($error == null) {
 					$sql = "INSERT INTO users (email, password) 
 								VALUES ('$email', '$password')";
 					mysqli_query($db, $sql);
 					header('location: profile.php');
 					
 					$_SESSION['email'] = $email;
-					$_SESSION['success'] = 'Log in successful!';
 					header('location: profile.php');
 				}
 			}
-			
-			
 			?>
 
 			<div id="top-banner">
@@ -56,7 +52,6 @@
 					<div id="banner-img"><img src="img/banner.png" alt="start earning today" /></div>
 					<div id="reg-form">
 						<form action="index.php" method="POST">
-							<?php include('errors.php'); ?>
 							<table>
 								<tr>
 									<th></th>
@@ -64,7 +59,7 @@
 								</tr>
 								<tr>
 									<td></td>
-									<td><input type="email" name="email" placeholder="email address" spellcheck="false" required></td>
+									<td><input type="email" name="email" placeholder="email" spellcheck="false" required></td>
 									<br>
 								</tr>
 								<tr>
@@ -81,9 +76,15 @@
 									<td></td>
 									<td>
 										<br>
-										<button type="submit" name="register" id="reg-signupbtn">Sign Up</button>
+										<button type="submit" name="register" id="reg-signupbtn">Sign up</button>
 										<h6>Already have an account?&nbsp;</h6>
-										<a href="login.php" id="reg-loginbtn">Sign In</a>
+										<a href="login.php" id="reg-loginbtn">Sign in</a>
+									</td>
+								</tr>
+								<tr>	
+									<td></td>
+									<td>
+										<?php if ($error != null) { echo '<div class="errors">', $error, '</div>'; } ?>
 									</td>
 								</tr>
 							</table>
