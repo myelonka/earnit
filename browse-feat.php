@@ -71,12 +71,11 @@ while ($stmt->fetch()) {
         ?>
             <form id="featured_form" method="post" action="" enctype="multipart/form-data">
               Name:<br>
-              <input type="text" name="author" value=""><br><br>
+              <input type="text" name="author" class="back" value=""><br><br>
               Surname:<br>
-              <input type="text" name="title" value=""><br><br>
+              <input type="text" name="title" class="back" value=""><br><br>
               Motivation letter (max 5000 characters):<br>
-              <textarea maxlength="5000" type="text" name="description" value="description" cols="40px" rows="15" wrap="soft">
-              </textarea><br><br>
+              <textarea maxlength="5000" type="text" class="back" name="description" value="description" cols="40px" rows="15" wrap="soft"></textarea><br><br>
               Upload your CV (pdf format):<br>
               <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
               <input type="submit" value="Submit Application" name="submit"><br><br>

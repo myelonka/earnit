@@ -87,17 +87,15 @@
         ?>
             <form id="post_form" method="post" action="post.php">
               Company name:<br>
-              <input type="text" name="author" value=""><br><br>
+              <input type="text" class="back" name="author" value=""><br><br>
               Title:<br>
-              <input type="text" name="title" value=""><br><br>
+              <input type="text" class="back" name="title" value=""><br><br>
               Job description (max 5000 characters):<br>
-              <textarea maxlength="5000" type="text" name="description" value="description" cols="80px" rows="15" wrap="soft">
-              </textarea><br><br>
+              <textarea maxlength="5000" type="text" class="back" name="description" value="description" cols="80px" rows="15" wrap="soft"></textarea><br><br>
               Job promo (max 500 characters):<br>
-              <textarea maxlength="500" type="text" name="promo" value="description" cols="80px" rows="15" wrap="soft">
-              </textarea><br><br>
+              <textarea maxlength="500" type="text" class="back" name="promo" value="description" cols="80px" rows="15" wrap="soft"></textarea><br><br>
               Email:<br>
-              <input type="email" name="employerMail"><br><br>
+              <input type="email" class="back" name="employerMail"><br><br>
               Application deadline:<br>
               <input type="date" min="2017-01-01" max="2027-01-01" name="deadline"><br><br>
               Job field:<br><br>
@@ -109,15 +107,10 @@
               <input type="checkbox" name="field[]" value="uxDesigner">UX Designer<br>
               <input type="checkbox" name="field[]" value="interactionDesigner" >Interaction Designer<br>
               <input type="checkbox" name="field[]" value="seoSpecialist">SEO Specialist<br><br><br>
-              <input type="submit" name="submit_form">
+              <input type="submit" name="submit_form"><br><br><br>
 
 
-            <div class="col-6"><h2>Lorem ipsum dolor sit amet.</h2></div>
-			<div class="col-6" style="grid-column: 7/13"><h2>Lorem ipsum dolor sit amet.</h2></div>
-			<div class="col-3"><h3>Lorem ipsum dolor sit amet.</h3></div>
-			<div class="col-3" style="grid-column: 4/7"><h3>Lorem ipsum dolor sit amet.</h3></div>
-			<div class="col-3" style="grid-column: 7/10"><h3>Lorem ipsum dolor sit amet.</h3></div>
-			<div class="col-3" style="grid-column: 10/13"><h3>Lorem ipsum dolor sit amet.</h3></div>
+           
 		</div>
 		
 		<?php 
