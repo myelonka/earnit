@@ -19,7 +19,7 @@ $stmt = $db->prepare($query);
     
 
 while ($stmt->fetch()) {
-        echo "<div class='col-4' id='stile_ingrid'> <a href='#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div> ";
+        echo "<div class='col-4 equal' id='stile_ingrid'> <a href='#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div> ";
     }    
 ?>
 
@@ -42,13 +42,13 @@ while ($stmt->fetch()) {
             $stmt1->bind_result($author, $title, $description, $employerMail, $deadline);
             $stmt1->execute();
     
-            echo '<h2>$title</h2><br>;
-            <p>Hiring company: $author</p><br>
-            <p>Job description:<br> $description</p><br>
-            <p>Application deadline:<br> $deadline</p><br>';
+            echo '<h2>' . $title . '</h2><br>';
+            echo '<p>Hiring company:' .$author. '</p><br>';
+            echo '<p>Job description:<br>' .$description. '</p><br>';
+            echo '<p>Application deadline:<br>' .$deadline. '</p><br>';
             echo '<h2>Application form</h2><br>';
         
-            if (isset($_FILES['submit'])){
+            if (isset($_FILES['submit_application'])){
                 $allowedextensions = array('pdf');
                 $extension = strtolower(substr($_FILES['upload']['name'], strrpos($_FILES['upload']['name'], '.') + 1));
                 $error = array ();
@@ -71,14 +71,14 @@ while ($stmt->fetch()) {
         ?>
             <form id="featured_form" method="post" action="" enctype="multipart/form-data">
               Name:<br>
-              <input type="text" name="author" class="back" value=""><br><br>
+              <input type="text" name="employee_name" class="back" value=""><br><br>
               Surname:<br>
-              <input type="text" name="title" class="back" value=""><br><br>
+              <input type="text" name="employee_surname" class="back" value=""><br><br>
               Motivation letter (max 5000 characters):<br>
               <textarea maxlength="5000" type="text" class="back" name="description" value="description" cols="40px" rows="15" wrap="soft"></textarea><br><br>
               Upload your CV (pdf format):<br>
               <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
-              <input type="submit" value="Submit Application" name="submit"><br><br>
+              <input type="submit" value="Apply" name="submit_application" class="submit_forms"><br><br>
               
 	</div>
     </div>

@@ -219,6 +219,10 @@ button {
 	margin-top: 2rem;
 }
 
+.equal{
+    height: 30%;
+}
+
 /*!!!!!TESTING VISULAS!!!!!*/
 .page-container div {
 	border: 1px solid #ddd;
@@ -871,10 +875,23 @@ footer {
 }
 
 #post_form{
-    padding-top : 25%;
+    padding-top : 15%;
 }
 
-/*MODAL DIALOG  source used to create modal window is https://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html5-and-css3/ */
+.submit_forms{
+    border : solid 0px #000000;
+	border-radius : 5px;
+	text-align: center;
+    margin: 0 auto;
+	color : #000000;
+    line-height: 12px;
+	background : #a08fff;
+}
+
+.submit_forms:hover{
+     background : #5e2fec;
+}
+/*MODAL DIALOG -  source used to create modal window is taken from https://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html5-and-css3/ */
 
 
 .modalDialog {
