@@ -831,14 +831,6 @@ footer {
 
 /*POST FORM*/
 
-/*#teamwork_pic{
-    background-image: url("img/temwork.jpg");
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: cover;
-    opacity: 0.5;/
-}*/
-
 #message_style{
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
@@ -880,7 +872,7 @@ footer {
 
 .submit_forms{
     border : solid 0px #000000;
-	border-radius : 5px;
+    border-radius: 7px;
 	text-align: center;
     margin: 0 auto;
 	color : #000000;

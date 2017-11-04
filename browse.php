@@ -26,7 +26,7 @@
 							<a <?php if($subcurrent == 'feat') {echo ' class=\'sub-current\'';} ?> href="?page=feat">Featured</a>
 						</li>
 						<li>
-							<a <?php if($subcurrent == 'recent') {echo ' class=\'sub-current\'';} ?> href="?page=recent">New</a>
+							<a <?php if($subcurrent == 'recent') {echo ' class=\'sub-current\'';} ?> href="?page=recent">Search</a>
 						</li>
 						<li>
 							<a <?php if($subcurrent == 'categ') {echo ' class=\'sub-current\'';} ?> href="?page=categ">Categories</a>
@@ -54,7 +54,7 @@
 					  include('browse-feat.php');
 					  break;
 					case "recent":
-					 include('browse-recent.php');
+					 include('browse-search.php');
 					  break;
 					case "categ":
 					  include('browse-categ.php');
