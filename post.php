@@ -19,7 +19,7 @@
 		<div class="page-container">
 			<div class="col-12"><h1>Post a job offer</h1></div>
         <?php
-            
+            $db = new mysqli('localhost', 'root', '', 'testinguser');
             // How variables $_POST and $_GET work.
            // VALUES are set in these variables with a reference on their NAME, to retrieve them.
            //  ex :  <form method="post" action="post.php">
@@ -28,7 +28,7 @@
            //        </form> 
            // If you don't set the name, you won't be able to check if the input exists in POST/GET => You don't know if the button has been pressed.
 
-           if (isset($_POST['submit_form'])){   //if submit button is pressed
+           if (isset($_POST['submit_form'])){ //if submit button is pressed
                //add security
                $author = trim($_POST['author']);
                $title = trim($_POST['title']);
@@ -40,16 +40,23 @@
                
                if (!$author || !$title || !$description || !$promo ||!$employerMail || !$deadline){
                    printf('<img id="exclamation" src="img/exclamation_icon.png"><span id="message_style">You must fill out all the form fields</span>');
-                       
-
-               // Here informations are not filled, so you don't want the data to be uploaded to the database. Interrupt the code and redirect the user with an explicit error message.
-               } //29:00 on video
+               } 
                
                $author = addslashes($author);
+               $author = htmlentities($author);
+               $author = mysqli_real_escape_string($db, $author);
                $title = addslashes($title);
+               $title = htmlentities($title);
+               $title = mysqli_real_escape_string($db, $title);
                $description = addslashes($description);
+               $description = htmlentities($description);
+               $description = mysqli_real_escape_string($db, $description);
                $promo = addslashes($promo);
+               $promo = htmlentities($promo);
+               $promo = mysqli_real_escape_string($db, $promo);
                $employerMail = addslashes($employerMail);
+               $employerMail = htmlentities($employerMail);
+               $employerMail = mysqli_real_escape_string($db, $employerMail);
                $deadline = addslashes($deadline); //do this parameter need addslashes?
               
               @$db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -59,9 +66,6 @@
                   exit();
                 }
 
-               // smth is normally called stmt, referencing to statement of the database, and not something
-
-               // Care when using variables naming, either in database and code. For example, herem, timestamp is referencing to a format of data in code and sometimes, the compiler may misunderstood what you want. Don't use these kind of words : timestamp, int, string, etc.. for a name of a variable. You can name myTimestamp for example (which is not good tho, but not creating bugs).
                 if (isset($_POST['field'])) {
                     $optionArray = $_POST['field'];
                     for ($i=0; $i<count($optionArray); $i++) {
@@ -73,8 +77,8 @@
                
                $stmt->bind_param('sssssis', $author, $title, $description, $promo, $employerMail, $deadlline, $fieldvalue);
 
-               // You can see if the request has been executed by checking the return of it (True for yes, False, for no).
-               // $smth->error() will return you the error message.
+               // if the request has been executed by checking the return of it (True for yes, False, for no).
+               // $smth->error() will return  the error message.
                // echo $smth->error() will print the error message.
                if (!$stmt->execute()){
                   
@@ -107,7 +111,7 @@
               <input type="checkbox" name="field[]" value="uxDesigner">UX Designer<br>
               <input type="checkbox" name="field[]" value="interactionDesigner" >Interaction Designer<br>
               <input type="checkbox" name="field[]" value="seoSpecialist">SEO Specialist<br><br><br>
-              <input type="submit" name="submit_form"><br><br><br>
+              <input type="submit" name="submit_form" class="submit_forms"><br><br><br>
 
 
            
