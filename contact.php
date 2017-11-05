@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>EarnIt - Contact us</title>
+        <title>Contact Us - EarnIt</title>
 		<meta charset="utf-8">
 		<meta name="description" content="Contact page for EarnIt">
 		<meta name="keywords" content="earnit, freelancer, freelancing, entrepreneur, student, coding, graphic design, programming, wed design, web development, ui, ux, computer science, contact, help">

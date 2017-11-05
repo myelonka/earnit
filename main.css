@@ -2,8 +2,8 @@
 *** 1 rem = 16px
 
 *** THEME COLORS: 
-primary: #6633ff , secondary: #24207a , tertiary: #9f8fff , 
-dark: #06060c , light: #f9f9f9
+main: #FC3A52 , main-dark: #9E263B , main-light: #FC7087
+secondary: #0E2431
 
 *** VISUAL RULES BY MATI, THE GRAPHIC NAZI:
 - Try NOT to use font-size other than specified p,h1-6 sizes.
@@ -47,7 +47,7 @@ html, body {
    left: 0;
    top: 0;
    font-size: 100%;
-	background-color: #f9f9f9;
+	background-color: #fff;
 }
 div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
 form,fieldset,input,textarea,p,blockquote,th,td {
@@ -142,6 +142,8 @@ input {
 	font-size: 1.125rem;
 	padding: 0.5rem;
 	font-family: 'Space Mono', monospace;
+	background-color: #ddd;
+	line-height: 0;
 }
 button {
 	outline: none;
@@ -153,11 +155,11 @@ button {
 	cursor: pointer;
 }
 ::selection { /* SELECTED TEXT BG COLOR */
-    background: #6633ff;
+    background: #FC7087;
 	color: #fff;
 }
 ::-moz-selection {
-    background: #6633ff;
+    background: #FC7087;
 	color: #fff;
 }
 
@@ -219,6 +221,8 @@ button {
 	margin-top: 2rem;
 }
 
+<<<<<<< HEAD
+=======
 .equal{
     height: 30%;
 }
@@ -227,11 +231,11 @@ button {
 .page-container div {
 	border: 1px solid #ddd;
 }
+>>>>>>> bd24060f342b87a726c8152fc64ad18856b28516
 .errors	{
 	display: inline-block;
 	float: left;
 	background: url('img/warning.png') no-repeat left center;
-	background-color: #f44336;
 	background-color: #ff1744;
 	color: #fff;
 	text-align: left;
@@ -243,13 +247,19 @@ button {
 	letter-spacing: 1.5;
 }
 
+/*!!!!!TESTING VISULAS!!!!!*/
+.page-container div {
+	border: 1px solid #ddd;
+}
+
+
 /*!!!!!*/
 
 
 /* HEADER */
 
 #nav-container {
-	background-color: #06060c;
+	background-color: #0E2431;
 	width: 100%;
 	height: 4rem;
 	position: fixed;
@@ -300,13 +310,13 @@ button {
 	-webkit-transition: background-color 0.15s ease-out;
 	-moz-transition: background-color 0.15s ease-out;
 	-o-transition: background-color 0.15s ease-out;
-	background-color: #6633ff;
+	background-color: #FC3A52;
 	color: #fff !important;
 	font-weight: 400 !important;
 }
 
 #cta-link:hover {
-	background-color: #24207a;
+	background-color: #9e263b;
 }
 
 .img-helper {
@@ -410,7 +420,7 @@ footer {
 	bottom: 0;
 	left: 0;
 	color: #fff;
-	background-color: #06060c;
+	background-color: #0E2431;
 }
 
 .footer-container {
@@ -512,7 +522,7 @@ footer {
 #top-banner {
 	width: 100%;
 	height: 400px;
-	background-color: #6633ff;
+	background-color: #FC3A52;
 	display: block;
 	position: relative;
 }
@@ -553,8 +563,8 @@ footer {
 #reg-form input {
 	width: 24rem;
 	height: 3rem;
-	background-color: #24207a;
-	border: solid 0.125rem #24207a;
+	background-color: #9e263b;
+	border: solid 0.125rem #9e263b;
 	color: #fff;
 	font-variant-ligatures: none;
 	padding: 1rem;
@@ -562,23 +572,29 @@ footer {
 }
 
 #reg-form input:focus {
-	border-color: #9f8fff;
+	border-color: #FC7087;
+	background-color: #FC7087;
 }
 
-#reg-form::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: #9f8fff;
+#reg-form input::placeholder {
+	color: #FC7087;
 	font-size: 1rem;
 }
-#reg-form::-moz-placeholder { /* Firefox 19+ */
-    color: #9f8fff;
+
+#reg-form input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+   color: #FC7087;
 	font-size: 1rem;
 }
-#reg-form:-ms-input-placeholder { /* IE 10+ */
-    color: #9f8fff;
+#reg-form input::-moz-placeholder { /* Firefox 19+ */
+    color: #FC7087;
 	font-size: 1rem;
 }
-#reg-form:-moz-placeholder { /* Firefox 18- */
-    color: #9f8fff;
+#reg-form input:-ms-input-placeholder { /* IE 10+ */
+    color: #FC7087;
+	font-size: 1rem;
+}
+#reg-form input:-moz-placeholder { /* Firefox 18- */
+    color: #FC7087;
 	font-size: 1rem;
 }
 
@@ -587,16 +603,17 @@ footer {
 	width: 45%;
 	float: left;
 	font-weight: 500;
-	color: #24207A;
+	color: #000;
+	background-color: #fff;
 }
 
 #reg-signupbtn {
-	border-bottom: 0.25rem solid #9f8fff;
+	border-bottom: 0.25rem solid #9E263B;
 }
 
 #reg-signupbtn:active {
 	border-bottom: none;
-	border-top: 0.25rem solid #6633ff;
+	border-top: 0.25rem solid #FC3A52;
 }
 
 #reg-loginbtn {
@@ -631,15 +648,15 @@ footer {
 
 .sub-nav a {
 	font-weight: 500;
-	color: #06060c;
+	color: #0E2431;
 }
 
 .sub-nav a:hover {
-	color: #6633ff;
+	color: #FC3A52;
 }
 
 .sub-current {
-	color: #6633ff !important;
+	color: #FC3A52 !important;
 }
 
 /*HOW IT WORKS*/
@@ -653,11 +670,11 @@ footer {
 }
 
 .highlight {
-	color: #6633ff;
+	color: #FC3A52;
 }
 
 .how-icon-container {
-	background-color: #6634ff;
+	background-color: #FC3A52;
 	border-radius: 50%;
 	height: 10rem;
 	width: 10rem;
@@ -696,7 +713,7 @@ footer {
 }
 
 #avatar {
-	background-image: url('img/profile-pic.jpg');
+	background-image: url('uploads/default.jpg');
 	width: 200px;
 	height: 200px;
 	background-size: cover;
@@ -738,7 +755,7 @@ footer {
 }
 
 #loginform input:focus {
-	border-color: #6633ff;
+	border-color: #FC3A52;
 }
 
 #loginbtn {
@@ -746,9 +763,9 @@ footer {
 	width: 50%;
 	float: left;
 	font-weight: 500;
-	background-color: #6633ff;
+	background-color: #FC3A52;
 	color: #fff;
-	border-bottom: 0.25rem solid #24207a;
+	border-bottom: 0.25rem solid #9e263b;
 	margin-bottom: 2rem;
 }
 
@@ -758,7 +775,7 @@ footer {
 }
 
 #forgotbtn {
-	color: #06060c;
+	color: #0E2431;
 	padding-top: 0.6rem;
 	float: left;
 	width: 50%;
@@ -777,7 +794,7 @@ footer {
 
 
 #reg-form2 {
-	background-color: #6633ff;
+	background-color: #FC3A52;
 	color: #fff;
 	padding: 1rem 4rem;
 }
@@ -800,8 +817,8 @@ footer {
 #reg-form2 input {
 	width: 432.61px;
 	height: 3rem;
-	background-color: #24207a;
-	border: solid 0.125rem #24207a;
+	background-color: #9e263b;
+	border: solid 0.125rem #9e263b;
 	color: #fff;
 	font-variant-ligatures: none;
 	padding: 1rem;
@@ -809,32 +826,41 @@ footer {
 }
 
 #reg-form2 input:focus {
-	border-color: #9f8fff;
+	border-color: #FC7087;
 }
 
 #reg-form2::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    color: #9f8fff;
+    color: #FC7087;
 	font-size: 1rem;
 }
 #reg-form2::-moz-placeholder { /* Firefox 19+ */
-    color: #9f8fff;
+    color: #FC7087;
 	font-size: 1rem;
 }
 #reg-form2:-ms-input-placeholder { /* IE 10+ */
-    color: #9f8fff;
+    color: #FC7087;
 	font-size: 1rem;
 }
 #reg-form2:-moz-placeholder { /* Firefox 18- */
-    color: #9f8fff;
+    color: #FC7087;
 	font-size: 1rem;
 }
+
+/*EDIT PROFILE*/
+
+#profile-edit input, textarea {
+	width: 33.33%;
+	display: block;
+	margin-bottom: 1rem;
+}
+
 
 /*POST FORM*/
 
 #message_style{
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
-    color: #6633ff;
+    color: #FC3A52;
 }
 
 .back{
@@ -844,7 +870,7 @@ footer {
 
 .back:focus { 
     outline: none;
-    border-color: #9f8fff;
+    border-color: #FC7087;
 }
 
 #exclamation{
@@ -855,11 +881,11 @@ footer {
 
 .post_title{
     font-size: 24px;
-    color: #6633ff;
+    color: #FC3A52;
 }
 
 .post_var{
-    color: #6633ff;
+    color: #FC3A52;
 }
 
 #stile_ingrid{
@@ -916,7 +942,7 @@ footer {
 }
 
 .close {
-	background: #606061;
+	background: #0E2431;
 	color: #FFFFFF;
 	line-height: 25px;
 	position: absolute;
@@ -935,7 +961,7 @@ footer {
 }
 
 .close:hover { 
-    background: #9f8fff; 
+    background: #FC7087; 
 }
 
 

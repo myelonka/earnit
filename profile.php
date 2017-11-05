@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>EarnIt - Profile</title>
+        <title>Profile - EarnIt</title>
 		<meta charset="utf-8">
 		<meta name="description" content="Profilepage for registered users">
 		<meta name="keywords" content="earnit, freelancer, freelancing, entrepreneur, student, coding, graphic design, programming, wed design, web development, ui, ux, computer science, user, profile">
