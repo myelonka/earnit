@@ -73,7 +73,7 @@
                         $fieldvalue = $optionArray[$i];//which checkbox was marked
                     }
                 }
-               $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, promo, employerMail, timestamp, category) VALUES (null, ?, ?, ?, ?, ?, ?, ?)');
+               $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, promoSentence, employerMail, timestamp, category) VALUES (null, ?, ?, ?, ?, ?, ?, ?)');
                
                $stmt->bind_param('sssssss', $author, $title, $description, $promo, $employerMail, $deadline, $fieldvalue);
                printf($stmt->error);
