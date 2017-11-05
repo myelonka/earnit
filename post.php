@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>EarnIt - Post an offer</title>
+        <title>Post an Offer - EarnIt</title>
 		<meta charset="utf-8">
 		<meta name="description" content="Find the best freelancers for your project">
 		<meta name="keywords" content="earnit, freelancer, freelancing, entrepreneur, student, coding, graphic design, programming, wed design, web development, ui, ux, computer science">
@@ -55,7 +55,7 @@
               @$db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
                 if ($db->connect_error) {
                   echo "could not connect: " . $db->connect_error;
-                  printf("<br><a href=index.php>Return to home page </a>");
+                  printf("<br><a href=index.php?>Return to home page </a>");
                   exit();
                 }
 

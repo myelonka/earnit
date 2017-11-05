@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>EarnIt - How it works</title>
+        <title>How It Works - EarnIt</title>
 		<meta charset="utf-8">
 		<meta name="description" content="Describing how this platform works">
 		<meta name="keywords" content="earnit, freelancer, freelancing, entrepreneur, student, coding, graphic design, programming, wed design, web development, ui, ux, computer science, faq">
@@ -17,19 +17,6 @@
 		?>
 		
 		<div class="page-container">
-
-		<!--<div class="col-1">1</div>
-			<div class="col-1">2</div>
-			<div class="col-1">3</div>
-			<div class="col-1">4</div>
-			<div class="col-1">5</div>
-			<div class="col-1">6</div>
-			<div class="col-1">7</div>
-			<div class="col-1">8</div>
-			<div class="col-1">9</div>
-			<div class="col-1">10</div>
-			<div class="col-1">11</div>
-			<div class="col-1">12</div>-->
 
 			<div id="how-it-works-heading" class="col-12"><h4>I want to <span class="highlight">{ offer }</span> a job</h4></div>
 			<div class="col-4">
