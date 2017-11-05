@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Sign In - EarnIt</title>
+        <title>EarnIt - Sign In</title>
 		<meta charset="utf-8">
 		<meta name="description" content="Login page for users">
 		<meta name="keywords" content="earnit, freelancer, freelancing, entrepreneur, student, coding, graphic design, programming, wed design, web development, ui, ux, computer science, user, profile">
@@ -30,11 +30,10 @@
 			  $active = $row['active'];
 
 			  $count = mysqli_num_rows($result);
-
 			  if($count == 1) {
-				 $_SESSION['login_user'] = $email;
-
-				 header("location: profile.php?");
+			  	session_start();
+				$_SESSION['login_user'] = $row['id'];
+				header("location: profile.php?");
 			  }else {
 				 $error = 'Your username or password is invalid!';
 			  }

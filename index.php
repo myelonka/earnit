@@ -96,7 +96,7 @@
 			<?php endif; ?>
 			
 			<div class="page-container">
-				<div class="col-12"><h2>Don't just Scooby-Dooby-<i>Dream</i>.<br>Scooby-Dooby-<span style="color: #FC3A52">Do</span>.</h2></div>
+				<div class="col-12"><h2>Don't just Scooby-Dooby-<i>Dream</i>.<br>Scooby-Dooby-<span style="color: #6633ff">Do</span>.</h2></div>
 				<div class="col-3"><h2>Lorem ipsum [h2]</h2></div>
 				<div class="col-9"><h3>&hellip; dolor sit amet. [h3]</h3></div>
 				<div class="col-3"><h4>&mdash;<br>Lorem ipsum dolor sit amet. [h4]</h4></div>
