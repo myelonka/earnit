@@ -75,7 +75,8 @@
                 }
                $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, promo, employerMail, timestamp, category) VALUES (null, ?, ?, ?, ?, ?, ?, ?)');
                
-               $stmt->bind_param('sssssis', $author, $title, $description, $promo, $employerMail, $deadlline, $fieldvalue);
+               $stmt->bind_param('sssssss', $author, $title, $description, $promo, $employerMail, $deadline, $fieldvalue);
+               printf($stmt->error);
 
                // if the request has been executed by checking the return of it (True for yes, False, for no).
                // $smth->error() will return  the error message.
