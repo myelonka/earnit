@@ -30,7 +30,7 @@
 					 <ul>
 						<h5 class="smallcaps">Connect</h5><br><br>
 						<form id="newsletter" method="GET">
-							 <input id="newsletter-email" type="email" name="email" placeholder="email address" required><br>
+							 <input id="newsletter-email" type="email" name="email" placeholder="email address"><br>
 							 <input id="newsletter-submitbtn"  value="Subscribe to newsletter &raquo;">
 						</form>
 						</ul>
