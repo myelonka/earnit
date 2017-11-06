@@ -74,7 +74,12 @@
                         $fieldvalue = $optionArray[$i];//which checkbox was marked
                     }
                 }
+<<<<<<< HEAD
                $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, promoSentence, employerMail, deadline, category) VALUES (null, ?, ?, ?, ?, ?, ?, ?)');
+=======
+               $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, promo, employerMail, timestamp, category) VALUES (null, ?, ?, ?, ?, ?, ?, ?)');
+               
+>>>>>>> parent of e6af412... edited
                $stmt->bind_param('sssssss', $author, $title, $description, $promo, $employerMail, $deadline, $fieldvalue);
 
                // if the request has been executed by checking the return of it (True for yes, False, for no).
