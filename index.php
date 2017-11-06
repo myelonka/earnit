@@ -95,7 +95,7 @@
 			<?php endif; ?>
 			
 			<div class="page-container">
-<<<<<<< HEAD
+				
 				<div class="col-12">
 					<h2>Don't just dream.&nbsp;<span style="color: #FC3A52">Do.</span></h2>
 				</div>
@@ -111,16 +111,6 @@
 				<div class="col-8">
 					<img src="img/pic.jpg" width="100%"/>
 				</div>
-				<div class="col-12"><h2>Don't just Scooby-Dooby-<i>Dream</i>.<br>Scooby-Dooby-<span style="color: #6633ff">Do</span>.</h2></div>
-=======
-				<div class="col-12"><h2>Don't just Scooby-Dooby-<i>Dream</i>.<br>Scooby-Dooby-<span style="color: #FC3A52">Do</span>.</h2></div>
->>>>>>> parent of 2233402... gg
-				<div class="col-3"><h2>Lorem ipsum [h2]</h2></div>
-				<div class="col-9"><h3>&hellip; dolor sit amet. [h3]</h3></div>
-				<div class="col-3"><h4>&mdash;<br>Lorem ipsum dolor sit amet. [h4]</h4></div>
-				<div class="col-3"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [p]</p></div>
-				<div class="col-3"><h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. [h6]</h6></div>
-				<div class="col-3">AYY LMAO</div>	
 			</div>
 
 			<?php
