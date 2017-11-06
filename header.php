@@ -32,16 +32,7 @@
 		<img src="img/profile-icon.svg" alt="profile icon" class="svg" id="profile-img" />
 	</a>
 </div>
-<!--<div class="profmenu">
-	<ul>
-		<li>
-			<a href="profile.php?">My Profile</a>
-		</li>
-		<li>
-			<a href="logout.php">Logout</a>
-		</li>
-	</ul>
-</div>-->
+
 
 
 <script> //Converts img to svg xml

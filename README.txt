@@ -13,13 +13,11 @@ Please edit with care.
 
 STUFF TO FIX:
 
-18-10-2017 / Mati:
-- earnit-logo.png link doesn't work (not clickable; something to do with display property on the anchor)
-
-
 20-10-2017 / Mati:
 - $current only works when there is a '?' at the end of url
 
+05-11-2017 / Mati:
+- edit profile page - how to fucking find user id to update data?
 
 
 SECONDARY TASKS:
