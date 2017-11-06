@@ -28,7 +28,7 @@ $query = "SELECT author, title, promoSentence FROM posts WHERE MATCH(description
 $stmt = $db->prepare($query);
     $stmt->bind_result($author, $title, $promoSentence);
     $stmt->execute();
-    
+
 
 while ($stmt->fetch()) {
         echo "<div class='col-4 equal' id='stile_ingrid'> <a href='#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div> ";
