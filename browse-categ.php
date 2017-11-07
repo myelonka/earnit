@@ -19,26 +19,28 @@ if ($db->connect_error){
     exit();
 }
     
-        if (isset($_POST['field'])) {
-            $optionArray = $_POST['field'];
-            for ($i=0; $i<count($optionArray); $i++){
-            // echo $optionArray[$i]."<br />";
-            $fieldvalue = $optionArray[$i];//which checkbox was marked
-            }
-        }
-
-    $query = "select author,title,description,promoSentence,deadline from posts";
-    if (isset($_POST['field'])){
-         $query = $query . " where title =" .$fieldvalue;
+if (isset($_POST['field'])) {
+    $optionArray = $_POST['field'];
+    for ($i=0; $i<count($optionArray); $i++){
+    // echo $optionArray[$i]."<br />";
+    $fieldvalue = $optionArray[$i];//which checkbox was marked
     }
+}
 
+$query = "select author,title,description,promoSentence,deadline from posts";
+if (isset($_POST['field'])){
+    $query = "SELECT author, title, description, promoSentence, deadline FROM posts WHERE category=?";
+
+}
 //echo "Running the query: $query <br/>"; # For debugging
-
-$stmt = $db->prepare($query);
-    $stmt->bind_result($author, $title, $description,$promoSentence,$deadline);
-    $stmt->execute();
-    
-
+if (!$stmt = $db->prepare($query)){
+  printf($db->error);
+}
+if (isset($_POST['field'])){
+  $stmt->bind_param("s", $fieldvalue);
+}
+$stmt->bind_result($author, $title, $description, $promoSentence, $deadline);
+$stmt->execute();
 while ($stmt->fetch()) {
         echo "<div class='col-4 equal' id='stile_ingrid'> <a href='#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div> ";
     }    
@@ -49,6 +51,7 @@ while ($stmt->fetch()) {
     <div id="openModal" class="modalDialog">
         <div>
             <a href="#close" title="Close" class="close">X</a>
+            
         </div>
 	</div>
     </div>
