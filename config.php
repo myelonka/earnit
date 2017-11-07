@@ -7,7 +7,7 @@ $current = substr($current, 0, strpos($current, "?"));
 
 $dbname = 'earnit';
 $dbuser = 'root';
-$dbpass = 'root';
+$dbpass = '';
 $dbserver = 'localhost';
 
 ?>
