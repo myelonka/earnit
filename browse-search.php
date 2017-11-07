@@ -30,19 +30,12 @@ if (isset($_POST['search_form'])){
 
 //echo "Running the query: $query <br/>"; # For debugging
 
-<<<<<<< HEAD
 if(!$stmt = $db->prepare($query)){
   printf($db->error);
 }
 $stmt->bind_result($author, $title, $promoSentence);
 $stmt->execute();
 
-=======
-$stmt = $db->prepare($query);
-    $stmt->bind_result($author, $title, $promoSentence);
-    $stmt->execute();
-    
->>>>>>> 858bf1ebdf892bc269fccfdd42ff278861c277f6
 
 while ($stmt->fetch()) {
     // Set the postid in the url so you can know which post has been clicked
