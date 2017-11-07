@@ -612,6 +612,25 @@ footer {
 	text-decoration: underline;
 }
 
+#homepage {
+	background-image: url(img/homepage.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#homepage-text h2 {
+	padding-top: 0rem;
+	color: #fff;
+	font-size: 8rem;
+}
+
+#homepage-text p {
+	color: #fff;
+	line-height: 1.7rem;
+	padding-bottom: 1rem;
+}
+
+
 /*BROWSE*/
 
 .sub-nav {
@@ -655,8 +674,8 @@ footer {
 .how-icon-container {
 	background-color: #FC3A52;
 	border-radius: 50%;
-	height: 10rem;
-	width: 10rem;
+	height: 8rem;
+	width: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -672,16 +691,9 @@ footer {
 	padding: 1rem 1rem 1rem 1rem;
 }
 
-.how-step-container p, h3{
-	display: inline;
-}
-
-.how-step-container p {
-	width: 100px;
-}
-
-#get-a-job {
-	background-color: #000;
+.how-step-container h3 {
+	font-size: 16pt;
+	padding-bottom: 5px;
 }
 
 
