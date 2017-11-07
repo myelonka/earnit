@@ -16,23 +16,46 @@
 			include('header.php');
 			include('session.php');
 			ini_set('session.cookie_httponly', true);
+			
+			$query = mysqli_query($db, "
+				  SELECT
+						email,
+						fName,
+						lName,
+						bio,
+						avatar,
+						linkFacebook,
+						linkLinkedIn,
+						linkGitHub,
+						headline,
+						phoneNo,
+						country,
+						location
+				  FROM users 
+				  WHERE email = '$login_session'
+			 ");
+			
+			$qrow = mysqli_fetch_array($query,MYSQLI_ASSOC);
+			
 		?>
 			
 				<div class="page-container">
 					<div class="col-2" id="profile-info">
 					<div id="avatar"></div>
-					<span><p>country</p></span>
-					<span><p>languages</p></span>
-					<span><p>skills</p></span>
-					<span><p>member since</p></span>
+					<span><p><?php echo $qrow['bio'] ?></p></span>
+					<span><p><?php echo $qrow['country'] ?></p></span>
+					<span><p><?php echo $qrow['location'] ?></p></span>
+					<span><p><?php echo $qrow['phoneNo'] ?></p></span>
+					<span><p><?php echo $qrow['linkFacebook'] ?></p></span>
+					<span><p><?php echo $qrow['linkLinkedIn'] ?></p></span>
 					<br>
 					<a href="logout.php">Logout</a>
 						
 					
 					</div>
 					<div class="col-10" id="profile-name"><br>
-						<span><h2><?php echo $_SESSION['login_user']; ?></h2></span>
-						<span><p>&mdash;<br>short description</p></span>
+						<span><h2><?php echo $qrow['fName'] . '&nbsp;' . $qrow['lName']; ?></h2></span>
+						<span><p>&mdash;<br><?php echo $qrow['headline'] ?></p></span>
 					</div>
 					<div class="col-10" id="profile-work">
 						<div class="col-3">profile work</div>

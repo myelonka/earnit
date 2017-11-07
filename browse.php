@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Browse Offers - EarnIt</title>
+        <title>EarnIt - Browse offers - Featured</title>
 		<meta charset="utf-8">
 		<meta name="description" content="Browse job offers and commissions from entrepreneurs">
 		<meta name="keywords" content="earnit, freelancer, freelancing, entrepreneur, student, coding, graphic design, programming, wed design, web development, ui, ux, computer science, job, commission">

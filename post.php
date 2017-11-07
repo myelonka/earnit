@@ -19,7 +19,7 @@
 		<div class="page-container">
 			<div class="col-12"><h1>Post a job offer</h1></div>
         <?php
-            $db = new mysqli('localhost', 'root', '', 'testinguser');
+            @ $db = new mysqli('localhost', 'root', '', 'testinguser');
             // How variables $_POST and $_GET work.
            // VALUES are set in these variables with a reference on their NAME, to retrieve them.
            //  ex :  <form method="post" action="post.php">
@@ -73,8 +73,12 @@
                         $fieldvalue = $optionArray[$i];//which checkbox was marked
                     }
                 }
+               $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, promoSentence, employerMail, deadline, category) VALUES (null, ?, ?, ?, ?, ?, ?, ?)');
+
                $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, promo, employerMail, timestamp, category) VALUES (null, ?, ?, ?, ?, ?, ?, ?)');
                
+               $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, promoSentence, employerMail, timestamp, category) VALUES (null, ?, ?, ?, ?, ?, ?, ?)');
+				  
                $stmt->bind_param('sssssss', $author, $title, $description, $promo, $employerMail, $deadline, $fieldvalue);
                printf($stmt->error);
 

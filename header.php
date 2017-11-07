@@ -1,6 +1,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
-    
 
 <div id="nav-container">
 	<div id="logo-container">
@@ -32,16 +31,7 @@
 		<img src="img/profile-icon.svg" alt="profile icon" class="svg" id="profile-img" />
 	</a>
 </div>
-<!--<div class="profmenu">
-	<ul>
-		<li>
-			<a href="profile.php?">My Profile</a>
-		</li>
-		<li>
-			<a href="logout.php">Logout</a>
-		</li>
-	</ul>
-</div>-->
+
 
 
 <script> //Converts img to svg xml

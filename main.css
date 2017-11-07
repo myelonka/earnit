@@ -221,8 +221,6 @@ button {
 	margin-top: 2rem;
 }
 
-<<<<<<< HEAD
-=======
 .equal{
     height: 30%;
 }
@@ -231,7 +229,7 @@ button {
 .page-container div {
 	border: 1px solid #ddd;
 }
->>>>>>> bd24060f342b87a726c8152fc64ad18856b28516
+
 .errors	{
 	display: inline-block;
 	float: left;
@@ -249,9 +247,8 @@ button {
 
 /*!!!!!TESTING VISULAS!!!!!*/
 .page-container div {
-	border: 1px solid #ddd;
+	border: 0.1px solid #ddd;
 }
-
 
 /*!!!!!*/
 
@@ -389,24 +386,6 @@ a.svg-link:after {
 
 a.svg-link:hover path {
 	fill: rgba(255, 255, 255, 1) !important;
-}
-
-.profmenu {
-	position: fixed;
-	z-index: 6;
-	top: 4rem;
-	right: 0;
-	text-align: right;
-	background: #000;
-	padding: 0.5rem 2rem 1.5rem 3rem;;
-}
-
-.profmenu li {
-	padding-top: 0.5rem;
-}
-
-.profmenu a {
-	color: #fff;
 }
 
 
@@ -907,6 +886,8 @@ footer {
 
 .modalDialog {
 	position: absolute;
+    overflow:scroll;
+    height:100%;
 	top: 0;
 	right: 0;
 	bottom: 0;
