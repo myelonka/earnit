@@ -43,8 +43,6 @@
 				$linkedin = addslashes($linkedin);
 				$github = addslashes($github);
 				
-				$VALID_USER = $_SESSION['login_user'];
-				
 				
 				if ($db->connect_error) {
 					echo "could not connect: " . $db->connect_error;
@@ -52,7 +50,30 @@
 					exit();
 				 };
 				
-				 $stmt = $db->prepare("UPDATE users SET fName='$fname', lName='$lname', bio='$bio', linkFacebook='$facebook', linkLinkedIn='$linkedin', linkGitHub='#github', headline='$headline', phoneNo='$phone', country='$country', location='$location' WHERE email='$VALID_USER'");
+				$query = mysqli_query($db, "
+				  SELECT
+						email,
+						fName,
+						lName,
+						bio,
+						avatar,
+						linkFacebook,
+						linkLinkedIn,
+						linkGitHub,
+						headline,
+						phoneNo,
+						country,
+						location
+				  FROM users 
+				  WHERE email = '$login_session'
+			 ");
+			
+				$qrow = mysqli_fetch_array($query,MYSQLI_ASSOC);
+				
+			 	$stmt = $db->prepare("UPDATE users SET fName='$fname', lName='$lname', bio='$bio', linkFacebook='$facebook', linkLinkedIn='$linkedin', linkGitHub='$github', headline='$headline', phoneNo='$phone', country='$country', location='$location' WHERE email='$login_session'");
+				
+				$stmt->bind_param('ssssssssss', $fname, $lname, $bio, $facebook, $linkedin, $github, $headline, $phone, $country, $location);
+               printf($stmt->error);
 				
 			}
 			

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>EarnIt - Post an offer</title>
+        <title>Post an Offer - EarnIt</title>
 		<meta charset="utf-8">
 		<meta name="description" content="Find the best freelancers for your project">
 		<meta name="keywords" content="earnit, freelancer, freelancing, entrepreneur, student, coding, graphic design, programming, wed design, web development, ui, ux, computer science">
@@ -19,7 +19,7 @@
 		<div class="page-container">
 			<div class="col-12"><h1>Post a job offer</h1></div>
         <?php
-            $db = new mysqli('localhost', 'root', '', 'testinguser');
+            @ $db = new mysqli('localhost', 'root', '', 'testinguser');
             // How variables $_POST and $_GET work.
            // VALUES are set in these variables with a reference on their NAME, to retrieve them.
            //  ex :  <form method="post" action="post.php">
@@ -29,19 +29,18 @@
            // If you don't set the name, you won't be able to check if the input exists in POST/GET => You don't know if the button has been pressed.
 
            if (isset($_POST['submit_form'])){ //if submit button is pressed
-              if (!isset($_POST['author']) || !isset($_POST['title']) || !isset($_POST['description']) || !isset($_POST['promo']) || !isset($_POST['employerMail']) || !isset($_POST['deadline']) || !isset($_POST['field'])){
-                printf('<img id="exclamation" src="img/exclamation_icon.png"><span id="message_style">You must fill out all the form fields</span>');
-                exit;
-              }
                //add security
                $author = trim($_POST['author']);
                $title = trim($_POST['title']);
                $description = $_POST['description'];//trim removes white space..we dont purt it here
                $promo = $_POST['promo'];
                $employerMail = trim($_POST['employerMail']);
-               $deadline = strtotime($_POST['deadline']); //converting into timestamp
-               $deadline = date("Y-m-d", $deadline); //converting timestamp to date
+               $deadline = strtotime($_POST['deadline']);//converting into timestamp
                $field = $_POST['field'];          
+               
+               if (!$author || !$title || !$description || !$promo ||!$employerMail || !$deadline){
+                   printf('<img id="exclamation" src="img/exclamation_icon.png"><span id="message_style">You must fill out all the form fields</span>');
+               } 
                
                $author = addslashes($author);
                $author = htmlentities($author);
@@ -58,12 +57,12 @@
                $employerMail = addslashes($employerMail);
                $employerMail = htmlentities($employerMail);
                $employerMail = mysqli_real_escape_string($db, $employerMail);
-               // $deadline = addslashes($deadline); //do this parameter need addslashes?
-
+               $deadline = addslashes($deadline); //do this parameter need addslashes?
+              
               @$db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
                 if ($db->connect_error) {
                   echo "could not connect: " . $db->connect_error;
-                  printf("<br><a href=index.php>Return to home page </a>");
+                  printf("<br><a href=index.php?>Return to home page </a>");
                   exit();
                 }
 
@@ -75,12 +74,19 @@
                     }
                 }
                $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, promoSentence, employerMail, deadline, category) VALUES (null, ?, ?, ?, ?, ?, ?, ?)');
+
+               $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, promo, employerMail, timestamp, category) VALUES (null, ?, ?, ?, ?, ?, ?, ?)');
+               
+               $stmt = $db->prepare('INSERT INTO posts (postId, author, title, description, promoSentence, employerMail, timestamp, category) VALUES (null, ?, ?, ?, ?, ?, ?, ?)');
+				  
                $stmt->bind_param('sssssss', $author, $title, $description, $promo, $employerMail, $deadline, $fieldvalue);
+               printf($stmt->error);
 
                // if the request has been executed by checking the return of it (True for yes, False, for no).
                // $smth->error() will return  the error message.
                // echo $smth->error() will print the error message.
                if (!$stmt->execute()){
+                  
                   // Here you have an error, you should print it and redirect the user with an explicit error message
                   exit();
                }
