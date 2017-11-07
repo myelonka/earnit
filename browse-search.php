@@ -38,6 +38,10 @@ $stmt->bind_result($author, $title, $promoSentence);
 $stmt->execute();
 
 =======
+$stmt = $db->prepare($query);
+    $stmt->bind_result($author, $title, $promoSentence);
+    $stmt->execute();
+    
 >>>>>>> 858bf1ebdf892bc269fccfdd42ff278861c277f6
 
 while ($stmt->fetch()) {
