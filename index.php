@@ -46,7 +46,7 @@
 			?>
 
 			<?php if (empty($_SESSION['login_user'])): ?>
-			<div id="top-banner"> :
+			<div id="top-banner"> 
 				<div id="top-banner-wrapper">
 					<div id="banner-img"><img src="img/banner.png" alt="start earning today" /></div>
 					<div id="reg-form">
@@ -54,7 +54,7 @@
 							<table>
 								<tr>
 									<th></th>
-									<th><h5>&mdash;<br>Register for free!</h5></th>
+									<th><h5><br>Register for free!</h5></th>
 								</tr>
 								<tr>
 									<td></td>
@@ -94,22 +94,21 @@
 			
 			<?php endif; ?>
 			
-			<div class="page-container">
+			<div id="homepage" class="page-container">
 				
-				<div class="col-12">
-					<h2>Don't just dream.&nbsp;<span style="color: #FC3A52">Do.</span></h2>
+				<div id="homepage-text" class="col-12">
+					<h2>Don't <br> just dream. <br> <span style="color: #FC3A52">Do.</span></h2>
 				</div>
-				<div class="col-4">
+				<div id="homepage-text" class="col-6">
 					<p>
 						Whatever you need to simplify your to do list, no matter your budget.
-						<br>
+					</p>
+					<p>
 						Find services based on your goals and deadlines, it’s that simple.
-						<br>
+					</p>
+					<p>
 						Your payment is always secure, EarnIt is built to protect your peace of mind.
 					</p>
-				</div>
-				<div class="col-8">
-					<img src="img/pic.jpg" width="100%"/>
 				</div>
 			</div>
 

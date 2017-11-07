@@ -612,6 +612,25 @@ footer {
 	text-decoration: underline;
 }
 
+#homepage {
+	background-image: url(img/homepage.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#homepage-text h2 {
+	padding-top: 0rem;
+	color: #fff;
+	font-size: 8rem;
+}
+
+#homepage-text p {
+	color: #fff;
+	line-height: 1.7rem;
+	padding-bottom: 1rem;
+}
+
+
 /*BROWSE*/
 
 .sub-nav {
