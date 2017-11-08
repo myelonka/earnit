@@ -40,13 +40,13 @@ html {
   -moz-box-sizing: border-box;
 }
 html, body {
-   height: 100%;
-   width: 100%;
-   margin: 0;
-   padding: 0;
-   left: 0;
-   top: 0;
-   font-size: 100%;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	left: 0;
+	top: 0;
+	font-size: 100%;
 	background-color: #fff;
 }
 div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
@@ -675,7 +675,6 @@ footer {
 	padding: 0rem 0rem 0rem 1.5rem;
 	color: #fff;
 	font-size: 6rem;
-	pad
 }
 
 #homepage-text p {
@@ -728,21 +727,37 @@ footer {
 
 /*HOW IT WORKS*/
 
-#how-it-works-heading h4 {
-	padding: 2rem 0rem 2rem 0rem;
-	text-align: center;
-	text-transform: uppercase;
-	font-weight: 600;
-	font-size: 30pt;
+#how-it-works-heading1 {
+	background: #fd3b52;
+	padding-bottom: 3rem;
+	margin-bottom: 2rem;
 }
 
-.highlight {
-	color: #FC3A52;
+#how-it-works-heading2 {
+	background: #9e263b;
+	padding-bottom: 3rem;
+	margin-bottom: 2rem;
+}
+
+#how-it-works-page-container h4 {
+	padding: 6rem 0rem 3rem 2rem;
+	text-align: left;
+	font-weight: 700;
+	font-size: 40pt;
+	color: #fff;
+}
+
+.highlight1 {
+	color: #9e263b;
+	font-weight: bold;
+}
+
+.highlight2 {
+	color: #fd3b52;
+	font-weight: bold;
 }
 
 .how-icon-container {
-	background-color: #FC3A52;
-	border-radius: 50%;
 	height: 8rem;
 	width: 8rem;
     display: flex;
@@ -752,19 +767,14 @@ footer {
 }
 
 .how-icon-container img {
-	height: 85px;
+	height: 100px;
 }
 
 .how-step-container {
 	margin: 2rem 2rem 0rem 2rem;
 	padding: 1rem 1rem 1rem 1rem;
+	color: #fff;
 }
-
-.how-step-container h3 {
-	font-size: 16pt;
-	padding-bottom: 5px;
-}
-
 
 
 

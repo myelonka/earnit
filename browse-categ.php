@@ -42,7 +42,7 @@ if (isset($_POST['field'])){
 $stmt->bind_result($author, $title, $description, $promoSentence, $deadline);
 $stmt->execute();
 while ($stmt->fetch()) {
-        echo "<div class='col-4 equal' id='stile_ingrid'> <a href='#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div> ";
+        echo "<div class='col-4 equal' id='stle_ingrid'> <a href='#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div> ";
     }    
 ?>
 
