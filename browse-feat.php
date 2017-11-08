@@ -1,4 +1,4 @@
-<div class="col-12" id="teamwork"><h1>Featured</h1></div>
+<div class="col-12" id="browse_heading"><h1>Featured</h1></div>
 
 <?php
      @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);

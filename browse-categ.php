@@ -1,6 +1,7 @@
-<div class="col-12"><h1>Categories</h1>
+<div class="col-12" id="browse_heading"><h1>Categories</h1></div>
+<div class="col-12">
     <form id="post_form" method="post" action="">
-              Choose a job field:<br>
+              Choose a job field:<br><br>
               <input type="checkbox" name="field[]" value="frontEnd">Front End<br>
               <input type="checkbox" name="field[]" value="backEnd" >Back End<br>
               <input type="checkbox" name="field[]" value="webDesigner">Web Designer<br>
@@ -8,8 +9,12 @@
               <input type="checkbox" name="field[]" value="uxDesigner">UX Designer<br>
               <input type="checkbox" name="field[]" value="interactionDesigner" >Interaction Designer<br>
               <input type="checkbox" name="field[]" value="seoSpecialist">SEO Specialist<br><br><br>
-              <input type="submit" name="submit_form" class="submit_forms"><br><br><br><br><br>
-    
+              <input type="submit" name="submit_form" class="submit_forms">
+
+</form>
+</div>
+
+<div id="job_list">    
     <?php
      @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -54,10 +59,6 @@ while ($stmt->fetch()) {
             
         </div>
 	</div>
-    </div>
+</div>
 
-  <?php
-    include('footer.php');
-  ?>
-  
 </div>

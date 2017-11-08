@@ -107,7 +107,7 @@
 						Find a freelance job in no time, combine study assignments with real job experience and build connections with local companies. 
 					</p>
 					<p>
-						We provide opportunity. Employers trust - you have to Earn It !
+						We provide opportunities. Employers trust - you have to Earn It !
 					</p>
 				</div>
 			</div>
