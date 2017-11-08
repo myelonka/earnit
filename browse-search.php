@@ -1,7 +1,7 @@
 <div class="col-12"><h1>Search a job offer</h1></div>
 
    <form id="featured_form" method="post" action="browse-search.php">
-   Seach:<br><br>
+   Search:<br><br>
    <input type="text" name="search" class="back" value=""><br><br><br><br>
    <input type="submit" value="Search" name="search_form" class="submit_forms"><br><br>
 
@@ -42,6 +42,10 @@ while ($stmt->fetch()) {
     echo "<div class='col-4 equal' id='stile_ingrid'> <a href='?page=search&id=$postId#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div>";
     }
     $stmt->close();
+?>
+
+<?php
+  include('footer.php');
 ?>
        
     <div id="openModal" class="modalDialog">
@@ -132,3 +136,7 @@ while ($stmt->fetch()) {
              ?>
 	</div>
     </div>
+
+    <?php
+        include('footer.php');
+    ?>
