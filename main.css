@@ -619,15 +619,16 @@ footer {
 }
 
 #homepage-text h2 {
-	padding-top: 0rem;
+	padding: 0rem 0rem 0rem 1.5rem;
 	color: #fff;
 	font-size: 8rem;
+	pad
 }
 
 #homepage-text p {
 	color: #fff;
 	line-height: 1.7rem;
-	padding-bottom: 1rem;
+	padding: 0rem 0rem 1rem 2rem;
 }
 
 
