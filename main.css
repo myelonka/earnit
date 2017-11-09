@@ -724,7 +724,7 @@ footer {
 }
 
 #how-it-works-page-container h4 {
-	padding: 6rem 0rem 3rem 2rem;
+	padding: 3rem 0rem 1rem 2rem;
 	text-align: left;
 	font-weight: 700;
 	font-size: 40pt;
@@ -751,11 +751,11 @@ footer {
 }
 
 .how-icon-container img {
-	height: 100px;
+	height: 110px;
 }
 
 .how-step-container {
-	margin: 2rem 2rem 0rem 2rem;
+	margin: 0rem 2rem 0rem 2rem;
 	padding: 1rem 1rem 1rem 1rem;
 	color: #fff;
 }
