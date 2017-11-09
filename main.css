@@ -237,17 +237,6 @@ button {
     height: 30%;
 }
 
-
-
-
-
-
-
-/*!!!!!TESTING VISULAS!!!!!*/
-.page-container div {
-	border: 1px solid #ddd;
-}
-
 .errors	{
 	display: inline-block;
 	float: left;
@@ -262,18 +251,6 @@ button {
 	text-transform: uppercase;
 	letter-spacing: 1.5;
 }
-
-
-
-
-
-
-/*!!!!!TESTING VISULAS!!!!!*/
-.page-container div {
-	border: 0.1px solid #ddd;
-}
-
-/*!!!!!*/
 
 
 
@@ -673,17 +650,25 @@ footer {
 }
 
 #homepage-text h2 {
+<<<<<<< HEAD
+	padding: 4rem 0rem 0rem 4rem;
+	color: #fff;
+	font-size: 6rem;
+	line-height: 1;
+	text-shadow: 3px 3px 30px rgba(0,0,0,0.5);
+=======
 	height: 30rem;
 	padding: 6rem 0rem 0rem 1.5rem;
 	color: #fff;
 	font-size: 6.5rem;
 	line-height: 7rem;
+>>>>>>> a4b256cd24643d401222d0dde17387ddce4a3ee3
 }
 
 #homepage-text p {
 	color: #fff;
 	line-height: 1.7rem;
-	padding: 0rem 1.5rem 1rem 2rem;
+	padding: 4rem 1.5rem 1rem 4rem;
 	font-size: 1rem;
 }
 
@@ -739,7 +724,7 @@ footer {
 }
 
 #how-it-works-page-container h4 {
-	padding: 6rem 0rem 3rem 2rem;
+	padding: 3rem 0rem 1rem 2rem;
 	text-align: left;
 	font-weight: 700;
 	font-size: 40pt;
@@ -766,11 +751,11 @@ footer {
 }
 
 .how-icon-container img {
-	height: 100px;
+	height: 110px;
 }
 
 .how-step-container {
-	margin: 2rem 2rem 0rem 2rem;
+	margin: 0rem 2rem 0rem 2rem;
 	padding: 1rem 1rem 1rem 1rem;
 	color: #fff;
 }

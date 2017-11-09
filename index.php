@@ -97,16 +97,12 @@
 			<div id="homepage" class="page-container">
 				
 				<div id="homepage-text" class="col-12">
-					<h2>Work for <br> your tomorrow <br> <span style="color: #FC3A52">today.</span></h2>
+					<h2>Work for <br> your tomorrow <br> <span style="color: #FC3A52">&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  today.</span></h2>
 				</div>
 				<div id="homepage-text" class="col-8">
 					<p>
-						We are here to provide the link between students and their future employers.
-					</p>
-					<p>
-						Find a freelance job in no time, combine study assignments with real job experience and build connections with local companies. 
-					</p>
-					<p>
+						We are here to provide the link between students and their future employers.<br>
+						Find a freelance job in no time, combine study assignments with real job experience and build connections with local companies.<br>
 						We provide opportunities. Employers trust - you have to Earn It !
 					</p>
 				</div>
