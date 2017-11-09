@@ -1,20 +1,15 @@
-<div class="col-12" id="browse_heading"><h1>Categories</h1></div>
-<div class="col-12">
+<div class="col-12"><h1>Categories</h1>
     <form id="post_form" method="post" action="">
-              <h1>Choose a job field:</h1>
-              <input type="checkbox" name="field[]" value="frontEnd"><p>Front End</p><br>
-              <input type="checkbox" name="field[]" value="backEnd" ><p>Back End</p><br>
-              <input type="checkbox" name="field[]" value="webDesigner"><p>Web Designer</p><br>
-              <input type="checkbox" name="field[]" value="uiDesigner" ><p>UI Designer</p><br>
-              <input type="checkbox" name="field[]" value="uxDesigner"><p>UX Designer</p></p><br>
-              <input type="checkbox" name="field[]" value="interactionDesigner" ><p>Interaction Designer</p><br>
-              <input type="checkbox" name="field[]" value="seoSpecialist"><p>SEO Specialist</p><br><br><br>
-              <input class="submit_forms" type="submit" name="submit_form">
-
-</form>
-</div>
-
-<div id="job_list">    
+              Choose a job field:<br>
+              <input type="checkbox" name="field[]" value="frontEnd">Front End<br>
+              <input type="checkbox" name="field[]" value="backEnd" >Back End<br>
+              <input type="checkbox" name="field[]" value="webDesigner">Web Designer<br>
+              <input type="checkbox" name="field[]" value="uiDesigner" >UI Designer<br>
+              <input type="checkbox" name="field[]" value="uxDesigner">UX Designer<br>
+              <input type="checkbox" name="field[]" value="interactionDesigner" >Interaction Designer<br>
+              <input type="checkbox" name="field[]" value="seoSpecialist">SEO Specialist<br><br><br>
+              <input type="submit" name="submit_form" class="submit_forms"><br><br><br><br><br>
+    
     <?php
      @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -32,10 +27,9 @@ if (isset($_POST['field'])) {
     }
 }
 
-$query = "select author,title,description,promoSentence,deadline from posts";
+$query = "select postId, author,title,description,promoSentence,deadline from posts";
 if (isset($_POST['field'])){
-    $query = "SELECT author, title, description, promoSentence, deadline FROM posts WHERE category=?";
-
+    $query = "SELECT postId, author, title, description, promoSentence, deadline FROM posts WHERE category=?";
 }
 //echo "Running the query: $query <br/>"; # For debugging
 if (!$stmt = $db->prepare($query)){
@@ -44,10 +38,10 @@ if (!$stmt = $db->prepare($query)){
 if (isset($_POST['field'])){
   $stmt->bind_param("s", $fieldvalue);
 }
-$stmt->bind_result($author, $title, $description, $promoSentence, $deadline);
+$stmt->bind_result($postId, $author, $title, $description, $promoSentence, $deadline);
 $stmt->execute();
 while ($stmt->fetch()) {
-        echo "<div class='col-4 equal' id='stile_ingrid'> <a href='#openModal'></a><br><span class='post_title'>$title </span> <br><br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span><br><img src='img/browse_icon.png'/></div> ";
+        echo "<div class='col-4 equal' id='stile_ingrid'> <a href=?page=categ&id=$postId#openModal><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div> ";
     }    
 ?>
 
@@ -58,9 +52,9 @@ while ($stmt->fetch()) {
             <a href="#close" title="Close" class="close">X</a>
              <?php
             // Retrieve the id set in the url
-            $field = $_POST['field'];
+            $id = $_GET['id'];
             //ask all the data from database associated to this id
-            $query = "SELECT author, title, description, employerMail, deadline FROM posts WHERE category=$field";
+            $query = "SELECT author, title, description, employerMail, deadline FROM posts WHERE postId=$id";
             $stmt = $db->prepare($query);
             $stmt->bind_result($author, $title, $description, $employerMail, $deadline);    
             $stmt->execute();
@@ -71,6 +65,17 @@ while ($stmt->fetch()) {
             echo '<p>Job description:<br>' .$description. '</p><br>';
             echo '<p>Application deadline:<br>' .$deadline. '</p><br>';
             echo '<h2>Application form</h2><br>';
+          
+            if (isset($_POST['submit_application'])){
+                $query = "INSERT IGNORE INTO usertopost (postId, userId) VALUES (?, ?)";
+                if (!$stmt = $db->prepare($query)){
+                    printf($db->error);
+                }
+                $stmt->bind_param('ss', $id, $_SESSION['login_user']);
+                if (!$stmt->execute()){
+                    printf($db->error);
+                }
+            }
           
             $usersId = [];
             $query = "SELECT * FROM usertopost WHERE postId=$id";
@@ -94,16 +99,7 @@ while ($stmt->fetch()) {
             }
 
 
-            if (isset($_POST['submit_application'])){
-                $query = "INSERT IGNORE INTO usertopost (postId, userId) VALUES (4, 8)";
-                if (!$stmt1 = $db->prepare($query)){
-                    printf($db->error);
-                }
-                //$stmt->bind_param('ss', $id, $_SESSION['login_user']);
-                if (!$stmt1->execute()){
-                    printf($db->error);
-                }
-            }
+
 
             if (isset($_FILES['submit_application'])){
                 $allowedextensions = array('pdf');
@@ -144,6 +140,5 @@ while ($stmt->fetch()) {
              ?>
         </div>
 	</div>
-</div>
-
+    </div>
 </div>
