@@ -192,7 +192,6 @@ button {
 
 
 
-
 /* GRID SYSTEM */
 
 .col-1 {width: 8.33%;}
@@ -980,9 +979,6 @@ footer {
     text-align: center;
 }
 
-#post_form{
-}
-
 .submit_forms{
     border : solid 0px #000000;
     border-radius: 7px;
@@ -992,12 +988,56 @@ footer {
     line-height: 12px;
 	background : #FC7087;
 	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .submit_forms:hover{
      background : #FC7087;
 }
 
+#featured_form h1 , #post_form h1 {
+	font-weight: 600;
+	letter-spacing: 0px;
+	font-size: 14pt;
+	padding-bottom: 5px;
+}
+
+#featured_form input {
+	margin-bottom: 20px;
+}
+
+#fileToUpload {
+	height: 50px;
+	background-color: transparent;
+	width: 300px;
+}
+
+#featured_form textarea {
+	margin-bottom: 30px;
+}
+
+#post_form input[type='checkbox']{
+	margin: 15px 0px 0px 0px;
+	width: 50px;
+	cursor: pointer;
+}
+
+#post_form p {
+	display: inline-block;
+	height: 30px;
+}
+
+#post_form input[type='submit'] {
+    border : solid 0px #000000;
+    border-radius: 7px;
+	text-align: center;
+    margin: 0 auto;
+	color : #000000;
+    line-height: 12px;
+	background : #FC7087;
+	text-transform: uppercase;
+	cursor: pointer;
+}
 
 
 
