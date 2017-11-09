@@ -1,48 +1,55 @@
 <div class="col-12" id="browse_heading"><h1>Search a job offer</h1></div>
 
+<div class="col-12">
    <form id="fpost_form" method="post" action="browse-search.php">
-   Search:<br><br>
-   <input type="text" name="search" class="back" value=""><br><br><br><br>
-   <input type="submit" value="Search" name="search_form" class="submit_forms"><br><br>
+   <h3> Search:</h3>
+   <input type="text" name="search" class="back" value=""><br><br>
+   <input type="submit" value="Search" name="search_form" class="submit_forms">
+  </form>
+</div> 
 
-<?php
-  include('config.php');
-     @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+<div id="job_container">
+  
+    <?php
+      include('config.php');
+         @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
-if ($db->connect_error){
-    echo "could not connect: " . $db->connect_error;
-    printf("<br><a href=index.php>Return to home page </a>");
-    exit();
-}
-       
-if (isset($_POST['search_form'])){
-    $search_input = trim($_POST['search']);
-    $search_input = addslashes($search_input);
-    $search_input = htmlentities($search_input);
-    $search_input = mysqli_real_escape_string($db, $search_input);
-}
-
-$query = "SELECT author, title, promoSentence FROM posts";
-if (isset($_POST['search_form'])){
-  $query = "SELECT author, title, promoSentence FROM posts WHERE description LIKE '%$search_input%'";
-
-}
-
-//echo "Running the query: $query <br/>"; # For debugging
-
-if(!$stmt = $db->prepare($query)){
-  printf($db->error);
-}
-$stmt->bind_result($author, $title, $promoSentence);
-$stmt->execute();
-
-
-while ($stmt->fetch()) {
-    // Set the postid in the url so you can know which post has been clicked
-    echo "<div class='col-4 equal' id='stile_ingrid'> <a href='?page=search&id=$postId#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div>";
+    if ($db->connect_error){
+        echo "could not connect: " . $db->connect_error;
+        printf("<br><a href=index.php>Return to home page </a>");
+        exit();
     }
-    $stmt->close();
-?>
+           
+    if (isset($_POST['search_form'])){
+        $search_input = trim($_POST['search']);
+        $search_input = addslashes($search_input);
+        $search_input = htmlentities($search_input);
+        $search_input = mysqli_real_escape_string($db, $search_input);
+    }
+
+    $query = "SELECT author, title, promoSentence FROM posts";
+    if (isset($_POST['search_form'])){
+      $query = "SELECT author, title, promoSentence FROM posts WHERE description LIKE '%$search_input%'";
+
+    }
+
+    //echo "Running the query: $query <br/>"; # For debugging
+
+    if(!$stmt = $db->prepare($query)){
+      printf($db->error);
+    }
+    $stmt->bind_result($author, $title, $promoSentence);
+    $stmt->execute();
+
+
+    while ($stmt->fetch()) {
+        // Set the postid in the url so you can know which post has been clicked
+        echo "<div id='stile_ingrid'> <a href='?page=search&id=$postId#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div>";
+        }
+        $stmt->close();
+    ?>
+
+</div>
        
     <div id="openModal" class="modalDialog">
         <div>

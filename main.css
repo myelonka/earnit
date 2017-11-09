@@ -230,6 +230,7 @@ button {
    min-height: 100%;
 	max-width: 1400px;
 	margin-top: 2rem;
+	margin-bottom: 2rem;
 }
 
 .equal{
@@ -672,9 +673,11 @@ footer {
 }
 
 #homepage-text h2 {
-	padding: 4rem 0rem 0rem 1.5rem;
+	height: 30rem;
+	padding: 6rem 0rem 0rem 1.5rem;
 	color: #fff;
-	font-size: 6rem;
+	font-size: 6.5rem;
+	line-height: 7rem;
 }
 
 #homepage-text p {
@@ -682,10 +685,6 @@ footer {
 	line-height: 1.7rem;
 	padding: 0rem 1.5rem 1rem 2rem;
 	font-size: 1rem;
-}
-
-#pagecontainer {
-	max-height: 500px;
 }
 
 
@@ -976,7 +975,20 @@ footer {
 }
 
 #stile_ingrid{
+	padding: 15px;
     text-align: center;
+    border: 1px solid #FC7087;
+    height: 310px;
+    width: 310px;
+    margin: 19px;
+    float: left;
+}
+
+#job_container {
+	width: 1400px;
+	max-height: 9000px;
+	margin: 0 auto;
+	overflow: hidden;
 }
 
 .submit_forms{
@@ -995,11 +1007,11 @@ footer {
      background : #FC7087;
 }
 
-#featured_form h1 , #post_form h1 {
+#featured_form h1 , #post_form h1, #fpost_form h3 {
 	font-weight: 600;
 	letter-spacing: 0px;
 	font-size: 14pt;
-	padding-bottom: 5px;
+	padding: 5px 0px 5px 0px;
 }
 
 #featured_form input {
@@ -1038,6 +1050,8 @@ footer {
 	text-transform: uppercase;
 	cursor: pointer;
 }
+
+
 
 
 
@@ -1099,7 +1113,7 @@ footer {
     background: #FC7087; 
 }
 
-
+/*
 @media only screen and (min-width: 720px) {
 	.page-container {
         max-width: 720px;
@@ -1126,4 +1140,4 @@ footer {
 		width: 1400px;
 	}
 }
-
+*/
