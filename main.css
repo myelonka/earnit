@@ -667,12 +667,13 @@ footer {
 
 #homepage {
 	background-image: url(img/homepage.jpg);
-	background-size: contain;
+	background-size: cover;
 	background-repeat: no-repeat;
+	margin-bottom: 2rem;
 }
 
 #homepage-text h2 {
-	padding: 0rem 0rem 0rem 1.5rem;
+	padding: 4rem 0rem 0rem 1.5rem;
 	color: #fff;
 	font-size: 6rem;
 }
@@ -680,7 +681,7 @@ footer {
 #homepage-text p {
 	color: #fff;
 	line-height: 1.7rem;
-	padding: 0rem 0rem 1rem 2rem;
+	padding: 0rem 1.5rem 1rem 2rem;
 	font-size: 1rem;
 }
 

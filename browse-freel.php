@@ -2,8 +2,3 @@
 
 <p>Nothing here yet :(</p>
 
-
-
-	<?php
-		include('footer.php');
-	?>

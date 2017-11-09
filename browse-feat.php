@@ -27,10 +27,6 @@ while ($stmt->fetch()) {
     $stmt->close();
 ?>
 
-    <?php
-        include('footer.php');
-    ?>
-
 <div class="col-12">
     <div id="openModal" class="modalDialog">
         <div>

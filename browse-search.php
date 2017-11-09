@@ -43,10 +43,6 @@ while ($stmt->fetch()) {
     }
     $stmt->close();
 ?>
-
-<?php
-  include('footer.php');
-?>
        
     <div id="openModal" class="modalDialog">
         <div>
