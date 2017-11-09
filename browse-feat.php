@@ -43,9 +43,9 @@ while ($stmt->fetch()) {
             $stmt->fetch();
             $stmt->close();
             echo '<h2>' . $title . '</h2><br>';
-            echo '<p>Hiring company:' .$author. '</p><br>';
-            echo '<p>Job description:<br>' .$description. '</p><br>';
-            echo '<p>Application deadline:<br>' .$deadline. '</p><br>';
+            echo '<h10>Hiring company:</h10><p>' .$author. '</p><br><br>';
+            echo '<h10>Job description:</h10><p>' .$description. '</p><br><br>';
+            echo '<h10>Application deadline:</h10><p>' .$deadline. '</p><br><br>';
             echo '<h2>Application form</h2><br>';
           
             if (isset($_POST['submit_application'])){
@@ -104,13 +104,13 @@ while ($stmt->fetch()) {
             }
         ?>
             <form id="featured_form" method="post" action="" enctype="multipart/form-data">
-              Name:<br>
+              <h10> Name: </h10><br>
               <input type="text" name="employee_name" class="back" value=""><br><br>
-              Surname:<br>
+              <h10> Surname: </h10><br>
               <input type="text" name="employee_surname" class="back" value=""><br><br>
-              Motivation letter (max 5000 characters):<br>
-              <textarea maxlength="5000" type="text" class="back" name="description" value="description" cols="40px" rows="15" wrap="soft"></textarea><br><br>
-              Upload your CV (pdf format):<br>
+              <h10> Motivation letter (max 5000 characters): </h10><br>
+              <textarea maxlength="5000" type="text" class="back" name="description" value="description" cols="40px" rows="15" wrap="soft"></textarea><br>
+              <h10> Upload your CV (pdf format): </h10><br>
               <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
               <input type="submit" value="Apply" name="submit_application" class="submit_forms"><br><br>
              </form>

@@ -1064,6 +1064,17 @@ footer {
 	cursor: pointer;
 }
 
+h10 {
+	font-weight: 600;
+	font-size: 14pt;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+#openModal p {
+	display: inline-block;
+}
+
 
 
 
