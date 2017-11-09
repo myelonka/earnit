@@ -1,5 +1,6 @@
-<div class="col-12" id="teamwork"><h1>Featured</h1></div>
+<div class="col-12" id="browse_heading"><h1>Featured</h1></div>
 
+<div id="job_container">
 <?php
      @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -22,12 +23,12 @@ $stmt->execute();
 
 while ($stmt->fetch()) {
     // Set the postid in the url so you can know which post has been clicked
-    echo "<div class='col-4 equal' id='stile_ingrid'> <a href='?page=feat&id=$postId#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div>";
+    echo "<div id='stile_ingrid'> <a href='?page=feat&id=$postId#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br><br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div>";
     }
     $stmt->close();
 ?>
 
-<div class="col-12">
+</div>
     <div id="openModal" class="modalDialog">
         <div>
             <a href="#close" title="Close" class="close">X</a>
@@ -115,9 +116,13 @@ while ($stmt->fetch()) {
              </form>
              <?php 
             foreach ($emailsId as $key => $value) {
+<<<<<<< HEAD
                 echo "<h3>".$value."</h3><br>";
+=======
+                echo "<h1>".$value."</h2><br>";
+>>>>>>> 6c968f32916a4c1477d0e7a34b796bada693564b
             }
              ?>
 	</div>
+    
     </div>
-</div>

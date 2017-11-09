@@ -1,53 +1,60 @@
-<div class="col-12"><h1>Search a job offer</h1></div>
+<div class="col-12" id="browse_heading"><h1>Search a job offer</h1></div>
 
-   <form id="featured_form" method="post" action="">
-   Seach:<br><br>
-   <input type="text" name="search" class="back" value=""><br><br><br><br>
-   <input type="submit" value="Search" name="search_form" class="submit_forms"><br><br>
+<div class="col-12">
+   <form id="fpost_form" method="post" action="browse-search.php">
+   <h3> Search:</h3>
+   <input type="text" name="search" class="back" value=""><br><br>
+   <input type="submit" value="Search" name="search_form" class="submit_forms">
+  </form>
+</div> 
 
-<?php
-  include('config.php');
-     @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+<div id="job_container">
+  
+    <?php
+      include('config.php');
+         @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
-if ($db->connect_error){
-    echo "could not connect: " . $db->connect_error;
-    printf("<br><a href=index.php>Return to home page </a>");
-    exit();
-}
-       
-if (isset($_POST['search_form'])){
-    $search_input = trim($_POST['search']);
-    $search_input = addslashes($search_input);
-    $search_input = htmlentities($search_input);
-    $search_input = mysqli_real_escape_string($db, $search_input);
-}
-
-$query = "SELECT postId, author, title, promoSentence FROM posts";
-if (isset($_POST['search_form'])){
-  $query = "SELECT postId, author, title, promoSentence FROM posts WHERE description LIKE '%$search_input%'";
-
-}
-
-//echo "Running the query: $query <br/>"; # For debugging
-
-if(!$stmt = $db->prepare($query)){
-  printf($db->error);
-}
-$stmt->bind_result($postId, $author, $title, $promoSentence);
-$stmt->execute();
-
-
-while ($stmt->fetch()) {
-    // Set the postid in the url so you can know which post has been clicked
-    echo "<div class='col-4 equal' id='stile_ingrid'> <a href=?page=recent&id=$postId#openModal><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div>";
+    if ($db->connect_error){
+        echo "could not connect: " . $db->connect_error;
+        printf("<br><a href=index.php>Return to home page </a>");
+        exit();
     }
-    $stmt->close();
-?>     
+           
+    if (isset($_POST['search_form'])){
+        $search_input = trim($_POST['search']);
+        $search_input = addslashes($search_input);
+        $search_input = htmlentities($search_input);
+        $search_input = mysqli_real_escape_string($db, $search_input);
+    }
+
+    $query = "SELECT author, title, promoSentence FROM posts";
+    if (isset($_POST['search_form'])){
+      $query = "SELECT author, title, promoSentence FROM posts WHERE description LIKE '%$search_input%'";
+
+    }
+
+    //echo "Running the query: $query <br/>"; # For debugging
+
+    if(!$stmt = $db->prepare($query)){
+      printf($db->error);
+    }
+    $stmt->bind_result($author, $title, $promoSentence);
+    $stmt->execute();
+
+
+    while ($stmt->fetch()) {
+        // Set the postid in the url so you can know which post has been clicked
+        echo "<div id='stile_ingrid'> <a href='?page=search&id=$postId#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br><br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div>";
+        }
+        $stmt->close();
+    ?>
+
+</div>
+       
     <div id="openModal" class="modalDialog">
         <div>
             <a href="#close" title="Close" class="close">X</a>
         <?php
-            $id = $_GET["id"];
             $query = "SELECT author, title, description, employerMail, deadline FROM posts WHERE postId=$id";
             $stmt = $db->prepare($query);
             $stmt->bind_result($author, $title, $description, $employerMail, $deadline);    
@@ -60,18 +67,6 @@ while ($stmt->fetch()) {
             echo '<p>Application deadline:<br>' .$deadline. '</p><br>';
             echo '<h2>Application form</h2><br>';
           
-            if (isset($_POST['submit_application'])){
-                $query = "INSERT IGNORE INTO usertopost (postId, userId) VALUES (?, ?)";
-                if (!$stmt = $db->prepare($query)){
-                    printf($db->error);
-                }
-                $stmt->bind_param('ii', $id, $_SESSION['login_user']);
-                if (!$stmt->execute()){
-                    printf($db->error);
-                }
-            }
-
-
             $usersId = [];
             $query = "SELECT * FROM usertopost WHERE postId=$id";
             $stmt = $db->prepare($query);
@@ -94,7 +89,16 @@ while ($stmt->fetch()) {
             }
 
 
-
+            if (isset($_POST['submit_application'])){
+                $query = "INSERT IGNORE INTO usertopost (postId, userId) VALUES (4, 8)";
+                if (!$stmt1 = $db->prepare($query)){
+                    printf($db->error);
+                }
+                //$stmt->bind_param('ss', $id, $_SESSION['login_user']);
+                if (!$stmt1->execute()){
+                    printf($db->error);
+                }
+            }
 
             if (isset($_FILES['submit_application'])){
                 $allowedextensions = array('pdf');
@@ -116,7 +120,7 @@ while ($stmt->fetch()) {
                 }
             }
         ?>
-            <form id="featured_form2" method="post" action="" enctype="multipart/form-data">
+            <form id="featured_form" method="post" action="" enctype="multipart/form-data">
               Name:<br>
               <input type="text" name="employee_name" class="back" value=""><br><br>
               Surname:<br>
@@ -134,4 +138,4 @@ while ($stmt->fetch()) {
             }
              ?>
 	</div>
-    </div>
+  </div>
