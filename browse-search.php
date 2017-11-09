@@ -1,7 +1,7 @@
-<div class="col-12"><h1>Search a job offer</h1></div>
+<div class="col-12" id="browse_heading"><h1>Search a job offer</h1></div>
 
-   <form id="featured_form" method="post" action="browse-search.php">
-   Seach:<br><br>
+   <form id="fpost_form" method="post" action="browse-search.php">
+   Search:<br><br>
    <input type="text" name="search" class="back" value=""><br><br><br><br>
    <input type="submit" value="Search" name="search_form" class="submit_forms"><br><br>
 
@@ -131,4 +131,4 @@ while ($stmt->fetch()) {
             }
              ?>
 	</div>
-    </div>
+  </div>

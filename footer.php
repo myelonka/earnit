@@ -13,7 +13,7 @@
 						  </li>
 
 						  <li>
-							  <a href="#">Jobs</a>
+							  <a href="browse.php?page=feat">Jobs</a>
 						  </li>
 
 						  <li>
@@ -37,7 +37,7 @@
 				 </div>
 			 <div id="follow">
 				<ul>
-					<h5 class="smallcaps">Follow</h5><br><br>
+					<h5 class="smallcaps">Follow us</h5><br><br>
 					 <div id="icons">
 						  <li>
 								 <a href="https://www.facebook.com/anetete.anetete" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>

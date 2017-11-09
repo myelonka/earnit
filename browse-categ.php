@@ -1,15 +1,20 @@
-<div class="col-12"><h1>Categories</h1>
+<div class="col-12" id="browse_heading"><h1>Categories</h1></div>
+<div class="col-12">
     <form id="post_form" method="post" action="">
-              Choose a job field:<br>
-              <input type="checkbox" name="field[]" value="frontEnd">Front End<br>
-              <input type="checkbox" name="field[]" value="backEnd" >Back End<br>
-              <input type="checkbox" name="field[]" value="webDesigner">Web Designer<br>
-              <input type="checkbox" name="field[]" value="uiDesigner" >UI Designer<br>
-              <input type="checkbox" name="field[]" value="uxDesigner">UX Designer<br>
-              <input type="checkbox" name="field[]" value="interactionDesigner" >Interaction Designer<br>
-              <input type="checkbox" name="field[]" value="seoSpecialist">SEO Specialist<br><br><br>
-              <input type="submit" name="submit_form" class="submit_forms"><br><br><br><br><br>
-    
+              <h1>Choose a job field:</h1>
+              <input type="checkbox" name="field[]" value="frontEnd"><p>Front End</p><br>
+              <input type="checkbox" name="field[]" value="backEnd" ><p>Back End</p><br>
+              <input type="checkbox" name="field[]" value="webDesigner"><p>Web Designer</p><br>
+              <input type="checkbox" name="field[]" value="uiDesigner" ><p>UI Designer</p><br>
+              <input type="checkbox" name="field[]" value="uxDesigner"><p>UX Designer</p></p><br>
+              <input type="checkbox" name="field[]" value="interactionDesigner" ><p>Interaction Designer</p><br>
+              <input type="checkbox" name="field[]" value="seoSpecialist"><p>SEO Specialist</p><br><br><br>
+              <input class="submit_forms" type="submit" name="submit_form">
+
+</form>
+</div>
+
+<div id="job_list">    
     <?php
      @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -42,7 +47,7 @@ if (isset($_POST['field'])){
 $stmt->bind_result($author, $title, $description, $promoSentence, $deadline);
 $stmt->execute();
 while ($stmt->fetch()) {
-        echo "<div class='col-4 equal' id='stile_ingrid'> <a href='#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div> ";
+        echo "<div class='col-4 equal' id='stile_ingrid'> <a href='#openModal'></a><br><span class='post_title'>$title </span> <br><br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span><br><img src='img/browse_icon.png'/></div> ";
     }    
 ?>
 
@@ -139,5 +144,6 @@ while ($stmt->fetch()) {
              ?>
         </div>
 	</div>
-    </div>
+</div>
+
 </div>

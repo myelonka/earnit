@@ -40,13 +40,13 @@ html {
   -moz-box-sizing: border-box;
 }
 html, body {
-   height: 100%;
-   width: 100%;
-   margin: 0;
-   padding: 0;
-   left: 0;
-   top: 0;
-   font-size: 100%;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	left: 0;
+	top: 0;
+	font-size: 100%;
 	background-color: #fff;
 }
 div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
@@ -153,6 +153,8 @@ button {
 	height: 2rem;
 	display: inline;
 	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: 400;
 }
 ::selection { /* SELECTED TEXT BG COLOR */
     background: #FC7087;
@@ -162,6 +164,11 @@ button {
     background: #FC7087;
 	color: #fff;
 }
+
+
+
+
+
 
 /* POSITIONING */
 
@@ -179,6 +186,10 @@ button {
 .justify {
     text-align: justify;
 }
+
+
+
+
 
 
 /* GRID SYSTEM */
@@ -225,6 +236,12 @@ button {
     height: 30%;
 }
 
+
+
+
+
+
+
 /*!!!!!TESTING VISULAS!!!!!*/
 .page-container div {
 	border: 1px solid #ddd;
@@ -245,12 +262,21 @@ button {
 	letter-spacing: 1.5;
 }
 
+
+
+
+
+
 /*!!!!!TESTING VISULAS!!!!!*/
 .page-container div {
 	border: 0.1px solid #ddd;
 }
 
 /*!!!!!*/
+
+
+
+
 
 
 /* HEADER */
@@ -390,6 +416,9 @@ a.svg-link:hover path {
 
 
 
+
+
+
 /* FOOTER */
 
 footer {
@@ -479,7 +508,7 @@ footer {
 }
 
 #newsletter-submitbtn {
-	width: auto;
+	width: 200px;
 	height: 2.5rem;
 	text-align: right;
 	margin-left: -0.25rem;
@@ -495,6 +524,11 @@ footer {
 #newsletter-submitbtn:hover {
 	color: #fff;
 }
+
+
+
+
+
 
 /*HOMEPAGE*/
 
@@ -587,8 +621,26 @@ footer {
 }
 
 #reg-signupbtn {
-	border-bottom: 0.25rem solid #9E263B;
+	background: transparent;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #fff;
+	color: #fff;
 }
+
+#reg-signupbtn:hover{
+	background: #fff;
+	color: #9e263b;
+}
+
+::-webkit-input-placeholder {
+	color: #999999;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
 
 #reg-signupbtn:active {
 	border-bottom: none;
@@ -616,19 +668,30 @@ footer {
 	background-image: url(img/homepage.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
+	margin-bottom: 2rem;
 }
 
 #homepage-text h2 {
-	padding-top: 0rem;
+	padding: 4rem 0rem 0rem 1.5rem;
 	color: #fff;
-	font-size: 8rem;
+	font-size: 6rem;
 }
 
 #homepage-text p {
 	color: #fff;
 	line-height: 1.7rem;
-	padding-bottom: 1rem;
+	padding: 0rem 1.5rem 1rem 2rem;
+	font-size: 1rem;
 }
+
+#pagecontainer {
+	max-height: 500px;
+}
+
+
+
+
+
 
 
 /*BROWSE*/
@@ -657,23 +720,44 @@ footer {
 	color: #FC3A52 !important;
 }
 
+
+
+
+
+
 /*HOW IT WORKS*/
 
-#how-it-works-heading h4 {
-	padding: 2rem 0rem 2rem 0rem;
-	text-align: center;
-	text-transform: uppercase;
-	font-weight: 600;
-	font-size: 30pt;
+#how-it-works-heading1 {
+	background: #fd3b52;
+	padding-bottom: 3rem;
+	margin-bottom: 2rem;
 }
 
-.highlight {
-	color: #FC3A52;
+#how-it-works-heading2 {
+	background: #9e263b;
+	padding-bottom: 3rem;
+	margin-bottom: 2rem;
+}
+
+#how-it-works-page-container h4 {
+	padding: 6rem 0rem 3rem 2rem;
+	text-align: left;
+	font-weight: 700;
+	font-size: 40pt;
+	color: #fff;
+}
+
+.highlight1 {
+	color: #9e263b;
+	font-weight: bold;
+}
+
+.highlight2 {
+	color: #fd3b52;
+	font-weight: bold;
 }
 
 .how-icon-container {
-	background-color: #FC3A52;
-	border-radius: 50%;
 	height: 8rem;
 	width: 8rem;
     display: flex;
@@ -683,18 +767,17 @@ footer {
 }
 
 .how-icon-container img {
-	height: 85px;
+	height: 100px;
 }
 
 .how-step-container {
 	margin: 2rem 2rem 0rem 2rem;
 	padding: 1rem 1rem 1rem 1rem;
+	color: #fff;
 }
 
-.how-step-container h3 {
-	font-size: 16pt;
-	padding-bottom: 5px;
-}
+
+
 
 
 /*PROFILE PAGE*/
@@ -719,6 +802,10 @@ footer {
 #profile-work div {
 	height: 300px;
 }
+
+
+
+
 
 
 /*LOGIN PAGE*/
@@ -837,6 +924,11 @@ footer {
 	font-size: 1rem;
 }
 
+
+
+
+
+
 /*EDIT PROFILE*/
 
 #profile-edit input, textarea {
@@ -844,6 +936,10 @@ footer {
 	display: block;
 	margin-bottom: 1rem;
 }
+
+
+
+
 
 
 /*POST FORM*/
@@ -883,10 +979,6 @@ footer {
     text-align: center;
 }
 
-#post_form{
-    padding-top : 15%;
-}
-
 .submit_forms{
     border : solid 0px #000000;
     border-radius: 7px;
@@ -894,12 +986,62 @@ footer {
     margin: 0 auto;
 	color : #000000;
     line-height: 12px;
-	background : #a08fff;
+	background : #FC7087;
+	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .submit_forms:hover{
-     background : #5e2fec;
+     background : #FC7087;
 }
+
+#featured_form h1 , #post_form h1 {
+	font-weight: 600;
+	letter-spacing: 0px;
+	font-size: 14pt;
+	padding-bottom: 5px;
+}
+
+#featured_form input {
+	margin-bottom: 20px;
+}
+
+#fileToUpload {
+	height: 50px;
+	background-color: transparent;
+	width: 300px;
+}
+
+#featured_form textarea {
+	margin-bottom: 30px;
+}
+
+#post_form input[type='checkbox']{
+	margin: 15px 0px 0px 0px;
+	width: 50px;
+	cursor: pointer;
+}
+
+#post_form p {
+	display: inline-block;
+	height: 30px;
+}
+
+#post_form input[type='submit'] {
+    border : solid 0px #000000;
+    border-radius: 7px;
+	text-align: center;
+    margin: 0 auto;
+	color : #000000;
+    line-height: 12px;
+	background : #FC7087;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+
+
+
 /*MODAL DIALOG -  source used to create modal window is taken from https://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html5-and-css3/ */
 
 
@@ -935,7 +1077,7 @@ footer {
 }
 
 .close {
-	background: #0E2431;
+	background: #FC7087;
 	color: #FFFFFF;
 	line-height: 25px;
 	position: absolute;
