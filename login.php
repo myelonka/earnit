@@ -21,7 +21,7 @@
 
 			if(isset($_POST['login'])) {
 
-			  $email = mysqli_real_escape_string($db, $_POST['email']);
+			  $email = mysqli_real_escape_string($db,$_POST['email']);
 			  $password = mysqli_real_escape_string($db,$_POST['password']); 
 
 			  $sql = "SELECT id FROM users WHERE email = '$email' and password = '$password'";
@@ -32,7 +32,7 @@
 			  $count = mysqli_num_rows($result);
 
 			  if($count == 1) {
-				$_SESSION['login_user'] = $row['id'];
+				 $_SESSION['login_user'] = $email;
 
 				 header("location: profile.php?");
 			  }else {
