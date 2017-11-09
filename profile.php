@@ -41,7 +41,7 @@
 			
 				<div class="page-container">
 					<div class="col-2" id="profile-info">
-					<div id="avatar"></div>
+					<div id="avatar" style="background-image: <?php echo 'url(\'uploads/' . $qrow['email'] . '.jpg\');' ?> "></div>
 					<span><p><?php echo $qrow['bio'] ?></p></span>
 					<span><p><?php echo $qrow['country'] ?></p></span>
 					<span><p><?php echo $qrow['location'] ?></p></span>

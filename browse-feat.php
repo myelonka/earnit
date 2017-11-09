@@ -1,11 +1,11 @@
-<div class="col-12" id="browse_heading"><h1>Featured</h1></div>
+<div class="col-12" id="teamwork"><h1>Featured</h1></div>
 
 <?php
      @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
 if ($db->connect_error){
     echo "could not connect: " . $db->connect_error;
-    printf("<br><a href=index.php>Return to home page </a>");
+    printf("<br><a href=index.php?>Return to home page </a>");
     exit();
 }
 
@@ -114,10 +114,9 @@ while ($stmt->fetch()) {
              <?php 
              
             foreach ($emailsId as $key => $value) {
-                echo "<h1>".$value."</h2><br>";
+                echo "<h2>".$value."</h2><br>";
             }
              ?>
 	</div>
-    
     </div>
 </div>
