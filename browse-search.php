@@ -2,7 +2,6 @@
 
 <div class="col-12">
    <form id="fpost_form" method="post" action="browse-search.php">
-   <h3> Search:</h3>
    <input type="text" name="search" class="back" value=""><br><br>
    <input type="submit" value="Search" name="search_form" class="submit_forms">
   </form>

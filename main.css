@@ -695,6 +695,7 @@ footer {
 .sub-nav a {
 	font-weight: 500;
 	color: #0E2431;
+	padding: 10px;
 }
 
 .sub-nav a:hover {
@@ -703,6 +704,7 @@ footer {
 
 .sub-current {
 	color: #FC3A52 !important;
+	border-bottom: 1px solid #FC3A52;
 }
 
 #apply-button {
@@ -1007,18 +1009,17 @@ footer {
 
 .submit_forms{
     border : solid 0px #000000;
-    border-radius: 7px;
 	text-align: center;
     margin: 0 auto;
-	color : #000000;
+	color : #fff;
     line-height: 12px;
-	background : #FC7087;
+	background : #FC3A52;
 	text-transform: uppercase;
 	cursor: pointer;
 }
 
 .submit_forms:hover{
-     background : #FC7087;
+     background : #ff1431;
 }
 
 #featured_form h1 , #post_form h1, #fpost_form h3 {
@@ -1055,14 +1056,19 @@ footer {
 
 #post_form input[type='submit'] {
     border : solid 0px #000000;
-    border-radius: 7px;
 	text-align: center;
     margin: 0 auto;
-	color : #000000;
+	color : #fff;
     line-height: 12px;
-	background : #FC7087;
+	background : #FC3A52;
 	text-transform: uppercase;
 	cursor: pointer;
+}
+
+
+
+#post_form input[type='submit']:hover {
+	background: #ff1431;
 }
 
 h10 {
@@ -1135,7 +1141,8 @@ h10 {
 }
 
 .close:hover { 
-    background: #FC7087; 
+     background : #ff1431;
+     color: #fff;
 }
 
 /*

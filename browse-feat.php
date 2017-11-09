@@ -1,6 +1,11 @@
-<div class="col-12" id="browse_heading"><h1>Featured</h1></div>
+<div class="col-12" id="browse_heading"><h1>Featured</h1>
+
+<p>Take a look at the newest offers:</p>
+
+</div><br>
 
 <div id="job_container">
+
 <?php
      @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
