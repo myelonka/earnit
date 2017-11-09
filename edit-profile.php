@@ -19,6 +19,25 @@
 			
 			@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 			
+			$query = mysqli_query($db, "
+				  SELECT
+						fName,
+						lName,
+						bio,
+						avatar,
+						linkFacebook,
+						linkLinkedIn,
+						linkGitHub,
+						headline,
+						phoneNo,
+						country,
+						location
+				  FROM users 
+				  WHERE email = '$login_session'
+			 ");
+			
+				$qrow = mysqli_fetch_array($query,MYSQLI_ASSOC);
+			
 			if (isset($_POST['update-profile'])) {
 				
 				$fname = trim($_POST['fName']);
@@ -50,9 +69,31 @@
 					exit();
 				 };
 				
-				$query = mysqli_query($db, "
+			 	$stmt = "
+					UPDATE users 
+					SET  
+					fName='$fname', 
+					lName='$lname', 
+					bio='$bio', 
+					linkFacebook='$facebook', 
+					linkLinkedIn='$linkedin', 
+					linkGitHub='$github', 
+					headline='$headline', 
+					phoneNo='$phone', 
+					country='$country', 
+					location='$location'
+					WHERE email='$login_session'
+					";
+				
+				if ($db->query($stmt) === TRUE) {
+					echo "Record updated successfully";
+				} else {
+				 	echo "Error updating record: " . $conn->error;
+				}
+			}
+			
+			$query = mysqli_query($db, "
 				  SELECT
-						email,
 						fName,
 						lName,
 						bio,
@@ -68,21 +109,13 @@
 				  WHERE email = '$login_session'
 			 ");
 			
-				$qrow = mysqli_fetch_array($query,MYSQLI_ASSOC);
-				
-			 	$stmt = $db->prepare("UPDATE users SET fName='$fname', lName='$lname', bio='$bio', linkFacebook='$facebook', linkLinkedIn='$linkedin', linkGitHub='$github', headline='$headline', phoneNo='$phone', country='$country', location='$location' WHERE email='$login_session'");
-				
-				$stmt->bind_param('ssssssssss', $fname, $lname, $bio, $facebook, $linkedin, $github, $headline, $phone, $country, $location);
-               printf($stmt->error);
-				
-			}
-			
+			$qrow = mysqli_fetch_array($query,MYSQLI_ASSOC);
 			?>
 			
 				<div class="page-container">
 					<form action="" id="profile-edit" name="update" method="POST">
 						<div class="col-2" id="profile-info">
-						<div id="avatar"></div>
+						<div id="avatar" style="background-image: url(' <?php echo $qrow['avatar'] ?> ')"></div>
 						<a href="logout.php">Logout</a>
 						</div>
 						<div class="col-10" id="profile-name"><br>
@@ -90,18 +123,17 @@
 							<span><p>&mdash;<br>edit</p></span>
 						</div>
 						<div class="col-10">
-							<label>First Name:</label><input type="text" name="fName" />
-							<label>Last Name:</label><input type="text" name="lName" />
-							<label>Headline:</label><input type="text" name="headline" />
-							<label>Bio:</label><textarea type="text" name="bio"></textarea>
-							<label>Country:</label><input type="text" name="country" />
-							<label>Location:</label><input type="text" name="location" />
-							<label>Phone Number:</label><input type="tel" name="phoneNo" />
-							<label>Facebook:</label><input type="url" name="linkFacebook" />
-							<label>LinkedIn:</label><input type="url" name="linkLinkedIn" />
-							<label>GitHub:</label><input type="url" name="linkGitHub" />
+							<label>First Name:</label><input type="text" name="fName" value="<?php echo $qrow['fName']; ?>"/>
+							<label>Last Name:</label><input type="text" name="lName"  value="<?php echo $qrow['lName']; ?>"/>
+							<label>Headline:</label><input type="text" name="headline"  value="<?php echo $qrow['headline']; ?>"/>
+							<label>Bio:</label><textarea type="text" name="bio" value="<?php echo $qrow['bio']; ?>"></textarea>
+							<label>Country:</label><input type="text" name="country" value="<?php echo $qrow['country']; ?> "/>
+							<label>Location:</label><input type="text" name="location" value="<?php echo $qrow['location']; ?>" />
+							<label>Phone Number:</label><input type="tel" name="phoneNo" value="<?php echo $qrow['phoneNo']; ?> "/>
+							<label>Facebook:</label><input type="url" name="linkFacebook" value="<?php echo $qrow['linkFacebook']; ?>" />
+							<label>LinkedIn:</label><input type="url" name="linkLinkedIn" value="<?php echo $qrow['linkLinkedIn']; ?>" />
+							<label>GitHub:</label><input type="url" name="linkGitHub" value="<?php echo $qrow['linkGitHub']; ?>" />
 							 <input type="submit" name="update-profile" value="Save" />
-							<input type="reset" />
 						</div>
 					</form>
 				</div>
