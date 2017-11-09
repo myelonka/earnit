@@ -140,7 +140,7 @@ while ($stmt->fetch()) {
              <?php 
              
             foreach ($emailsId as $key => $value) {
-                echo "<h1>".$value."</h2><br>";
+                echo "<h3>".$value."</h3><br>";
             }
              ?>
         </div>
