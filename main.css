@@ -1008,6 +1008,10 @@ footer {
 }
 
 .submit_forms{
+	transition: background-color 0.15s ease-out;
+	-webkit-transition: background-color 0.15s ease-out;
+	-moz-transition: background-color 0.15s ease-out;
+	-o-transition: background-color 0.15s ease-out;
     border : solid 0px #000000;
 	text-align: center;
     margin: 0 auto;
@@ -1019,7 +1023,7 @@ footer {
 }
 
 .submit_forms:hover{
-     background : #ff1431;
+     background : #9e263b;
 }
 
 #featured_form h1 , #post_form h1, #fpost_form h3 {
@@ -1055,6 +1059,10 @@ footer {
 }
 
 #post_form input[type='submit'] {
+	transition: background-color 0.15s ease-out;
+	-webkit-transition: background-color 0.15s ease-out;
+	-moz-transition: background-color 0.15s ease-out;
+	-o-transition: background-color 0.15s ease-out;
     border : solid 0px #000000;
 	text-align: center;
     margin: 0 auto;
@@ -1068,7 +1076,7 @@ footer {
 
 
 #post_form input[type='submit']:hover {
-	background: #ff1431;
+	background: #9e263b;
 }
 
 h10 {
