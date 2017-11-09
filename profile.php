@@ -45,6 +45,7 @@
 					&mdash;	
 					<div class="col-2" id="profile-info">
 					<div id="avatar"></div>
+
 					<span><p><?php echo $qrow['bio'] ?></p></span>
 					&mdash;
 					<span><p><?php echo $qrow['country'] ?></p></span>

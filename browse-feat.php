@@ -116,11 +116,8 @@ while ($stmt->fetch()) {
              </form>
              <?php 
             foreach ($emailsId as $key => $value) {
-<<<<<<< HEAD
                 echo "<h3>".$value."</h3><br>";
-=======
                 echo "<h1>".$value."</h2><br>";
->>>>>>> 6c968f32916a4c1477d0e7a34b796bada693564b
             }
              ?>
 	</div>
