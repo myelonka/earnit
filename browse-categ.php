@@ -49,8 +49,9 @@ while ($stmt->fetch()) {
 <div class="col-12">
     <div id="openModal" class="modalDialog">
         <div>
+            
             <a href="#close" title="Close" class="close">X</a>
-             <?php
+            <?php
             // Retrieve the id set in the url
             $id = $_GET['id'];
             //ask all the data from database associated to this id
@@ -63,7 +64,9 @@ while ($stmt->fetch()) {
             echo '<h2>' . $title . '</h2><br>';
             echo '<p>Hiring company:' .$author. '</p><br>';
             echo '<p>Job description:<br>' .$description. '</p><br>';
-            echo '<p>Application deadline:<br>' .$deadline. '</p><br>';
+            ;
+            echo '<p>Application deadline:<br>' .$deadline. '</p>
+            <br>';
             echo '<h2>Application form</h2><br>';
           
             if (isset($_POST['submit_application'])){
@@ -120,7 +123,8 @@ while ($stmt->fetch()) {
                 echo $err;
                 }
             }
-        ?>
+        ?>  
+            <div id='categ'>
             <form id="featured_form" method="post" action="" enctype="multipart/form-data">
               Name:<br>
               <input type="text" name="employee_name" class="back" value=""><br><br>
@@ -132,6 +136,7 @@ while ($stmt->fetch()) {
               <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
               <input type="submit" value="Apply" name="submit_application" class="submit_forms"><br><br>
              </form>
+            </div>
              <?php 
              
             foreach ($emailsId as $key => $value) {
