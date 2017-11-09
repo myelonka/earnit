@@ -704,6 +704,34 @@ footer {
 	color: #FC3A52 !important;
 }
 
+#apply-button {
+	height: 2.5rem;
+	width: 45%;
+	float: left;
+	font-weight: 500;
+	background: #FC7087;
+	color: #fff;
+	font-family: 'Space Mono', monospace;
+	font-size: 14pt;
+	padding-top: 4px;
+	margin-left: 25%;
+	margin-top: 20px;
+}
+
+#apply-button:hover{
+	background: #FC3A52;
+	color: #fff;
+}
+
+::-webkit-input-placeholder {
+	color: #999999;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+
 
 
 
@@ -960,7 +988,7 @@ footer {
 }
 
 #stile_ingrid {
-	padding: 15px;
+	padding: 20px 15px 15px 15px;
     text-align: center;
     border: 1px solid #FC7087;
     height: 310px;
