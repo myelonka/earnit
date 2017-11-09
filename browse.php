@@ -31,9 +31,6 @@
 						<li>
 							<a <?php if($subcurrent == 'categ') {echo ' class=\'sub-current\'';} ?> href="?page=categ">Categories</a>
 						</li>
-						<li>
-							<a <?php if($subcurrent == 'freel') {echo ' class=\'sub-current\'';} ?> href="?page=freel">Freelancers</a>
-						</li>
 					</ul>
 				</div>
 				
@@ -50,9 +47,6 @@
 					  break;
 					case "categ":
 					  include('browse-categ.php');
-					  break;
-					case "freel":
-					 include('browse-freel.php');
 					  break;
 					}
 				?>
