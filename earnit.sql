@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 07, 2017 at 02:00 PM
--- Server version: 10.1.26-MariaDB
+-- Host: localhost
+-- Generation Time: Nov 10, 2017 at 10:53 AM
+-- Server version: 5.6.35
 -- PHP Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -12,15 +12,28 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+--
+-- Database: `earnit`
+--
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+-- --------------------------------------------------------
+
 --
--- Database: `earnit`
+-- Table structure for table `applicants`
 --
+
+CREATE TABLE `applicants` (
+  `idApplicant` int(11) NOT NULL,
+  `fNameApplicant` varchar(50) NOT NULL,
+  `lNameAppicant` varchar(50) NOT NULL,
+  `description` varchar(5000) NOT NULL,
+  `cv` longblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -116,6 +129,12 @@ INSERT INTO `usertopost` (`postId`, `userId`) VALUES
 --
 
 --
+-- Indexes for table `applicants`
+--
+ALTER TABLE `applicants`
+  ADD PRIMARY KEY (`idApplicant`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -138,6 +157,11 @@ ALTER TABLE `usertopost`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `applicants`
+--
+ALTER TABLE `applicants`
+  MODIFY `idApplicant` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `posts`
 --

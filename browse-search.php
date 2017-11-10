@@ -9,7 +9,7 @@
 
 <div id="job_container">
   
-    <?php
+<?php
       include('config.php');
          @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -46,7 +46,7 @@
         echo "<div id='stile_ingrid'> <span class='post_title'>$title </span> <br><br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span><br><a href='?page=search&id=$postId#openModal' id='apply-button'>APPLY</a></div>";
         }
         $stmt->close();
-    ?>
+?>
 
 </div>
        
