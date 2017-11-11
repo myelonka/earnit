@@ -1,7 +1,7 @@
 <div class="col-12"><h1>Search a job offer</h1></div>
 
    <form id="featured_form" method="post" action="">
-   Seach:<br><br>
+   Seach from job titles:<br><br>
    <input type="text" name="search" class="back" value=""><br><br><br><br>
    <input type="submit" value="Search" name="search_form" class="submit_forms"><br><br>
 
@@ -24,7 +24,7 @@ if (isset($_POST['search_form'])){
 
 $query = "SELECT postId, author, title, promoSentence FROM posts";
 if (isset($_POST['search_form'])){
-  $query = "SELECT postId, author, title, promoSentence FROM posts WHERE description LIKE '%$search_input%'";
+  $query = "SELECT postId, author, title, promoSentence FROM posts WHERE title LIKE '%$search_input%'";
 
 }
 
