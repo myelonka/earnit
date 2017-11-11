@@ -38,7 +38,7 @@
 								VALUES ('$email', '$password')";
 					mysqli_query($db, $sql);
 					$_SESSION['login_user'] = $id;
-					header('location: edit-profile.php?');
+					header('location: edit-profile.php');
 				}
 			}
 			?>

@@ -606,6 +606,7 @@ footer {
 	background-image: url(img/homepage.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
+	border-radius: 0.5rem;
 }
 
 #homepage-text h1 {
@@ -713,7 +714,7 @@ footer {
 }
 
 #profile-info td {
-	padding: 0.25rem 0.75rem;
+	padding: 0.5rem 0.75rem;
 }
 
 #icon-row {
