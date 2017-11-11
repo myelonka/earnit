@@ -94,20 +94,22 @@
            }
             
         ?>
+
+        <div class='col-12'>
             <form id="post_form" method="post" action="post.php">
-              Company name:<br>
+              <h10>Company name:</h10><br>
               <input type="text" class="back" name="author" value=""><br><br>
-              Title:<br>
+              <h10>Title:</h10><br>
               <input type="text" class="back" name="title" value=""><br><br>
-              Job description (max 5000 characters):<br>
+              <h10>Job description (max 5000 characters):</h10><br>
               <textarea maxlength="5000" type="text" class="back" name="description" value="description" cols="80px" rows="15" wrap="soft"></textarea><br><br>
-              Job promo (max 500 characters):<br>
+              <h10>Job promo (max 500 characters):</h10><br>
               <textarea maxlength="500" type="text" class="back" name="promo" value="description" cols="80px" rows="15" wrap="soft"></textarea><br><br>
-              Email:<br>
+              <h10>Email:</h10><br>
               <input type="email" class="back" name="employerMail"><br><br>
-              Application deadline:<br>
+              <h10>Application deadline:</h10><br>
               <input type="date" min="2017-01-01" max="2027-01-01" name="deadline"><br><br>
-              Job field:<br><br>
+              <h10>Job field:</h10><br><br>
 
               <input type="checkbox" name="field[]" value="frontEnd">Front End<br>
               <input type="checkbox" name="field[]" value="backEnd" >Back End<br>
@@ -117,15 +119,12 @@
               <input type="checkbox" name="field[]" value="interactionDesigner" >Interaction Designer<br>
               <input type="checkbox" name="field[]" value="seoSpecialist">SEO Specialist<br><br><br>
               <input type="submit" name="submit_form" class="submit_forms"><br><br><br>
-
-
+            </form>
            
 		</div>
 		
 		<?php 
 			include('footer.php');
      	?>
-		
-		</div>
 	</body>
 </html>

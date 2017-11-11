@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.7.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 07, 2017 at 02:00 PM
--- Server version: 10.1.26-MariaDB
+-- Host: localhost
+-- Generation Time: Nov 10, 2017 at 10:53 AM
+-- Server version: 5.6.35
 -- PHP Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -12,15 +12,28 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+--
+-- Database: `earnit`
+--
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+-- --------------------------------------------------------
+
 --
--- Database: `earnit`
+-- Table structure for table `applicants`
 --
+
+CREATE TABLE `applicants` (
+  `idApplicant` int(11) NOT NULL,
+  `fNameApplicant` varchar(50) NOT NULL,
+  `lNameAppicant` varchar(50) NOT NULL,
+  `description` varchar(5000) NOT NULL,
+  `cv` longblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -53,7 +66,7 @@ INSERT INTO `posts` (`postId`, `author`, `title`, `description`, `promoSentence`
 (7, 'The British Museum', 'IT Architect', 'We are recruiting for an ICT Officer to provide assistance for system maintenance and the monitoring of data flow for the Portable Antiquities Scheme’s PASt Explorers project, generously funded by the Heritage Lottery Fund.\r\n\r\nThe post-holder will check data from public records entered onto the database, maintain online communities, develop web resources and develop the national/county synthesis of research online. You will also provide database training for volunteers and self-recorders, whilst thinking of innovative ways to keep web design and content up-to-date.\r\n\r\nThe ideal candidate will be educated to degree level, or equivalent, with demonstrable experience of data and database administration. With strong knowledge of web development with PHP, SQL & HTML, you will have experience of source code version control, end-user support and troubleshooting.\r\n\r\nWe are interested in hearing from candidates who have excellent communication and interpersonal skills to liaise effectively with a variety of stakeholders. With the ability to take initiative, you will identify ways to continually improve processes whilst being sensitive to the needs of local communities.', 'You will have amazing journey with us!', 1, 'britishmuseum@info.com', '2017-11-05 13:20:24', '2017-12-08', 'webDesigner'),
 (8, 'Aspire', 'Graphic Designer', 'We are currently recruiting a Digital Analyst for joining media company. This company is a young team of driven individuals who are not afraid of hard work.\r\n\r\nThis is a great opportunity for a candidate with a passion about data and analysis who wants a career opportunity within the digital and media industry.\r\n\r\nAs Digital Analyst, your responsibilities will be:\r\n\r\nDelivering data processing, customer analytics and database development projects.\r\nPeriodic client analysis\r\nMaintenance and performance optimisation in Paid Social and Paid Search campaigns.\r\nAdvice, recommendations and reports based on the analysed data.\r\nMonitor SEO Traffic and ranking performance.\r\nThe ideal candidate will have the following:\r\n\r\nTo be educated to degree level in an analytical subject: Maths, Economics, Physics, Computer Science or a similar related subject.\r\nAdvanced Excel is a must.\r\nAdvanced Google Analytics is a must.\r\nGenuine interest or experience in digital and media industry is required.\r\nMultitasking individual with strong analytical, communication and presentation skills.\r\nApply for this role today by sending me your CV via this website.\r\n\r\nPlease note all applications will be made in confidence.', 'Digital Analyst role for an amazing media company!', 0, 'aspire@inspire.com', '2017-11-05 13:23:41', '2017-12-29', 'webDesigner'),
 (9, 'Pearson', 'Technical Architect', 'The Role\r\n\r\nWe have an exciting opportunity for a Technical Architect to join the technology team responsible for the Active Learn platforms for schools. With around 3 million users across the UK and internationally, these key platforms deliver the content for Pearson\'s major products such as Bug Club, Abacus and Edexcel GCSE materials.\r\n\r\nKey Responsibilities\r\n\r\nTo lead definition and implementation of technical and architectural standards and strategy for a range of customer-facing teaching and learning services.\r\n\r\nWorking with the Platform Managers and Technical Leads, you will help the platform development teams to deliver new features and architectural improvements, ensuring that our learning platforms deliver performance and security, through adoption of technology standards and strategy, so that our code is written in an efficient, clear and maintainable manner, including documentation.\r\n\r\nWorking with Enterprise Architecture and Global Learning Services teams, you will ensure alignment with global technology strategy, and identify opportunities to improve collaboration across teams, and to reuse technology capabilities.\r\n\r\nWorking directly with business stakeholders, you will support them in designing new product solutions, content creation standards and provide them with technical guidance and support.\r\n\r\nYou will be working within a matrix organisation to lead teams - both in house and outsourced, on- and off-shore - and will play a lead role in establishing good team dynamics, high productivity and continuous improvement.\r\n\r\nQualifications\r\n\r\nEssential Experience\r\n\r\nExperience working as a Technical Architect or Software Architect. We will also consider people who have experience as a Technical lead and are ready to step up into an Architecture role.\r\nExperience of working on complex consumer-orientated digital projects or programmes.\r\nSolid technical understanding of web technologies and solution design;\r\nStrong record of delivery using iterative software development practices.\r\nExperience in working with third-party suppliers across multiple sites;\r\nDesirable Experience\r\n\r\nExperience of working in educational, publishing or media organisations;\r\nUnderstanding and practical experience of implementing web sites with good User Experience;\r\nImproving and developing platforms for performance and security;\r\nClear understanding of Agile development tools and methodologies;\r\nExperience of leading distributed development teams and matrix organisations\r\nAny relevant qualifications / degree would be highly desirable.\r\nAt Pearson, we’re committed to a world that’s always learning and to our talented team who makes it all possible. From bringing lectures vividly to life to turning textbooks into laptop lessons, we are always re-examining the way people learn best, whether it’s one child in our own backyard or an education community across the globe. We are bold thinkers and standout innovators who motivate each other to explore new frontiers in an environment that supports and inspires us to always be better. By pushing the boundaries of technology - and each other - to surpass these boundaries, we create seeds of learning that become the catalyst for the world’s innovations, personal and global, large and small', 'We have an exciting opportunity for a Technical Architect to join the technology team!', 1, 'sotime@geg.lv', '2017-11-05 13:29:18', '2018-01-01', 'frontEnd'),
-(10, 'British Heart Foundation', 'Developer', 'About the role \r\n\r\nWe are looking for a new Developer to join our IT Team. As an excellent problem solver you will champion excellence in the development and support of technical solutions.\r\n\r\nYou\'ll configure, implement, support and maintain technical solutions, performing development/configuration activities for large complex BHF programmes in both Waterfall and Agile environments. You will ensure that development/configuration activities are delivered on time and to budget.\r\n\r\nResponsible for detailed system design and the creation of project documentation to expected quality; you will be an advocate and adopt new technology trends whilst also mentoring junior team members.\r\n\r\nAbout you\r\n\r\nTo be successful in this role you will have excellent communication skills and the ability to build strong working relationships with key stakeholders across the organisation at all levels.\r\n\r\nWith a degree in Computer Science / Software Engineering or equivalent you will have a solid grasp of underlying software engineering principles and techniques. You\'ll have demonstrable commercial experience and all aspects of the software development lifecycle.\r\n\r\nYou\'ll be experienced using and applying the latest technical architectures with Microsoft technologies and be experienced working in a team environment contributing to architecture, technical design and technical documentation of systems. You\'ll also have experience of web Development and Design (HTML, CSS, JavaScript) as well as knowledge of development languages which cover key Microsoft programmes.\r\n\r\nThis is an opportunity to make a lasting change to the work that we do. We are looking for someone with a can do attitude, flexible to work on multiple projects and ensure key deadlines are met. Strong applications should demonstrate your understanding of complex business requirements, how you continuously seek to improve services to meet customer needs and your technical experience for the post.\r\n\r\nHow to apply \r\n\r\nTo apply for this role please click through to our website for further details. Our process involves submitting your CV and supporting statement which should outline your interest and explain how you meet the role\'s criteria.\r\n\r\nBritish Heart Foundation recognises and respects the value and diversity of all.', 'For over 50 years our research has saved lives. We\'ve broken new ground, revolutionised treatments and transformed care. But heart and circulatory disease still kills one in four people in the UK. That\'s why we need you.', 0, 'sotddime@geg.lv', '2017-11-05 13:31:08', '2018-11-15', 'seoSpecialist'),
+(10, 'British Heart Foundation', 'Developer', 'About the role \r\n\r\nWe are looking for a new Developer to join our IT Team. As an excellent problem solver you will champion excellence in the development and support of technical solutions.\r\n\r\nYou\'ll configure, implement, support and maintain technical solutions, performing development/configuration activities for large complex BHF programmes in both Waterfall and Agile environments. You will ensure that development/configuration activities are delivered on time and to budget.\r\n\r\nResponsible for detailed system design and the creation of project documentation to expected quality; you will be an advocate and adopt new technology trends whilst also mentoring junior team members.\r\n\r\nAbout you\r\n\r\nTo be successful in this role you will have excellent communication skills and the ability to build strong working relationships with key stakeholders across the organisation at all levels.\r\n\r\nWith a degree in Computer Science / Software Engineering or equivalent you will have a solid grasp of underlying software engineering principles and techniques. You\'ll have demonstrable commercial experience and all aspects of the software development lifecycle.\r\n\r\nYou\'ll be experienced using and applying the latest technical architectures with Microsoft technologies and be experienced working in a team environment contributing to architecture, technical design and technical documentation of systems. You\'ll also have experience of web Development and Design (HTML, CSS, JavaScript) as well as knowledge of development languages which cover key Microsoft programmes.\r\n\r\nThis is an opportunity to make a lasting change to the work that we do. We are looking for someone with a can do attitude, flexible to work on multiple projects and ensure key deadlines are met. Strong applications should demonstrate your understanding of complex business requirements, how you continuously seek to improve services to meet customer needs and your technical experience for the post.\r\n\r\nHow to apply \r\n\r\nTo apply for this role please click through to our website for further details. Our process involves submitting your CV and supporting statement which should outline your interest and explain how you meet the role\'s criteria.\r\n\r\nBritish Heart Foundation recognises and respects the value and diversity of all.', 'For over 50 years our research has saved lives. But heart and circulatory disease still kills one in four people in the UK. That\'s why we need you.', 0, 'sotddime@geg.lv', '2017-11-05 13:31:08', '2018-11-15', 'seoSpecialist'),
 (11, 'Save The Children', 'Database Manager', 'Parkinson’s UK is the Parkinson’s support and research charity. Among our greatest strengths are our people, the enthusiasm of our local groups and supporters and the commitment of our staff. We’re leading the work to find a cure and improve life for everyone affected by Parkinson\'s and you could be part of helping us achieve this.\r\n\r\nParkinson\'s UK is looking for an experienced digital product management lead to develop our product management function. You\'ll be heading up a multidisciplinary team, creating, supporting and continuously improving products of significant scale and complexity - for example our personalisation products, AI-driven customer service, our case management system, our online shop, and our website.\r\n\r\nYou will take products through discovery, alpha, beta and live phases of development with the goal of making our services simpler, easier and faster to use. You will support other product managers to devise and iterate product roadmaps and backlogs, be a champion for user needs, document product knowledge, and communicate plans and progress through various channels including stakeholder meetings and demos. You\'re responsible for helping the charity adopt good product management culture, coaching and mentoring Product Managers and Product Owners across the business. This includes bringing in and teaching new product management techniques within the charity. You will also be a key contact for our main agency partners.\r\n\r\nThe ideal candidate will have expert knowledge of product management as a discipline. You will have a proven track record at delivering and continuously developing big digital products - not just websites - in an agile way and at pace.\r\n\r\nWe are looking for candidates who are approachable, engaging and take a pragmatic approach to managing programmes of work. You will be an excellent communicator and able to explain what product management means to a wide range of people with varying knowledge in an engaging way.', 'You will take products through all phases of development with the goal of making our services simpler, easier and faster to use.', 1, 'kvpss@fgv.ru', '2017-11-05 13:37:04', '2018-03-03', 'backEnd');
 
 -- --------------------------------------------------------
@@ -116,6 +129,12 @@ INSERT INTO `usertopost` (`postId`, `userId`) VALUES
 --
 
 --
+-- Indexes for table `applicants`
+--
+ALTER TABLE `applicants`
+  ADD PRIMARY KEY (`idApplicant`);
+
+--
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
@@ -138,6 +157,11 @@ ALTER TABLE `usertopost`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `applicants`
+--
+ALTER TABLE `applicants`
+  MODIFY `idApplicant` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `posts`
 --

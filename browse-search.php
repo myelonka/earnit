@@ -8,6 +8,19 @@
 <?php
   include('config.php');
      @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+=======
+<div class="col-12">
+   <form id="fpost_form" method="post" action="browse-search.php">
+   <input type="text" name="search" class="back" value=""><br><br>
+   <input type="submit" value="Search" name="search_form" class="submit_forms">
+  </form>
+</div> 
+
+<div id="job_container">
+  
+<?php
+      include('config.php');
+         @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
 if ($db->connect_error){
     echo "could not connect: " . $db->connect_error;
@@ -36,6 +49,13 @@ if(!$stmt = $db->prepare($query)){
 $stmt->bind_result($postId, $author, $title, $promoSentence);
 $stmt->execute();
 
+=======
+    while ($stmt->fetch()) {
+        // Set the postid in the url so you can know which post has been clicked
+        echo "<div id='stile_ingrid'> <span class='post_title'>$title </span> <br><br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span><br><a href='?page=search&id=$postId#openModal' id='apply-button'>APPLY</a></div>";
+        }
+        $stmt->close();
+?>
 
 while ($stmt->fetch()) {
     // Set the postid in the url so you can know which post has been clicked

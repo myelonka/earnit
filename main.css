@@ -694,6 +694,7 @@ footer {
 .sub-nav a {
 	font-weight: 500;
 	color: #0E2431;
+	padding: 10px;
 }
 
 .sub-nav a:hover {
@@ -702,7 +703,36 @@ footer {
 
 .sub-current {
 	color: #FC3A52 !important;
+	border-bottom: 1px solid #FC3A52;
 }
+
+#apply-button {
+	height: 2.5rem;
+	width: 45%;
+	float: left;
+	font-weight: 500;
+	background: #FC7087;
+	color: #fff;
+	font-family: 'Space Mono', monospace;
+	font-size: 14pt;
+	padding-top: 4px;
+	margin-left: 28%;
+	margin-top: 20px;
+}
+
+#apply-button:hover{
+	background: #FC3A52;
+	color: #fff;
+}
+
+::-webkit-input-placeholder {
+	color: #999999;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
 
 
 
@@ -960,7 +990,7 @@ footer {
 }
 
 #stile_ingrid {
-	padding: 15px;
+	padding: 20px 15px 15px 15px;
     text-align: center;
     border: 1px solid #FC7087;
     height: 310px;
@@ -977,19 +1007,23 @@ footer {
 }
 
 .submit_forms{
+	transition: background-color 0.15s ease-out;
+	-webkit-transition: background-color 0.15s ease-out;
+	-moz-transition: background-color 0.15s ease-out;
+	-o-transition: background-color 0.15s ease-out;
     border : solid 0px #000000;
-    border-radius: 7px;
 	text-align: center;
     margin: 0 auto;
-	color : #000000;
+	color : #fff;
+	height: 40px;
     line-height: 12px;
-	background : #FC7087;
+	background : #FC3A52;
 	text-transform: uppercase;
 	cursor: pointer;
 }
 
 .submit_forms:hover{
-     background : #FC7087;
+     background : #9e263b;
 }
 
 #featured_form h1 , #post_form h1, #fpost_form h3 {
@@ -1025,15 +1059,35 @@ footer {
 }
 
 #post_form input[type='submit'] {
+	transition: background-color 0.15s ease-out;
+	-webkit-transition: background-color 0.15s ease-out;
+	-moz-transition: background-color 0.15s ease-out;
+	-o-transition: background-color 0.15s ease-out;
     border : solid 0px #000000;
-    border-radius: 7px;
 	text-align: center;
     margin: 0 auto;
-	color : #000000;
+	color : #fff;
     line-height: 12px;
-	background : #FC7087;
+	background : #FC3A52;
 	text-transform: uppercase;
 	cursor: pointer;
+}
+
+
+
+#post_form input[type='submit']:hover {
+	background: #9e263b;
+}
+
+h10 {
+	font-weight: 600;
+	font-size: 14pt;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+#openModal p {
+	display: inline-block;
 }
 
 
@@ -1078,24 +1132,26 @@ footer {
 .close {
 	background: #FC7087;
 	color: #FFFFFF;
-	line-height: 25px;
+	line-height: 50px;
+	font-size: 25pt;
+	width: 50px;
 	position: absolute;
-	right: -12px;
+	right: -25px;
 	text-align: center;
-	top: -10px;
-	width: 24px;
+	top: -25px;
 	text-decoration: none;
 	font-weight: bold;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	border-radius: 12px;
-	-moz-box-shadow: 1px 1px 3px #000;
-	-webkit-box-shadow: 1px 1px 3px #000;
-	box-shadow: 1px 1px 3px #000;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	-moz-box-shadow: 2px 2px 5px #000;
+	-webkit-box-shadow: 2px 2px 5px #000;
+	box-shadow: 2px 2px 5px #000;
 }
 
 .close:hover { 
-    background: #FC7087; 
+     background : #ff1431;
+     color: #fff;
 }
 
 /*

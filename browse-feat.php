@@ -1,6 +1,11 @@
-<div class="col-12" id="browse_heading"><h1>Featured</h1></div>
+<div class="col-12" id="browse_heading"><h1>Featured</h1>
+
+<p>Take a look at the newest offers:</p>
+
+</div><br>
 
 <div id="job_container">
+
 <?php
      @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
@@ -23,7 +28,7 @@ $stmt->execute();
 
 while ($stmt->fetch()) {
     // Set the postid in the url so you can know which post has been clicked
-    echo "<div id='stile_ingrid'> <a href='?page=feat&id=$postId#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br><br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div>";
+    echo "<div id='stile_ingrid'> <span class='post_title'>$title </span> <br><br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span><br><a href='?page=feat&id=$postId#openModal' id='apply-button'>APPLY</a></div>";
     }
     $stmt->close();
 ?>
@@ -43,9 +48,9 @@ while ($stmt->fetch()) {
             $stmt->fetch();
             $stmt->close();
             echo '<h2>' . $title . '</h2><br>';
-            echo '<p>Hiring company:' .$author. '</p><br>';
-            echo '<p>Job description:<br>' .$description. '</p><br>';
-            echo '<p>Application deadline:<br>' .$deadline. '</p><br>';
+            echo '<h10>Hiring company:</h10><p>' .$author. '</p><br><br>';
+            echo '<h10>Job description:</h10><p>' .$description. '</p><br><br>';
+            echo '<h10>Application deadline:</h10><p>' .$deadline. '</p><br><br>';
             echo '<h2>Application form</h2><br>';
           
             if (isset($_POST['submit_application'])){
@@ -104,13 +109,13 @@ while ($stmt->fetch()) {
             }
         ?>
             <form id="featured_form" method="post" action="" enctype="multipart/form-data">
-              Name:<br>
+              <h10> Name: </h10><br>
               <input type="text" name="employee_name" class="back" value=""><br><br>
-              Surname:<br>
+              <h10> Surname: </h10><br>
               <input type="text" name="employee_surname" class="back" value=""><br><br>
-              Motivation letter (max 5000 characters):<br>
-              <textarea maxlength="5000" type="text" class="back" name="description" value="description" cols="40px" rows="15" wrap="soft"></textarea><br><br>
-              Upload your CV (pdf format):<br>
+              <h10> Motivation letter (max 5000 characters): </h10><br>
+              <textarea maxlength="5000" type="text" class="back" name="description" value="description" cols="40px" rows="15" wrap="soft"></textarea><br>
+              <h10> Upload your CV (pdf format): </h10><br>
               <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
               <input type="submit" value="Apply" name="submit_application" class="submit_forms"><br><br>
              </form>
@@ -119,7 +124,58 @@ while ($stmt->fetch()) {
                 echo "<h3>".$value."</h3><br>";
                 echo "<h1>".$value."</h2><br>";
             }
-             ?>
+        
+           if (isset($_POST['submit_application'])){ //if submit button is pressed
+               //add security
+               $fNameApplicant = trim($_POST['employee_name']);
+               $lNameApplicant = trim($_POST['employee_surname']);
+               $description = $_POST['description'];//trim removes white space..we dont purt it here
+               $cv = $_POST['fileToUpload'];       
+               
+               if (!$fNameApplicant || !$lNameApplicant || !$description || !$cv){
+                   echo('<img id="exclamation" src="img/exclamation_icon.png"><span id="message_style">You must fill out all the form fields</span>');
+                 } 
+               
+               $fNameApplicant = addslashes($fNameApplicant);
+               $fNameApplicant = htmlentities($fNameApplicant);
+               $fNameApplicant = mysqli_real_escape_string($db, $fNameApplicant);
+               $lNameApplicant = addslashes($lNameApplicant);
+               $lNameApplicant = htmlentities($lNameApplicant);
+               $lNameApplicant = mysqli_real_escape_string($db, $lNameApplicant);
+               $description = addslashes($description);
+               $description = htmlentities($description);
+               $description = mysqli_real_escape_string($db, $description);
+               $cv = addslashes($cv);
+               $cv = htmlentities($cv);
+               $cv = mysqli_real_escape_string($db, $cv);
+              
+              @$db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+                if ($db->connect_error) {
+                  echo "could not connect: " . $db->connect_error;
+                  printf("<br><a href=index.php?>Return to home page </a>");
+                  exit();
+                }
+
+                }
+
+
+               $stmt = $db->prepare('INSERT INTO applicants (idApplicant, fNameApplicant, lNameApplicant, description, cv) VALUES (null, ?, ?, ?, ?)');
+                  
+               $stmt->bind_param('ss', $fNameApplicant, $lNameApplicant, $description, $cv);
+               printf($stmt->error);
+
+               // if the request has been executed by checking the return of it (True for yes, False, for no).
+               // $smth->error() will return  the error message.
+               // echo $smth->error() will print the error message.
+               if (!$stmt->execute()){
+                  
+                  // Here you have an error, you should print it and redirect the user with an explicit error message
+                  exit();
+               }
+            
+        ?>
+
+
 	</div>
     
     </div>
