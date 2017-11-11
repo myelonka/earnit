@@ -16,7 +16,6 @@
 			include('header.php');
 			
 			@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
-			session_start();
 			ini_set('session.cookie_httponly', true);
 			$error = null;
 

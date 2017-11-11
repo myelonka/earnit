@@ -19,7 +19,7 @@
 		<div class="page-container">
 			<div class="col-12"><h1>Post a job offer</h1></div>
         <?php
-            @ $db = new mysqli('localhost', 'root', '', 'testinguser');
+           @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
             // How variables $_POST and $_GET work.
            // VALUES are set in these variables with a reference on their NAME, to retrieve them.
            //  ex :  <form method="post" action="post.php">
@@ -59,7 +59,7 @@
                $employerMail = mysqli_real_escape_string($db, $employerMail);
                $deadline = addslashes($deadline); //do this parameter need addslashes?
               
-              @$db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+              @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
                 if ($db->connect_error) {
                   echo "could not connect: " . $db->connect_error;
                   printf("<br><a href=index.php?>Return to home page </a>");

@@ -12,4 +12,6 @@
       header("location: login.php");
    }
 
+	//SESSION STARTS IN THE HEADER
+	
 ?>

@@ -16,11 +16,3 @@ STUFF TO FIX:
 20-10-2017 / Mati:
 - $current only works when there is a '?' at the end of url
 
-05-11-2017 / Mati:
-- edit profile page - how to fucking find user id to update data?
-
-
-SECONDARY TASKS:
-
-- add newsletter functionality
-- add password encryption
