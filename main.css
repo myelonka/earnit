@@ -653,21 +653,39 @@ footer {
 
 /*HOW IT WORKS*/
 
-#how-it-works-heading h4 {
-	padding: 2rem 0rem 2rem 0rem;
-	text-align: center;
-	text-transform: uppercase;
-	font-weight: 600;
-	font-size: 30pt;
+/*HOW IT WORKS*/
+
+#how-it-works-heading1 {
+	background: #fd3b52;
+	padding-bottom: 3rem;
+	margin-bottom: 2rem;
 }
 
-.highlight {
-	color: #FC3A52;
+#how-it-works-heading2 {
+	background: #9e263b;
+	padding-bottom: 3rem;
+	margin-bottom: 2rem;
+}
+
+#how-it-works-page-container h4 {
+	padding: 3rem 0rem 1rem 2rem;
+	text-align: left;
+	font-weight: 700;
+	font-size: 40pt;
+	color: #fff;
+}
+
+.highlight1 {
+	color: #9e263b;
+	font-weight: bold;
+}
+
+.highlight2 {
+	color: #fd3b52;
+	font-weight: bold;
 }
 
 .how-icon-container {
-	background-color: #FC3A52;
-	border-radius: 50%;
 	height: 8rem;
 	width: 8rem;
     display: flex;
@@ -677,18 +695,17 @@ footer {
 }
 
 .how-icon-container img {
-	height: 85px;
+	height: 110px;
 }
 
 .how-step-container {
-	margin: 2rem 2rem 0rem 2rem;
+	margin: 0rem 2rem 0rem 2rem;
 	padding: 1rem 1rem 1rem 1rem;
+	color: #fff;
 }
 
-.how-step-container h3 {
-	font-size: 16pt;
-	padding-bottom: 5px;
-}
+
+
 
 
 /*PROFILE PAGE*/
