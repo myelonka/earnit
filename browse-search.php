@@ -4,6 +4,20 @@
    Seach:<br><br>
    <input type="text" name="search" class="back" value=""><br><br><br><br>
    <input type="submit" value="Search" name="search_form" class="submit_forms"><br><br>
+<<<<<<< HEAD
+=======
+
+<?php
+  include('config.php');
+     @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+=======
+<div class="col-12">
+   <form id="fpost_form" method="post" action="browse-search.php">
+   <input type="text" name="search" class="back" value=""><br><br>
+   <input type="submit" value="Search" name="search_form" class="submit_forms">
+  </form>
+</div> 
+>>>>>>> db60024f3bbe834f6474abc996dcd3d59a2bfde4
 
 <?php
   include('config.php');
@@ -21,6 +35,7 @@ if (isset($_POST['search_form'])){
     $search_input = htmlentities($search_input);
     $search_input = mysqli_real_escape_string($db, $search_input);
 }
+<<<<<<< HEAD
 
 $query = "SELECT postId, author, title, promoSentence FROM posts";
 if (isset($_POST['search_form'])){
@@ -28,6 +43,15 @@ if (isset($_POST['search_form'])){
 
 }
 
+=======
+
+$query = "SELECT postId, author, title, promoSentence FROM posts";
+if (isset($_POST['search_form'])){
+  $query = "SELECT postId, author, title, promoSentence FROM posts WHERE description LIKE '%$search_input%'";
+
+}
+
+>>>>>>> db60024f3bbe834f6474abc996dcd3d59a2bfde4
 //echo "Running the query: $query <br/>"; # For debugging
 
 if(!$stmt = $db->prepare($query)){
@@ -36,6 +60,16 @@ if(!$stmt = $db->prepare($query)){
 $stmt->bind_result($postId, $author, $title, $promoSentence);
 $stmt->execute();
 
+<<<<<<< HEAD
+=======
+=======
+    while ($stmt->fetch()) {
+        // Set the postid in the url so you can know which post has been clicked
+        echo "<div id='stile_ingrid'> <span class='post_title'>$title </span> <br><br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span><br><a href='?page=search&id=$postId#openModal' id='apply-button'>APPLY</a></div>";
+        }
+        $stmt->close();
+?>
+>>>>>>> db60024f3bbe834f6474abc996dcd3d59a2bfde4
 
 while ($stmt->fetch()) {
     // Set the postid in the url so you can know which post has been clicked
