@@ -11,7 +11,3 @@
 <div class="col-1">10</div>
 <div class="col-1">11</div>
 <div class="col-1">12</div>
-
-	<?php
-		include('footer.php');
-	?>

@@ -17,6 +17,7 @@
 			include('header.php');
 		
 			@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+			session_start();
 			ini_set('session.cookie_httponly', true);
 			$error = null;
 			$email = '';
@@ -39,7 +40,7 @@
 					mysqli_query($db, $sql);
 					header('location: profile.php');
 					
-					$_SESSION['login_user'] = $email;
+					$_SESSION['login_user'] = $id;
 					header('location: profile.php?');
 				}
 			}
@@ -77,7 +78,7 @@
 										<br>
 										<button type="submit" name="register" id="reg-signupbtn">Sign up</button>
 										<h6>Already have an account?&nbsp;</h6>
-										<a href="login.php" id="reg-loginbtn">Log in</a>
+										<a href="login.php" id="reg-loginbtn">Sign in</a>
 									</td>
 								</tr>
 								<tr>	
@@ -97,13 +98,17 @@
 			<div id="homepage" class="page-container">
 				
 				<div id="homepage-text" class="col-12">
-					<h2>Work for <br> your tomorrow <br> <span style="color: #FC3A52">&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  today.</span></h2>
+					<h2>Don't <br> just dream. <br> <span style="color: #FC3A52">Do.</span></h2>
 				</div>
-				<div id="homepage-text" class="col-8">
+				<div id="homepage-text" class="col-6">
 					<p>
-						We are here to provide the link between students and their future employers.<br>
-						Find a freelance job in no time, combine study assignments with real job experience and build connections with local companies.<br>
-						We provide opportunities. Employers trust - you have to Earn It !
+						Whatever you need to simplify your to do list, no matter your budget.
+					</p>
+					<p>
+						Find services based on your goals and deadlines, it’s that simple.
+					</p>
+					<p>
+						Your payment is always secure, EarnIt is built to protect your peace of mind.
 					</p>
 				</div>
 			</div>

@@ -1,22 +1,17 @@
-<div class="col-12" id="browse_heading"><h1>Featured</h1>
-
-<p>Take a look at the newest offers:</p>
-
-</div><br>
-
-<div id="job_container">
+<div class="col-12" id="teamwork"><h1>Featured</h1></div>
 
 <?php
+	
      @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
 if ($db->connect_error){
     echo "could not connect: " . $db->connect_error;
-    printf("<br><a href=index.php>Return to home page </a>");
+    printf("<br><a href=index.php?>Return to home page </a>");
     exit();
 }
 
 // get the postId to be able to easily keep a trace on your element.
-$query = "select postId,author,title,promoSentence from posts where isFeatured = 1";
+$query = "SELECT postId,author,title,promoSentence FROM posts WHERE isFeatured = 1";
 
 //echo "Running the query: $query <br/>"; # For debugging
 
@@ -28,12 +23,12 @@ $stmt->execute();
 
 while ($stmt->fetch()) {
     // Set the postid in the url so you can know which post has been clicked
-    echo "<div id='stile_ingrid'> <span class='post_title'>$title </span> <br><br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span><br><a href='?page=feat&id=$postId#openModal' id='apply-button'>APPLY</a></div>";
+    echo "<div class='col-4 equal' id='stile_ingrid'> <a href='?page=feat&id=$postId#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div>";
     }
     $stmt->close();
 ?>
 
-</div>
+<div class="col-12">
     <div id="openModal" class="modalDialog">
         <div>
             <a href="#close" title="Close" class="close">X</a>
@@ -48,22 +43,11 @@ while ($stmt->fetch()) {
             $stmt->fetch();
             $stmt->close();
             echo '<h2>' . $title . '</h2><br>';
-            echo '<h10>Hiring company:</h10><p>' .$author. '</p><br><br>';
-            echo '<h10>Job description:</h10><p>' .$description. '</p><br><br>';
-            echo '<h10>Application deadline:</h10><p>' .$deadline. '</p><br><br>';
+            echo '<p>Hiring company:' .$author. '</p><br>';
+            echo '<p>Job description:<br>' .$description. '</p><br>';
+            echo '<p>Application deadline:<br>' .$deadline. '</p><br>';
             echo '<h2>Application form</h2><br>';
           
-            if (isset($_POST['submit_application'])){
-            $query = "INSERT IGNORE INTO usertopost (postId, userId) VALUES (?, ?)";
-            if (!$stmt = $db->prepare($query)){
-                 printf($db->error);
-            }
-            $stmt->bind_param('ii', $id, $_SESSION['login_user']);
-            if (!$stmt->execute()){
-                printf($db->error);
-                }
-            }
-
             $usersId = [];
             $query = "SELECT * FROM usertopost WHERE postId=$id";
             $stmt = $db->prepare($query);
@@ -86,16 +70,25 @@ while ($stmt->fetch()) {
             }
 
 
-
+            if (isset($_POST['submit_application'])){
+                $query = "INSERT IGNORE INTO usertopost (postId, userId) VALUES (4, 8)";
+                if (!$stmt1 = $db->prepare($query)){
+                    printf($db->error);
+                }
+                //$stmt->bind_param('ss', $id, $_SESSION['login_user']);
+                if (!$stmt1->execute()){
+                    printf($db->error);
+                }
+            }
 
             if (isset($_FILES['submit_application'])){
                 $allowedextensions = array('pdf');
                 $extension = strtolower(substr($_FILES['upload']['name'], strrpos($_FILES['upload']['name'], '.') + 1));
                 if(in_array($extension, $allowedextensions) === false){
                     #add a new array entry
-                        $error[] = 'This is not an PDF file, upload is allowed only for PDF files.';
+                        $error[] = '<br> This is not an PDF file, upload is allowed only for PDF files.';
                     if($_FILES['upload']['size'] > 1000000){
-                         $error[]='The file exceeded the upload limit';
+                         $error[]='<br> The file exceeded the upload limit';
                     }
                     if(empty($error)){    
                         move_uploaded_file($_FILES['upload']['tmp_name'], "uploads/{$_FILES['upload']['name']}");     
@@ -109,73 +102,23 @@ while ($stmt->fetch()) {
             }
         ?>
             <form id="featured_form" method="post" action="" enctype="multipart/form-data">
-              <h10> Name: </h10><br>
-              <input type="text" name="employee_name" class="back" value=""><br><br>
-              <h10> Surname: </h10><br>
-              <input type="text" name="employee_surname" class="back" value=""><br><br>
-              <h10> Motivation letter (max 5000 characters): </h10><br>
-              <textarea maxlength="5000" type="text" class="back" name="description" value="description" cols="40px" rows="15" wrap="soft"></textarea><br>
-              <h10> Upload your CV (pdf format): </h10><br>
-              <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
+              <h1> Name: </h1>
+              <input type="text" name="employee_name" class="back" value="">
+              <h1> Surname: </h1>
+              <input type="text" name="employee_surname" class="back" value="">
+              <h1> Motivation letter (max 5000 characters): </h1>
+              <textarea maxlength="5000" type="text" class="back" name="description" value="description" cols="40px" rows="15" wrap="soft"></textarea>
+              <h1> Upload your CV (PDF format): </h1>
+              <input id="fileToUpload" type="file" name="fileToUpload">
+              <br><br>
               <input type="submit" value="Apply" name="submit_application" class="submit_forms"><br><br>
              </form>
              <?php 
+             
             foreach ($emailsId as $key => $value) {
-                echo "<h3>".$value."</h3><br>";
-                echo "<h1>".$value."</h2><br>";
+                echo "<h2>".$value."</h2><br>";
             }
-        
-           if (isset($_POST['submit_application'])){ //if submit button is pressed
-               //add security
-               $fNameApplicant = trim($_POST['employee_name']);
-               $lNameApplicant = trim($_POST['employee_surname']);
-               $description = $_POST['description'];//trim removes white space..we dont purt it here
-               $cv = $_POST['fileToUpload'];       
-               
-               if (!$fNameApplicant || !$lNameApplicant || !$description || !$cv){
-                   echo('<img id="exclamation" src="img/exclamation_icon.png"><span id="message_style">You must fill out all the form fields</span>');
-                 } 
-               
-               $fNameApplicant = addslashes($fNameApplicant);
-               $fNameApplicant = htmlentities($fNameApplicant);
-               $fNameApplicant = mysqli_real_escape_string($db, $fNameApplicant);
-               $lNameApplicant = addslashes($lNameApplicant);
-               $lNameApplicant = htmlentities($lNameApplicant);
-               $lNameApplicant = mysqli_real_escape_string($db, $lNameApplicant);
-               $description = addslashes($description);
-               $description = htmlentities($description);
-               $description = mysqli_real_escape_string($db, $description);
-               $cv = addslashes($cv);
-               $cv = htmlentities($cv);
-               $cv = mysqli_real_escape_string($db, $cv);
-              
-              @$db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
-                if ($db->connect_error) {
-                  echo "could not connect: " . $db->connect_error;
-                  printf("<br><a href=index.php?>Return to home page </a>");
-                  exit();
-                }
-
-                }
-
-
-               $stmt = $db->prepare('INSERT INTO applicants (idApplicant, fNameApplicant, lNameApplicant, description, cv) VALUES (null, ?, ?, ?, ?)');
-                  
-               $stmt->bind_param('ss', $fNameApplicant, $lNameApplicant, $description, $cv);
-               printf($stmt->error);
-
-               // if the request has been executed by checking the return of it (True for yes, False, for no).
-               // $smth->error() will return  the error message.
-               // echo $smth->error() will print the error message.
-               if (!$stmt->execute()){
-                  
-                  // Here you have an error, you should print it and redirect the user with an explicit error message
-                  exit();
-               }
-            
-        ?>
-
-
+             ?>
 	</div>
-    
     </div>
+</div>

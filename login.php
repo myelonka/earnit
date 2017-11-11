@@ -16,12 +16,13 @@
 			include('header.php');
 			
 			@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
+			session_start();
 			ini_set('session.cookie_httponly', true);
 			$error = null;
 
 			if(isset($_POST['login'])) {
 
-			  $email = mysqli_real_escape_string($db,$_POST['email']);
+			  $email = mysqli_real_escape_string($db, $_POST['email']);
 			  $password = mysqli_real_escape_string($db,$_POST['password']); 
 
 			  $sql = "SELECT id FROM users WHERE email = '$email' and password = '$password'";
@@ -32,8 +33,7 @@
 			  $count = mysqli_num_rows($result);
 
 			  if($count == 1) {
-				 $_SESSION['login_user'] = $email;
-
+				$_SESSION['login_user'] = $row['id'];
 				 header("location: profile.php?");
 			  }else {
 				 $error = 'Your username or password is invalid!';

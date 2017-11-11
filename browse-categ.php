@@ -1,64 +1,92 @@
-<div class="col-12" id="browse_heading"><h1>Categories</h1></div>
-<div class="col-12">
+<div class="col-12"><h1>Categories</h1>
     <form id="post_form" method="post" action="">
-              <h1>Choose a job field:</h1>
-              <input type="checkbox" name="field[]" value="frontEnd"><p>Front End</p><br>
-              <input type="checkbox" name="field[]" value="backEnd" ><p>Back End</p><br>
-              <input type="checkbox" name="field[]" value="webDesigner"><p>Web Designer</p><br>
-              <input type="checkbox" name="field[]" value="uiDesigner" ><p>UI Designer</p><br>
-              <input type="checkbox" name="field[]" value="uxDesigner"><p>UX Designer</p></p><br>
-              <input type="checkbox" name="field[]" value="interactionDesigner" ><p>Interaction Designer</p><br>
-              <input type="checkbox" name="field[]" value="seoSpecialist"><p>SEO Specialist</p><br><br><br>
-              <input class="submit_forms" type="submit" name="submit_form">
-
-</form>
-</div>
-
-<div id="job_container">
-
+              Choose a job field:<br>
+              <input type="checkbox" name="field[]" value="frontEnd">Front End<br>
+              <input type="checkbox" name="field[]" value="backEnd" >Back End<br>
+              <input type="checkbox" name="field[]" value="webDesigner">Web Designer<br>
+              <input type="checkbox" name="field[]" value="uiDesigner" >UI Designer<br>
+              <input type="checkbox" name="field[]" value="uxDesigner">UX Designer<br>
+              <input type="checkbox" name="field[]" value="interactionDesigner" >Interaction Designer<br>
+              <input type="checkbox" name="field[]" value="seoSpecialist">SEO Specialist<br><br><br>
+              <input type="submit" name="submit_form" class="submit_forms"><br><br><br><br><br>
+    
     <?php
      @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
 
-    if ($db->connect_error){
-        echo "could not connect: " . $db->connect_error;
-        printf("<br><a href=index.php>Return to home page </a>");
-        exit();
+if ($db->connect_error){
+    echo "could not connect: " . $db->connect_error;
+    printf("<br><a href=index.php>Return to home page </a>");
+    exit();
+}
+    
+if (isset($_POST['field'])) {
+    $optionArray = $_POST['field'];
+    for ($i=0; $i<count($optionArray); $i++){
+    // echo $optionArray[$i]."<br />";
+    $fieldvalue = $optionArray[$i];//which checkbox was marked
     }
-        
-    if (isset($_POST['field'])) {
-        $optionArray = $_POST['field'];
-        for ($i=0; $i<count($optionArray); $i++){
-        // echo $optionArray[$i]."<br />";
-        $fieldvalue = $optionArray[$i];//which checkbox was marked
-        }
-    }
+}
 
-    $query = "select author,title,description,promoSentence,deadline from posts";
-    if (isset($_POST['field'])){
-        $query = "SELECT author, title, description, promoSentence, deadline FROM posts WHERE category=?";
+$query = "select postId, author,title,description,promoSentence,deadline from posts";
+if (isset($_POST['field'])){
+    $query = "SELECT postId, author, title, description, promoSentence, deadline FROM posts WHERE category=?";
+}
+//echo "Running the query: $query <br/>"; # For debugging
+if (!$stmt = $db->prepare($query)){
+  printf($db->error);
+}
+if (isset($_POST['field'])){
+  $stmt->bind_param("s", $fieldvalue);
+}
+$stmt->bind_result($postId, $author, $title, $description, $promoSentence, $deadline);
+$stmt->execute();
+while ($stmt->fetch()) {
+        echo "<div class='col-4 equal' id='stile_ingrid'> <a href=?page=categ&id=$postId#openModal><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div> ";
+    }    
+?>
 
-    }
-    //echo "Running the query: $query <br/>"; # For debugging
-    if (!$stmt = $db->prepare($query)){
-      printf($db->error);
-    }
-    if (isset($_POST['field'])){
-      $stmt->bind_param("s", $fieldvalue);
-    }
-    $stmt->bind_result($author, $title, $description, $promoSentence, $deadline);
-    $stmt->execute();
-    while ($stmt->fetch()) {
-            echo "<div class='col-4 equal' id='stile_ingrid'><span class='post_title'>$title </span> <br><br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span><br><a href='?page=search&id=$postId#openModal' id='apply-button'>APPLY</a></div> ";
-        }    
-    ?>
 
-</div>
-
+<div class="col-12">
     <div id="openModal" class="modalDialog">
         <div>
             <a href="#close" title="Close" class="close">X</a>
+             <?php
+            // Retrieve the id set in the url
+            $id = $_GET['id'];
+            //ask all the data from database associated to this id
+            $query = "SELECT author, title, description, employerMail, deadline FROM posts WHERE postId=$id";
+            $stmt = $db->prepare($query);
+            $stmt->bind_result($author, $title, $description, $employerMail, $deadline);    
+            $stmt->execute();
+            $stmt->fetch();
+            $stmt->close();
+            echo '<h2>' . $title . '</h2><br>';
+            echo '<p>Hiring company:' .$author. '</p><br>';
+            echo '<p>Job description:<br>' .$description. '</p><br>';
+            echo '<p>Application deadline:<br>' .$deadline. '</p><br>';
+            echo '<h2>Application form</h2><br>';
+          
+            if (isset($_POST['submit_application'])){
+                $query = "INSERT IGNORE INTO usertopost (postId, userId) VALUES (?, ?)";
+                if (!$stmt = $db->prepare($query)){
+                    printf($db->error);
+                }
+                $stmt->bind_param('ss', $id, $_SESSION['login_user']);
+                if (!$stmt->execute()){
+                    printf($db->error);
+                }
+            }
+          
+            $usersId = [];
+            $query = "SELECT * FROM usertopost WHERE postId=$id";
+            $stmt = $db->prepare($query);
+            $stmt->bind_result($postId, $userId);
+            $stmt->execute();
+            while ($stmt->fetch()){
+                array_push($usersId, $userId);
+            }
+            $stmt->close();
             
-<<<<<<< HEAD
             $emailsId = [];
             foreach ($usersId as $key => $value) {
                 $query = "SELECT email FROM users WHERE id=$value";
@@ -92,8 +120,7 @@
                 echo $err;
                 }
             }
-        ?>  
-            <div id='categ'>
+        ?>
             <form id="featured_form" method="post" action="" enctype="multipart/form-data">
               Name:<br>
               <input type="text" name="employee_name" class="back" value=""><br><br>
@@ -105,16 +132,13 @@
               <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
               <input type="submit" value="Apply" name="submit_application" class="submit_forms"><br><br>
              </form>
-            </div>
              <?php 
              
             foreach ($emailsId as $key => $value) {
-                echo "<h3>".$value."</h3><br>";
+                echo "<h1>".$value."</h2><br>";
             }
              ?>
-=======
->>>>>>> 6c968f32916a4c1477d0e7a34b796bada693564b
         </div>
 	</div>
-
+    </div>
 </div>

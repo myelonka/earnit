@@ -14,6 +14,7 @@
 		<?php
 			include('config.php');
 			include('header.php');
+			session_start();
 			include('session.php');
 			ini_set('session.cookie_httponly', true);
 			
@@ -22,17 +23,15 @@
 						email,
 						fName,
 						lName,
-						bio,
 						avatar,
 						linkFacebook,
 						linkLinkedIn,
 						linkGitHub,
 						headline,
 						phoneNo,
-						country,
 						location
 				  FROM users 
-				  WHERE email = '$login_session'
+				  WHERE id = '$login_session'
 			 ");
 			
 			$qrow = mysqli_fetch_array($query,MYSQLI_ASSOC);
@@ -40,30 +39,22 @@
 		?>
 			
 				<div class="page-container">
-					<div class="col-4" id="profile-info">
-					<div id="avatar" style="background-image: url(' <?php echo $qrow['avatar'] ?> ')"></div>
-					&mdash;	
-					<span><p><?php echo $qrow['bio'] ?></p></span>
-					&mdash;
-					<span><p><?php echo $qrow['country'] ?></p></span>
-					&mdash;
+					<div class="col-2" id="profile-info">
+					<div id="avatar" style="background-image: url(uploads/<?php if(!is_null($qrow['avatar'])) { echo $qrow['avatar']; } else { echo 'default.jpg'; }; ?>)"></div>
 					<span><p><?php echo $qrow['location'] ?></p></span>
-					&mdash;
 					<span><p><?php echo $qrow['phoneNo'] ?></p></span>
-					&mdash;
 					<span><p><?php echo $qrow['linkFacebook'] ?></p></span>
-					&mdash;
 					<span><p><?php echo $qrow['linkLinkedIn'] ?></p></span>
 					<br>
-					<a href="logout.php">Logout</a>	
+					<a href="logout.php">Logout</a>
 						
 					
 					</div>
-					<div class="col-8" id="profile-name"><br>
+					<div class="col-10" id="profile-name"><br>
 						<span><h2><?php echo $qrow['fName'] . '&nbsp;' . $qrow['lName']; ?></h2></span>
 						<span><p>&mdash;<br><?php echo $qrow['headline'] ?></p></span>
 					</div>
-					<div class="col-8" id="profile-work">
+					<div class="col-10" id="profile-work">
 						<div class="col-3">profile work</div>
 						<div class="col-3">...</div>
 						<div class="col-3"></div>

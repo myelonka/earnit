@@ -40,13 +40,13 @@ html {
   -moz-box-sizing: border-box;
 }
 html, body {
-	height: 100%;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	left: 0;
-	top: 0;
-	font-size: 100%;
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+   left: 0;
+   top: 0;
+   font-size: 100%;
 	background-color: #fff;
 }
 div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
@@ -153,8 +153,6 @@ button {
 	height: 2rem;
 	display: inline;
 	cursor: pointer;
-	text-transform: uppercase;
-	font-weight: 400;
 }
 ::selection { /* SELECTED TEXT BG COLOR */
     background: #FC7087;
@@ -164,11 +162,6 @@ button {
     background: #FC7087;
 	color: #fff;
 }
-
-
-
-
-
 
 /* POSITIONING */
 
@@ -186,10 +179,6 @@ button {
 .justify {
     text-align: justify;
 }
-
-
-
-
 
 
 /* GRID SYSTEM */
@@ -230,11 +219,15 @@ button {
    min-height: 100%;
 	max-width: 1400px;
 	margin-top: 2rem;
-	margin-bottom: 2rem;
 }
 
 .equal{
     height: 30%;
+}
+
+/*!!!!!TESTING VISULAS!!!!!*/
+.page-container div {
+	border: 1px solid #ddd;
 }
 
 .errors	{
@@ -252,9 +245,12 @@ button {
 	letter-spacing: 1.5;
 }
 
+/*!!!!!TESTING VISULAS!!!!!*/
+.page-container div {
+	border: 0.1px solid #ddd;
+}
 
-
-
+/*!!!!!*/
 
 
 /* HEADER */
@@ -394,9 +390,6 @@ a.svg-link:hover path {
 
 
 
-
-
-
 /* FOOTER */
 
 footer {
@@ -486,7 +479,7 @@ footer {
 }
 
 #newsletter-submitbtn {
-	width: 200px;
+	width: auto;
 	height: 2.5rem;
 	text-align: right;
 	margin-left: -0.25rem;
@@ -502,11 +495,6 @@ footer {
 #newsletter-submitbtn:hover {
 	color: #fff;
 }
-
-
-
-
-
 
 /*HOMEPAGE*/
 
@@ -599,26 +587,8 @@ footer {
 }
 
 #reg-signupbtn {
-	background: transparent;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #fff;
-	color: #fff;
+	border-bottom: 0.25rem solid #9E263B;
 }
-
-#reg-signupbtn:hover{
-	background: #fff;
-	color: #9e263b;
-}
-
-::-webkit-input-placeholder {
-	color: #999999;
-}
-
-[placeholder]:focus::-webkit-input-placeholder {
-	color: transparent;
-}
-
 
 #reg-signupbtn:active {
 	border-bottom: none;
@@ -646,36 +616,19 @@ footer {
 	background-image: url(img/homepage.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	margin-bottom: 2rem;
 }
 
 #homepage-text h2 {
-<<<<<<< HEAD
-	padding: 4rem 0rem 0rem 4rem;
+	padding-top: 0rem;
 	color: #fff;
-	font-size: 6rem;
-	line-height: 1;
-	text-shadow: 3px 3px 30px rgba(0,0,0,0.5);
-=======
-	height: 30rem;
-	padding: 6rem 0rem 0rem 1.5rem;
-	color: #fff;
-	font-size: 6.5rem;
-	line-height: 7rem;
->>>>>>> a4b256cd24643d401222d0dde17387ddce4a3ee3
+	font-size: 8rem;
 }
 
 #homepage-text p {
 	color: #fff;
 	line-height: 1.7rem;
-	padding: 4rem 1.5rem 1rem 4rem;
-	font-size: 1rem;
+	padding-bottom: 1rem;
 }
-
-
-
-
-
 
 
 /*BROWSE*/
@@ -694,7 +647,6 @@ footer {
 .sub-nav a {
 	font-weight: 500;
 	color: #0E2431;
-	padding: 10px;
 }
 
 .sub-nav a:hover {
@@ -703,75 +655,25 @@ footer {
 
 .sub-current {
 	color: #FC3A52 !important;
-	border-bottom: 1px solid #FC3A52;
 }
-
-#apply-button {
-	height: 2.5rem;
-	width: 45%;
-	float: left;
-	font-weight: 500;
-	background: #FC7087;
-	color: #fff;
-	font-family: 'Space Mono', monospace;
-	font-size: 14pt;
-	padding-top: 4px;
-	margin-left: 28%;
-	margin-top: 20px;
-}
-
-#apply-button:hover{
-	background: #FC3A52;
-	color: #fff;
-}
-
-::-webkit-input-placeholder {
-	color: #999999;
-}
-
-[placeholder]:focus::-webkit-input-placeholder {
-	color: transparent;
-}
-
-
-
-
-
-
 
 /*HOW IT WORKS*/
 
-#how-it-works-heading1 {
-	background: #fd3b52;
-	padding-bottom: 3rem;
-	margin-bottom: 2rem;
+#how-it-works-heading h4 {
+	padding: 2rem 0rem 2rem 0rem;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 30pt;
 }
 
-#how-it-works-heading2 {
-	background: #9e263b;
-	padding-bottom: 3rem;
-	margin-bottom: 2rem;
-}
-
-#how-it-works-page-container h4 {
-	padding: 3rem 0rem 1rem 2rem;
-	text-align: left;
-	font-weight: 700;
-	font-size: 40pt;
-	color: #fff;
-}
-
-.highlight1 {
-	color: #9e263b;
-	font-weight: bold;
-}
-
-.highlight2 {
-	color: #fd3b52;
-	font-weight: bold;
+.highlight {
+	color: #FC3A52;
 }
 
 .how-icon-container {
+	background-color: #FC3A52;
+	border-radius: 50%;
 	height: 8rem;
 	width: 8rem;
     display: flex;
@@ -781,17 +683,18 @@ footer {
 }
 
 .how-icon-container img {
-	height: 110px;
+	height: 85px;
 }
 
 .how-step-container {
-	margin: 0rem 2rem 0rem 2rem;
+	margin: 2rem 2rem 0rem 2rem;
 	padding: 1rem 1rem 1rem 1rem;
-	color: #fff;
 }
 
-
-
+.how-step-container h3 {
+	font-size: 16pt;
+	padding-bottom: 5px;
+}
 
 
 /*PROFILE PAGE*/
@@ -816,10 +719,6 @@ footer {
 #profile-work div {
 	height: 300px;
 }
-
-
-
-
 
 
 /*LOGIN PAGE*/
@@ -938,11 +837,6 @@ footer {
 	font-size: 1rem;
 }
 
-
-
-
-
-
 /*EDIT PROFILE*/
 
 #profile-edit input, textarea {
@@ -950,10 +844,6 @@ footer {
 	display: block;
 	margin-bottom: 1rem;
 }
-
-
-
-
 
 
 /*POST FORM*/
@@ -989,112 +879,27 @@ footer {
     color: #FC3A52;
 }
 
-#stile_ingrid {
-	padding: 20px 15px 15px 15px;
+#stile_ingrid{
     text-align: center;
-    border: 1px solid #FC7087;
-    height: 310px;
-    width: 310px;
-    margin: 19px;
-    float: left;
 }
 
-#job_container {
-	width: 1400px;
-	max-height: 9000px;
-	margin: 0 auto;
-	overflow: hidden;
+#post_form{
+    padding-top : 15%;
 }
 
 .submit_forms{
-	transition: background-color 0.15s ease-out;
-	-webkit-transition: background-color 0.15s ease-out;
-	-moz-transition: background-color 0.15s ease-out;
-	-o-transition: background-color 0.15s ease-out;
     border : solid 0px #000000;
+    border-radius: 7px;
 	text-align: center;
     margin: 0 auto;
-	color : #fff;
-	height: 40px;
+	color : #000000;
     line-height: 12px;
-	background : #FC3A52;
-	text-transform: uppercase;
-	cursor: pointer;
+	background : #a08fff;
 }
 
 .submit_forms:hover{
-     background : #9e263b;
+     background : #5e2fec;
 }
-
-#featured_form h1 , #post_form h1, #fpost_form h3 {
-	font-weight: 600;
-	letter-spacing: 0px;
-	font-size: 14pt;
-	padding: 5px 0px 5px 0px;
-}
-
-#featured_form input {
-	margin-bottom: 20px;
-}
-
-#fileToUpload {
-	height: 50px;
-	background-color: transparent;
-	width: 300px;
-}
-
-#featured_form textarea {
-	margin-bottom: 30px;
-}
-
-#post_form input[type='checkbox']{
-	margin: 15px 0px 0px 0px;
-	width: 50px;
-	cursor: pointer;
-}
-
-#post_form p {
-	display: inline-block;
-	height: 30px;
-}
-
-#post_form input[type='submit'] {
-	transition: background-color 0.15s ease-out;
-	-webkit-transition: background-color 0.15s ease-out;
-	-moz-transition: background-color 0.15s ease-out;
-	-o-transition: background-color 0.15s ease-out;
-    border : solid 0px #000000;
-	text-align: center;
-    margin: 0 auto;
-	color : #fff;
-    line-height: 12px;
-	background : #FC3A52;
-	text-transform: uppercase;
-	cursor: pointer;
-}
-
-
-
-#post_form input[type='submit']:hover {
-	background: #9e263b;
-}
-
-h10 {
-	font-weight: 600;
-	font-size: 14pt;
-	display: inline-block;
-	margin-right: 10px;
-}
-
-#openModal p {
-	display: inline-block;
-}
-
-
-
-
-
-
 /*MODAL DIALOG -  source used to create modal window is taken from https://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html5-and-css3/ */
 
 
@@ -1130,31 +935,29 @@ h10 {
 }
 
 .close {
-	background: #FC7087;
+	background: #0E2431;
 	color: #FFFFFF;
-	line-height: 50px;
-	font-size: 25pt;
-	width: 50px;
+	line-height: 25px;
 	position: absolute;
-	right: -25px;
+	right: -12px;
 	text-align: center;
-	top: -25px;
+	top: -10px;
+	width: 24px;
 	text-decoration: none;
 	font-weight: bold;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
-	-moz-box-shadow: 2px 2px 5px #000;
-	-webkit-box-shadow: 2px 2px 5px #000;
-	box-shadow: 2px 2px 5px #000;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
 }
 
 .close:hover { 
-     background : #ff1431;
-     color: #fff;
+    background: #FC7087; 
 }
 
-/*
+
 @media only screen and (min-width: 720px) {
 	.page-container {
         max-width: 720px;
@@ -1181,4 +984,4 @@ h10 {
 		width: 1400px;
 	}
 }
-*/
+
