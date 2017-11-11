@@ -14,19 +14,17 @@
 		<?php
 			include('config.php');
 			include('header.php');
-			
 		?>
 		
-		<div class="page-container">
+		<div id="how-it-works-page-container" class="page-container">
 
-			<div id="how-it-works-heading" class="col-12"><h4>I want to <span class="highlight">{ offer }</span> a job</h4></div>
+			<div id="how-it-works-heading1" class="col-12"><h4>- I want to <span class="highlight1">{</span>  offer <span class="highlight1">}</span> a job.</h4>
 			<div class="col-4">
 				<div class="how-icon-container">
 					<img src="img/how-icons/icon1.png">
 				</div>
 				<div class="how-step-container">
-					<h3>STEP 1</h3>
-					<p> Describe your idea, set a deadine and post your offer</p>
+					<p><span class="highlight1">STEP 1</span> <br> - Describe your idea, set a deadine and post your offer</p>
 				</div>
 			</div>
 			<div class="col-4">
@@ -34,7 +32,7 @@
 					<img src="img/how-icons/icon2.png">
 				</div>
 				<div class="how-step-container">
-					<p><b>STEP 2</b> Check applicants, decide who fits the job best and contact them</p>
+					<p><span class="highlight1">STEP 2</span> <br> - Check applicants, decide who fits the job best and contact them</p>
 				</div>
 			</div>
 			<div class="col-4">
@@ -42,20 +40,20 @@
 					<img src="img/how-icons/icon3.png">
 				</div>
 				<div class="how-step-container">
-					<p><b>STEP 3</b> You have found the freelancer who can work on your offer</p>
+					<p><span class="highlight1">STEP 3</span> <br> - You have found the freelancer who can work on your offer</p>
 				</div>
 			</div>
+		</div>
 
 <br>
 
-		<div id="get-a-job">
-			<div id="how-it-works-heading" class="col-12"><h4>I want to <span class="highlight">{ get }</span> a job</h4></div>
+			<div id="how-it-works-heading2" class="col-12"><h4>- I want to <span class="highlight2">{</span>  get <span class="highlight2">}</span> a job.</h4>
 			<div class="col-4">
 				<div class="how-icon-container">
 					<img src="img/how-icons/icon4.png">
 				</div>
 				<div class="how-step-container">
-					<p><b>STEP 1</b> Browse current job offers</p>
+					<p><span class="highlight2">STEP 1</span><br> - Browse current job offers</p>
 				</div>
 			</div>
 			<div class="col-4">
@@ -63,7 +61,7 @@
 					<img src="img/how-icons/icon5.png">
 				</div>
 				<div class="how-step-container">
-					<p><b>STEP 2</b> Apply for the offers you want to work on</p>
+					<p><span class="highlight2">STEP 2</span><br> - Apply for the offers you want to work on</p>
 				</div>
 			</div>
 			<div class="col-4">
@@ -71,12 +69,9 @@
 					<img src="img/how-icons/icon6.png">
 				</div>
 				<div class="how-step-container">
-					<p><b>STEP 3</b> Wait for the commissioner to contact you</p>
+					<p><span class="highlight2">STEP 3</span> <br> - Wait for the commissioner to contact you</p>
 				</div>
 			</div>
-		</div>
-
-
 		</div>
 		
 		<?php 
