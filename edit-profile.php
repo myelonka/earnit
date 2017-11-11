@@ -14,7 +14,6 @@
 		<?php
 			include('config.php');
 			include('header.php');
-			session_start();
 			include('session.php');
 			ini_set('session.cookie_httponly', true);
 			
@@ -73,8 +72,7 @@
 				$github = addslashes($github);
 				
 			 	$stmt = mysqli_prepare($db, 
-				"UPDATE users 
-				SET 
+				"UPDATE users SET 
 					fName='$fname', 
 					lName='$lname',  
 					linkFacebook='$facebook', 
@@ -86,7 +84,8 @@
 				WHERE id='$login_session'");
 				
 				mysqli_stmt_bind_param($stmt, 'ssssssss', $fname, $lname, $facebook, $linkedin, $github, $headline, $phone, $location);
-               printf($stmt->error);
+            $stmt->execute();
+            $stmt->close();
 				
 			}
 			
@@ -114,30 +113,23 @@
 			
 				<div class="page-container">
 					<form action="" id="profile-edit" name="update" method="POST">
-						<div class="col-2" id="profile-info">
-						<div id="avatar" style="background-image: url(uploads/<?php if(!is_null($qrow['avatar'])) { echo $qrow['avatar']; } else { echo 'default.jpg'; }; ?>)"></div>
-						<!--<div>
-							<form action="" method="POST" enctype="multipart/form-data">
-                       <input type="file" name="upload" /></br>
-                       <input  type="submit" value="Upload new profile image" />
-                   	</form>
-						</div>-->
-						<a href="logout.php">Logout</a>
-						</div>
-						<div class="col-10" id="profile-name"><br>
+						<div class="col-12" id="profile-name">
 							<span><h2><?php echo $qrow['email']; ?></h2></span>
-							<span><p>&mdash;<br>edit</p></span>
+							<span><p style="color: #FC3A52">&mdash;<br>profile edit</p></span>
 						</div>
-						<div class="col-10">
-							<label>First Name:</label><input type="text" name="fName" value="<?php echo $qrow['fName']?>"/>
-							<label>Last Name:</label><input type="text" name="lName" value="<?php echo $qrow['lName']?>"/>
-							<label>Headline:</label><input type="text" name="headline" value="<?php echo $qrow['headline']?>"/>
-							<label>Location:</label><input type="text" name="location" value="<?php echo $qrow['location']?>"/>
-							<label>Phone Number:</label><input type="tel" name="phoneNo" value="<?php echo $qrow['phoneNo']?>"/>
-							<label>Facebook:</label><input type="url" name="linkFacebook" value="<?php echo $qrow['linkFacebook']?>"/>
-							<label>LinkedIn:</label><input type="url" name="linkLinkedIn" value="<?php echo $qrow['linkLinkedIn']?>"/>
-							<label>GitHub:</label><input type="url" name="linkGitHub" value="<?php echo $qrow['linkGitHub']?>"/>
-							 <input type="submit" name="update-profile" value="Save" />
+						<div class="col-8" style="border: dashed 2px #FC3A52;">
+							<label>First Name:</label><input type="text" name="fName" onClick="this.select();" value="<?php echo $qrow['fName']?>"/>
+							<label>Last Name:</label><input type="text" name="lName" onClick="this.select();" value="<?php echo $qrow['lName']?>"/>
+							<label>Headline:</label><textarea name="headline" onClick="this.select();"><?php echo $qrow['headline']?></textarea>
+							<label>Location:</label><input type="text" name="location" onClick="this.select();" value="<?php echo $qrow['location']?>"/>
+							<label>Phone Number:</label><input type="tel" name="phoneNo" onClick="this.select();" value="<?php echo $qrow['phoneNo']?>"/>
+							<label><i class="fa fa-facebook" aria-hidden="true"></i>facebook.com/</label><input type="text" name="linkFacebook" onClick="this.select();" placeholder="http://www.facebook.com/" value="<?php echo $qrow['linkFacebook']?>"/>
+							<label><i class="fa fa-linkedin" aria-hidden="true"></i>linkedin.com/li/</label><input type="text" name="linkLinkedIn" onClick="this.select();" value="<?php echo $qrow['linkLinkedIn']?>"/>
+							<label><i class="fa fa-github" aria-hidden="true"></i>github.com/</label><input type="text" name="linkGitHub" onClick="this.select();" value="<?php echo $qrow['linkGitHub']?>"/>
+						</div>
+						<div class="col-2" style="padding-top: 0">
+							 <input type="submit" name="update-profile" id="loginbtn" value="Save" style="margin-top: 0" />
+							<a href="profile.php?" id="cancelbtn">Cancel</a>
 						</div>
 					</form>
 				</div>

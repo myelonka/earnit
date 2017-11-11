@@ -3,7 +3,7 @@
 
 <?php 
 	@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
-
+	session_start();
 	if(isset($_SESSION['login_user'])) {
 		$user_check = $_SESSION['login_user'];
 
@@ -55,7 +55,7 @@
 	</div>
 	<a <?php if($current == 'profile.php') {echo ' class=\'current\'';} ?> href="profile.php?" class="svg-link" id="profile-img-link">
 			<?php if(isset($_SESSION['login_user']) && !empty($_SESSION['login_user'])) {
-				echo "<span id='welcome'>Welcome,&nbsp;</span> <span>" . $qrow['fName'] . '&nbsp;' . $qrow['lName'] . "</span>"; } 
+				echo "<span id='welcome'>Welcome,&nbsp;</span> <span>" . $qrow['fName'] . "</span>"; } 
 			else { 
 				echo '<span>Sign in</span>'; } ?>
 		<img src="img/profile-icon.svg" alt="profile icon" class="svg" id="profile-img" />

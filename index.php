@@ -17,7 +17,6 @@
 			include('header.php');
 		
 			@ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
-			session_start();
 			ini_set('session.cookie_httponly', true);
 			$error = null;
 			$email = '';
@@ -38,10 +37,8 @@
 					$sql = "INSERT INTO users (email, password) 
 								VALUES ('$email', '$password')";
 					mysqli_query($db, $sql);
-					header('location: profile.php');
-					
 					$_SESSION['login_user'] = $id;
-					header('location: profile.php?');
+					header('location: edit-profile.php');
 				}
 			}
 			?>
@@ -95,21 +92,20 @@
 			
 			<?php endif; ?>
 			
-			<div id="homepage" class="page-container">
-				
-				<div id="homepage-text" class="col-12">
-					<h2>Don't <br> just dream. <br> <span style="color: #FC3A52">Do.</span></h2>
-				</div>
-				<div id="homepage-text" class="col-6">
-					<p>
-						Whatever you need to simplify your to do list, no matter your budget.
-					</p>
-					<p>
-						Find services based on your goals and deadlines, it’s that simple.
-					</p>
-					<p>
-						Your payment is always secure, EarnIt is built to protect your peace of mind.
-					</p>
+			<div class="page-container">
+				<div id="homepage" class="col-12">
+					<div id="homepage-text" class="col-12">
+						<h1>Work for your tomorrow.<br><span style="background-color: #FC3A52">&nbsp;Today.&nbsp;</span></h1>
+					</div>
+					<div id="homepage-text" class="col-12">
+						<p>
+							<i class="fa fa-check-circle" aria-hidden="true"></i>&emsp;Whatever you need to simplify your to do list, no matter your budget.
+							<br>
+							<i class="fa fa-check-circle" aria-hidden="true"></i>&emsp;Find services based on your goals and deadlines, it’s that simple.
+							<br>
+							<i class="fa fa-check-circle" aria-hidden="true"></i>&emsp;Your payment is always secure, EarnIt is built to protect your peace of mind.
+						</p>
+					</div>
 				</div>
 			</div>
 
