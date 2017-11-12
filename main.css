@@ -1092,6 +1092,10 @@ footer {
 	width: 300px;
 }
 
+#featured_form, #post_form {
+	padding-left: 20px;
+}
+
 #featured_form textarea {
 	margin-bottom: 30px;
 }
@@ -1132,6 +1136,13 @@ h10 {
 	display: inline-block;
 	margin-right: 10px;
 }
+
+#openModal p {
+	display: inline-block;
+}
+
+
+
 
 /*MODAL DIALOG -  source used to create modal window is taken from https://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html5-and-css3/ */
 

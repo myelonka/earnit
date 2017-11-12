@@ -1,6 +1,8 @@
-<div class="col-12"><h1>Categories</h1>
+<div class="col-12"><h1>Categories</h1></div>
+
+<div id="browse_container">
     <form id="post_form" method="post" action="">
-              Choose a job field:<br>
+              <h10>Choose a job field:</h10><br>
               <input type="checkbox" name="field[]" value="frontEnd">Front End<br>
               <input type="checkbox" name="field[]" value="backEnd" >Back End<br>
               <input type="checkbox" name="field[]" value="webDesigner">Web Designer<br>
@@ -8,7 +10,9 @@
               <input type="checkbox" name="field[]" value="uxDesigner">UX Designer<br>
               <input type="checkbox" name="field[]" value="interactionDesigner" >Interaction Designer<br>
               <input type="checkbox" name="field[]" value="seoSpecialist">SEO Specialist<br><br><br>
-              <input type="submit" name="submit_form" class="submit_forms"><br><br><br><br><br>
+              <input type="submit" name="submit_form" class="submit_forms"><br><br><br>
+            </form>
+</div>
     
     <?php
      @ $db = new mysqli($dbserver, $dbuser, $dbpass, $dbname);
@@ -45,14 +49,13 @@ while ($stmt->fetch()) {
     }    
 ?>
 
-
 <div class="col-12">
     <div id="openModal" class="modalDialog">
         <div>
             <a href="#close" title="Close" class="close">X</a>
-             <?php
+        <?php
             // Retrieve the id set in the url
-            $id = $_GET['id'];
+            $id = $_GET["id"];
             //ask all the data from database associated to this id
             $query = "SELECT author, title, description, employerMail, deadline FROM posts WHERE postId=$id";
             $stmt = $db->prepare($query);
@@ -61,21 +64,10 @@ while ($stmt->fetch()) {
             $stmt->fetch();
             $stmt->close();
             echo '<h2>' . $title . '</h2><br>';
-            echo '<p>Hiring company:' .$author. '</p><br>';
-            echo '<p>Job description:<br>' .$description. '</p><br>';
-            echo '<p>Application deadline:<br>' .$deadline. '</p><br>';
+            echo '<h10>Hiring company:</h10><p>' .$author. '</p><br><br>';
+            echo '<h10>Job description:</h10><p>' .$description. '</p><br><br>';
+            echo '<h10>Application deadline:</h10><p>' .$deadline. '</p><br><br><br>';
             echo '<h2>Application form</h2><br>';
-          
-            if (isset($_POST['submit_application'])){
-                $query = "INSERT IGNORE INTO usertopost (postId, userId) VALUES (?, ?)";
-                if (!$stmt = $db->prepare($query)){
-                    printf($db->error);
-                }
-                $stmt->bind_param('ss', $id, $_SESSION['login_user']);
-                if (!$stmt->execute()){
-                    printf($db->error);
-                }
-            }
           
             $usersId = [];
             $query = "SELECT * FROM usertopost WHERE postId=$id";
@@ -99,16 +91,25 @@ while ($stmt->fetch()) {
             }
 
 
-
+            if (isset($_POST['submit_application'])){
+                $query = "INSERT IGNORE INTO usertopost (postId, userId) VALUES (4, 8)";
+                if (!$stmt1 = $db->prepare($query)){
+                    printf($db->error);
+                }
+                //$stmt->bind_param('ss', $id, $_SESSION['login_user']);
+                if (!$stmt1->execute()){
+                    printf($db->error);
+                }
+            }
 
             if (isset($_FILES['submit_application'])){
                 $allowedextensions = array('pdf');
                 $extension = strtolower(substr($_FILES['upload']['name'], strrpos($_FILES['upload']['name'], '.') + 1));
                 if(in_array($extension, $allowedextensions) === false){
                     #add a new array entry
-                        $error[] = 'This is not an PDF file, upload is allowed only for PDF files.';
+                        $error[] = '<br> This is not an PDF file, upload is allowed only for PDF files.';
                     if($_FILES['upload']['size'] > 1000000){
-                         $error[]='The file exceeded the upload limit';
+                         $error[]='<br> The file exceeded the upload limit';
                     }
                     if(empty($error)){    
                         move_uploaded_file($_FILES['upload']['tmp_name'], "uploads/{$_FILES['upload']['name']}");     
@@ -122,23 +123,23 @@ while ($stmt->fetch()) {
             }
         ?>
             <form id="featured_form" method="post" action="" enctype="multipart/form-data">
-              Name:<br>
-              <input type="text" name="employee_name" class="back" value=""><br><br>
-              Surname:<br>
-              <input type="text" name="employee_surname" class="back" value=""><br><br>
-              Motivation letter (max 5000 characters):<br>
-              <textarea maxlength="5000" type="text" class="back" name="description" value="description" cols="40px" rows="15" wrap="soft"></textarea><br><br>
-              Upload your CV (pdf format):<br>
-              <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
+              <h1> Name: </h1>
+              <input type="text" name="employee_name" class="back" value="">
+              <h1> Surname: </h1>
+              <input type="text" name="employee_surname" class="back" value="">
+              <h1> Motivation letter (max 5000 characters): </h1>
+              <textarea maxlength="5000" type="text" class="back" name="description" value="description" cols="40px" rows="15" wrap="soft"></textarea>
+              <h1> Upload your CV (PDF format): </h1>
+              <input id="fileToUpload" type="file" name="fileToUpload">
+              <br><br>
               <input type="submit" value="Apply" name="submit_application" class="submit_forms"><br><br>
              </form>
              <?php 
              
             foreach ($emailsId as $key => $value) {
-                echo "<h1>".$value."</h2><br>";
+                echo "<h10>".$value."</h10><br>";
             }
              ?>
-        </div>
-	</div>
+  </div>
     </div>
 </div>

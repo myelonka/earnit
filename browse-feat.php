@@ -1,4 +1,6 @@
-<div class="col-12" id="teamwork"><h1>Featured</h1></div>
+<div class="col-12" id="teamwork"><h1>Featured</h1><br>
+    <h10>Take a look at the newest offers:</h10>
+</div>
 
 <?php
 	
@@ -43,9 +45,9 @@ while ($stmt->fetch()) {
             $stmt->fetch();
             $stmt->close();
             echo '<h2>' . $title . '</h2><br>';
-            echo '<p>Hiring company:' .$author. '</p><br>';
-            echo '<p>Job description:<br>' .$description. '</p><br>';
-            echo '<p>Application deadline:<br>' .$deadline. '</p><br>';
+            echo '<h10>Hiring company:</h10><p>' .$author. '</p><br><br>';
+            echo '<h10>Job description:</h10><p>' .$description. '</p><br><br>';
+            echo '<h10>Application deadline:</h10><p>' .$deadline. '</p><br><br><br>';
             echo '<h2>Application form</h2><br>';
           
             $usersId = [];
