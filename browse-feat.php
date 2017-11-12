@@ -97,6 +97,7 @@ while ($stmt->fetch()) {
                     }
                 }
             }
+            
             if (!empty($error)){
                foreach ($error as $err){
                 echo $err;
@@ -118,7 +119,7 @@ while ($stmt->fetch()) {
              <?php 
              
             foreach ($emailsId as $key => $value) {
-                echo "<h2>".$value."</h2><br>";
+                echo "<h10>".$value."</h10><br>";
             }
              ?>
 	</div>

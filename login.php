@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Sign In - EarnIt</title>
+        <title>Log In - EarnIt</title>
 		<meta charset="utf-8">
 		<meta name="description" content="Login page for users">
 		<meta name="keywords" content="earnit, freelancer, freelancing, entrepreneur, student, coding, graphic design, programming, wed design, web development, ui, ux, computer science, user, profile">
@@ -41,7 +41,7 @@
 		?>
 		
 			<div class="page-container">
-				<div class="col-12" id="loginform"><h2>Sign in</h2><br><br><br>
+				<div class="col-12" id="loginform"><h2>Log in</h2><br><br><br>
 					<form action="" name="login" method="POST">
 						<tr>
 							<td></td>
@@ -56,7 +56,7 @@
 						<tr>	
 							<td></td>
 							<td>
-								<button type="submit" name="login" id="loginbtn">Sign in</button>
+								<button type="submit" name="login" id="loginbtn">Log in</button>
 								<a href="index.php?" id="forgotbtn">Don't have an account?</a>
 							</td>
 						</tr>

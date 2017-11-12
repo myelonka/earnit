@@ -95,7 +95,7 @@
 			<div class="page-container">
 				<div id="homepage" class="col-12">
 					<div id="homepage-text" class="col-12">
-						<h1>Work for your tomorrow.<br><span style="background-color: #FC3A52">&nbsp;Today.&nbsp;</span></h1>
+					<h2>Work for <br> your tomorrow <br> <span style="color: #FC3A52">&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  today.</span></h2>
 					</div>
 					<div id="homepage-text" class="col-12">
 						<p>

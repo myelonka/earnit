@@ -57,7 +57,7 @@
 			<?php if(isset($_SESSION['login_user']) && !empty($_SESSION['login_user'])) {
 				echo "<span id='welcome'>Welcome,&nbsp;</span> <span>" . $qrow['fName'] . "</span>"; } 
 			else { 
-				echo '<span>Sign in</span>'; } ?>
+				echo '<span>Log in</span>'; } ?>
 		<img src="img/profile-icon.svg" alt="profile icon" class="svg" id="profile-img" />
 	</a>
 </div>

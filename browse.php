@@ -33,6 +33,10 @@
 						</li>
 					</ul>
 				</div>
+
+			<?php 
+				include('footer.php');
+			?>
 				
 				<?php switch ($subcurrent) {
 					case "feat":
@@ -48,10 +52,6 @@
 				?>
 				
 			</div>
-
-			<?php 
-				include('footer.php');
-			?>
 		
 		</div>
 	</body>

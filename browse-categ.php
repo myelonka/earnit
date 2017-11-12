@@ -116,6 +116,7 @@ while ($stmt->fetch()) {
                     }
                 }
             }
+            
             if (!empty($error)){
                foreach ($error as $err){
                 echo $err;

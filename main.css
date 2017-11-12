@@ -468,7 +468,7 @@ footer {
 }
 
 #newsletter-submitbtn {
-	width: auto;
+	width: 12.1rem;
 	height: 2.5rem;
 	text-align: right;
 	margin-left: -0.25rem;
@@ -566,7 +566,7 @@ footer {
 	font-size: 1rem;
 }
 
-#reg-loginbtn, #reg-signupbtn {
+#reg-loginbtn, #reg-signupbtn, #loginbtn {
 	height: 2.5rem;
 	width: 45%;
 	float: left;
@@ -625,20 +625,34 @@ footer {
 	background-image: url(img/homepage.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	border-radius: 0.5rem;
+	margin-bottom: 2rem;
 }
 
-#homepage-text h1 {
-	padding: 2rem;
+#homepage-text h2 {
+<<<<<<< HEAD
+	padding: 4rem 0rem 0rem 4rem;
 	color: #fff;
+	font-size: 7rem;
+	line-height: 1;
+	text-shadow: 3px 3px 30px rgba(0,0,0,0.5);
+=======
+	height: 30rem;
+	padding: 4rem 0rem 0rem 1.5rem;
+	color: #fff;
+	font-size: 7rem;
+	line-height: 7rem;
+>>>>>>> a4b256cd24643d401222d0dde17387ddce4a3ee3
 }
 
 #homepage-text p {
-	font-weight: 500;
+	font-weight: 400;
 	color: #fff;
-	line-height: 1.7;
-	padding: 2rem;
-	font-size: 18pt;
+	line-height: 2;
+	font-size: 15pt;
+	width: 70%;
+	padding: 2rem 1rem 2rem 2rem;
+	margin: 2rem 0rem 15rem 0rem;
+	background: rgba(0,0,0,.4);
 }
 
 
@@ -862,21 +876,32 @@ footer {
 }
 
 #loginbtn {
-	height: 2.5rem;
-	width: 50%;
-	float: left;
-	font-weight: 500;
-	background-color: #FC3A52;
-	color: #fff;
-	border-bottom: 0.25rem solid #9e263b;
-	margin-bottom: 2rem;
-	cursor: pointer;
+	background: transparent;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #FC3A52;
+	color: #FC3A52;
 }
 
-#loginbtn:active {
-	border-bottom: none;
-	border-top: 0.25rem solid #f9f9f9;
+#loginbtn:hover{
+	background: #FC3A52;
+	color: #fff;
 }
+
+::-webkit-input-placeholder {
+	color: #999999;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
+
+#reg-signupbtn:active {
+	border-bottom: none;
+	border-top: 0.25rem solid #FC3A52;
+}
+
 
 #forgotbtn {
 	color: #0E2431;
@@ -1174,32 +1199,31 @@ h10 {
 	position: relative;
 	margin: 10% auto;
 	padding: 5px 20px 13px 20px;
-	border-radius: 10px;
 	background: #fff;
 }
 
 .close {
-	background: #0E2431;
+	background: #FC7087;
 	color: #FFFFFF;
-	line-height: 25px;
+	line-height: 50px;
+	font-size: 25pt;
+	width: 50px;
 	position: absolute;
-	right: -12px;
+	right: -50px;
 	text-align: center;
-	top: -10px;
-	width: 24px;
+	top: 0px;
 	text-decoration: none;
 	font-weight: bold;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	border-radius: 12px;
-	-moz-box-shadow: 1px 1px 3px #000;
-	-webkit-box-shadow: 1px 1px 3px #000;
-	box-shadow: 1px 1px 3px #000;
+	-moz-box-shadow: 2px 2px 5px #000;
+	-webkit-box-shadow: 2px 2px 5px #000;
+	box-shadow: 2px 2px 5px #000;
 }
 
 .close:hover { 
-    background: #FC7087; 
+     background : #ff1431;
+     color: #000;
 }
+
 
 
 @media only screen and (min-width: 720px) {
