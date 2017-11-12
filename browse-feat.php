@@ -97,7 +97,7 @@ while ($stmt->fetch()) {
                     }
                 }
             }
-            
+
             if (!empty($error)){
                foreach ($error as $err){
                 echo $err;
@@ -116,12 +116,6 @@ while ($stmt->fetch()) {
               <br><br>
               <input type="submit" value="Apply" name="submit_application" class="submit_forms"><br><br>
              </form>
-             <?php 
-             
-            foreach ($emailsId as $key => $value) {
-                echo "<h10>".$value."</h10><br>";
-            }
-             ?>
 	</div>
     </div>
 </div>
