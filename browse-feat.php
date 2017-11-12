@@ -23,7 +23,7 @@ $stmt->execute();
 
 while ($stmt->fetch()) {
     // Set the postid in the url so you can know which post has been clicked
-    echo "<div class='col-4 equal' id='stile_ingrid'> <a href='?page=feat&id=$postId#openModal'><img src='img/browse_icon.png'/></a><br><span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span></div>";
+    echo "<div class='col-4 equal' id='stile_ingrid'> <span class='post_title'>$title </span> <br> Employer: <span class='post_var'>$author</span><br><br> <span >$promoSentence</span><br><a id='apply-button' href='?page=feat&id=$postId#openModal'>APPLY</a></div>";
     }
     $stmt->close();
 ?>

@@ -576,8 +576,26 @@ footer {
 }
 
 #reg-signupbtn {
-	border-bottom: 0.25rem solid #9E263B;
+	background: transparent;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #fff;
+	color: #fff;
 }
+
+#reg-signupbtn:hover{
+	background: #fff;
+	color: #9e263b;
+}
+
+::-webkit-input-placeholder {
+	color: #999999;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
 
 #reg-signupbtn:active {
 	border-bottom: none;
@@ -600,6 +618,7 @@ footer {
 #reg-loginbtn:hover {
 	text-decoration: underline;
 }
+
 
 #homepage {
 	width: 100%;
@@ -653,8 +672,6 @@ footer {
 
 /*HOW IT WORKS*/
 
-/*HOW IT WORKS*/
-
 #how-it-works-heading1 {
 	background: #fd3b52;
 	padding-bottom: 3rem;
@@ -703,6 +720,34 @@ footer {
 	padding: 1rem 1rem 1rem 1rem;
 	color: #fff;
 }
+
+#apply-button {
+	height: 2.5rem;
+	width: 45%;
+	float: left;
+	font-weight: 500;
+	background: #FC7087;
+	color: #fff;
+	font-family: 'Space Mono', monospace;
+	font-size: 14pt;
+	padding-top: 4px;
+	margin-left: 28%;
+	margin-top: 20px;
+}
+
+#apply-button:hover{
+	background: #FC3A52;
+	color: #fff;
+}
+
+::-webkit-input-placeholder {
+	color: #999999;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+	color: transparent;
+}
+
 
 
 
@@ -992,27 +1037,102 @@ footer {
     color: #FC3A52;
 }
 
-#stile_ingrid{
+
+#stile_ingrid {
+	padding: 20px 15px 15px 15px;
     text-align: center;
+    border: 1px solid #FC7087;
+    height: 310px;
+    width: 310px;
+    margin: 19px;
+    float: left;
 }
 
-#post_form{
-    padding-top : 15%;
+#job_container {
+	width: 1400px;
+	max-height: 9000px;
+	margin: 0 auto;
+	overflow: hidden;
 }
 
 .submit_forms{
+	transition: background-color 0.15s ease-out;
+	-webkit-transition: background-color 0.15s ease-out;
+	-moz-transition: background-color 0.15s ease-out;
+	-o-transition: background-color 0.15s ease-out;
     border : solid 0px #000000;
-    border-radius: 7px;
 	text-align: center;
     margin: 0 auto;
-	color : #000000;
+	color : #fff;
+	height: 40px;
     line-height: 12px;
-	background : #a08fff;
+	background : #FC3A52;
+	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .submit_forms:hover{
-     background : #5e2fec;
+     background : #9e263b;
 }
+
+#featured_form h1 , #post_form h1, #fpost_form h3 {
+	font-weight: 600;
+	letter-spacing: 0px;
+	font-size: 14pt;
+	padding: 5px 0px 5px 0px;
+}
+
+#featured_form input {
+	margin-bottom: 20px;
+}
+
+#fileToUpload {
+	height: 50px;
+	background-color: transparent;
+	width: 300px;
+}
+
+#featured_form textarea {
+	margin-bottom: 30px;
+}
+
+#post_form input[type='checkbox']{
+	margin: 15px 0px 0px 0px;
+	width: 50px;
+	cursor: pointer;
+}
+
+#post_form p {
+	display: inline-block;
+	height: 30px;
+}
+
+#post_form input[type='submit'] {
+	transition: background-color 0.15s ease-out;
+	-webkit-transition: background-color 0.15s ease-out;
+	-moz-transition: background-color 0.15s ease-out;
+	-o-transition: background-color 0.15s ease-out;
+    border : solid 0px #000000;
+	text-align: center;
+    margin: 0 auto;
+	color : #fff;
+    line-height: 12px;
+	background : #FC3A52;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+#post_form input[type='submit']:hover {
+	background: #9e263b;
+}
+
+h10 {
+	font-weight: 600;
+	font-size: 14pt;
+	display: inline-block;
+	margin-right: 10px;
+}
+
 /*MODAL DIALOG -  source used to create modal window is taken from https://www.webdesignerdepot.com/2012/10/creating-a-modal-window-with-html5-and-css3/ */
 
 

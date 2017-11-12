@@ -75,7 +75,7 @@
 										<br>
 										<button type="submit" name="register" id="reg-signupbtn">Sign up</button>
 										<h6>Already have an account?&nbsp;</h6>
-										<a href="login.php" id="reg-loginbtn">Sign in</a>
+										<a href="login.php" id="reg-loginbtn">Log in</a>
 									</td>
 								</tr>
 								<tr>	
@@ -99,11 +99,11 @@
 					</div>
 					<div id="homepage-text" class="col-12">
 						<p>
-							<i class="fa fa-check-circle" aria-hidden="true"></i>&emsp;Whatever you need to simplify your to do list, no matter your budget.
+							 We are here to provide the link between students and their future employers.
 							<br>
-							<i class="fa fa-check-circle" aria-hidden="true"></i>&emsp;Find services based on your goals and deadlines, it’s that simple.
+							 Find a freelance job in no time, combine study assignments with real job experience and build connections with local companies.
 							<br>
-							<i class="fa fa-check-circle" aria-hidden="true"></i>&emsp;Your payment is always secure, EarnIt is built to protect your peace of mind.
+							 We provide opportunities. Employers trust - you have to Earn It !
 						</p>
 					</div>
 				</div>
